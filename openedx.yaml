@@ -1,0 +1,17 @@
+# This file describes this Open edX repo, as described in OEP-2:
+# https://open-edx-proposals.readthedocs.io/en/latest/oep-0002-bp-repo-metadata.html#specification
+
+---
+nick: platform-plugin-notices
+tags:
+    - library
+oeps:
+    oep-2: true
+    oep-3:
+        state: false
+        reason: Not needed for this project
+    oep-5:
+        state: false
+        reason: Plugin for a larger app. Not needed on it's own.
+    oep-18: true
+    oep-30: true
