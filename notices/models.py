@@ -18,11 +18,6 @@ class Notice(TimeStampedModel):
     """
 
     name = models.CharField(max_length=128, help_text="Name for the notice that needs to be acknowledged")
-    html_content = models.TextField(
-        help_text=(
-            "HTML content to be included in a notice prompt. Allowed tags include (a, b, em, i, span, strong)"
-        )
-    )
     active = models.BooleanField()
     history = HistoricalRecords(app="notices")
 
@@ -31,16 +26,41 @@ class Notice(TimeStampedModel):
 
         app_label = "notices"
 
-    def save(self, *args, **kwargs):
-        """Save method override to remove unsafe tags from html_content first."""
-        self.html_content = bleach.clean(self.html_content, tags=["a", "b", "em", "i", "span", "strong"])
-        super().save(*args, **kwargs)
-
     def __str__(self):
         """
         Get a string representation of this model instance.
         """
         return f"<Notice {self.name}>"
+
+
+class TranslatedNoticeContent(TimeStampedModel):
+    """
+    A model to house a translated html notice and the language it's translated into.
+
+    A Notice may have multiple TranslatedNoticeContents, with no more than one for each
+    language.
+
+    .. no_pii:
+    """
+    notice = models.ForeignKey(Notice, on_delete=models.CASCADE, related_name="translated_notice_content")
+    language_code = models.CharField(max_length=10, help_text="The IETF BCP 47 language code for this translation")
+    html_content = models.TextField(
+        help_text=(
+            "HTML content to be included in a notice prompt. Allowed tags include (a, b, em, i, span, strong)"
+        )
+    )
+    history = HistoricalRecords(app="notices")
+
+    class Meta:
+        """Model metadata."""
+
+        app_label = "notices"
+        unique_together = ['notice', 'language_code']
+
+    def save(self, *args, **kwargs):
+        """Save method override to remove unsafe tags from html_content first."""
+        self.html_content = bleach.clean(self.html_content, tags=["a", "b", "em", "i", "span", "strong"])
+        super().save(*args, **kwargs)
 
 
 class AcknowledgedNotice(TimeStampedModel):
