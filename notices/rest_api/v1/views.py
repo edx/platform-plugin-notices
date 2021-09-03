@@ -29,7 +29,16 @@ class ListUnacknowledgedNotices(APIView):
             {
                 "id": 1
                 "name": "First notice",
-                "html_content": "<b>Welcome</b>, please acknowledge me."
+                "translated_notice_content": [
+                    {
+                        "language_code": "en-US",
+                        "html_content": "<b>Hello</b>"
+                    },
+                    {
+                        "language_code": "es-ES",
+                        "html_content": "<i>Hola</i>"
+                    }
+                ]
             }
         ]
     }

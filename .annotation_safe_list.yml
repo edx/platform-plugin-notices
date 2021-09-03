@@ -21,6 +21,8 @@ contenttypes.ContentType:
   ".. no_pii:": "This model has no PII"
 notices.HistoricalNotice:
   ".. no_pii:": "This model has no PII"
+notices.HistoricalTranslatedNoticeContent:
+  ".. no_pii:": "This model has no PII"
 sessions.Session:
   ".. no_pii:": "This model has no PII"
 social_django.Association:
