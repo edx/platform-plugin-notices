@@ -87,7 +87,6 @@ django==2.2.24
     #   edx-django-utils
     #   edx-drf-extensions
     #   edx-i18n-tools
-    #   edx-lint
     #   rest-condition
 django-crum==0.7.9
     # via
@@ -120,7 +119,7 @@ drf-jwt==1.19.0
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/quality.txt
     #   edx-drf-extensions
-edx-django-utils==4.3.0
+edx-django-utils==4.4.0
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
@@ -130,12 +129,18 @@ edx-drf-extensions==6.6.0
     #   -r requirements/quality.txt
 edx-i18n-tools==0.7.0
     # via -r requirements/dev.in
-edx-lint==5.0.0
+edx-lint==5.1.0
     # via -r requirements/quality.txt
 edx-opaque-keys==2.2.2
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
+factory-boy==3.2.0
+    # via -r requirements/quality.txt
+faker==8.12.1
+    # via
+    #   -r requirements/quality.txt
+    #   factory-boy
 filelock==3.0.12
     # via
     #   -r requirements/ci.txt
@@ -221,7 +226,7 @@ pkginfo==1.7.1
     # via
     #   -r requirements/quality.txt
     #   twine
-platformdirs==2.2.0
+platformdirs==2.3.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -229,7 +234,7 @@ platformdirs==2.2.0
     #   virtualenv
 pluggy==0.13.1
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   -c requirements/constraints.txt
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   diff-cover
@@ -315,6 +320,7 @@ python-dateutil==2.8.2
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
+    #   faker
 python-slugify==5.0.2
     # via
     #   -r requirements/quality.txt
@@ -391,6 +397,7 @@ stevedore==3.4.0
 text-unidecode==1.3
     # via
     #   -r requirements/quality.txt
+    #   faker
     #   python-slugify
 toml==0.10.2
     # via
