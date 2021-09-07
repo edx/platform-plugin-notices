@@ -10,3 +10,8 @@
 
 # Common constraints for edx repos
 -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+
+
+# pluggy released v 1.0.0 on 2021/08/25 but pytest 6.2.x currently requires pluggy<1.0.0. This constraint will be
+# re-evaluated for removal in MICROBA-1473.
+pluggy<1.0.0
