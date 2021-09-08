@@ -7,6 +7,8 @@ from django.db import models
 from model_utils.models import TimeStampedModel
 from simple_history.models import HistoricalRecords
 
+from notices.data import AcknowledgmentResponseTypes
+
 User = get_user_model()
 
 
@@ -46,7 +48,7 @@ class TranslatedNoticeContent(TimeStampedModel):
     language_code = models.CharField(max_length=10, help_text="The IETF BCP 47 language code for this translation")
     html_content = models.TextField(
         help_text=(
-            "HTML content to be included in a notice prompt. Allowed tags include (a, b, em, i, span, strong)"
+            "HTML content to be included in a notice prompt. Allowed tags include (a, b, em, i, img, span, strong)"
         )
     )
     history = HistoricalRecords(app="notices")
@@ -59,7 +61,7 @@ class TranslatedNoticeContent(TimeStampedModel):
 
     def save(self, *args, **kwargs):
         """Save method override to remove unsafe tags from html_content first."""
-        self.html_content = bleach.clean(self.html_content, tags=["a", "b", "em", "i", "span", "strong"])
+        self.html_content = bleach.clean(self.html_content, tags=["a", "b", "em", "i", "img", "span", "strong"])
         super().save(*args, **kwargs)
 
 
@@ -71,9 +73,14 @@ class AcknowledgedNotice(TimeStampedModel):
 
     .. no_pii:
     """
+    RESPONSE_TYPE_CHOICES = [
+        (AcknowledgmentResponseTypes.CONFIRMED.value, "Confirmed"),
+        (AcknowledgmentResponseTypes.DISMISSED.value, "Dismissed"),
+    ]
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    notice = models.OneToOneField(Notice, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="notice_acknowledgments")
+    notice = models.ForeignKey(Notice, on_delete=models.CASCADE, related_name="acknowledgments")
+    response_type = models.CharField(max_length=32, choices=RESPONSE_TYPE_CHOICES)
 
     class Meta:
         """Model metadata."""

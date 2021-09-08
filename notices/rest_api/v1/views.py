@@ -1,13 +1,14 @@
 """API views for the notices app"""
 
-from django.core.exceptions import ValidationError
 from edx_rest_framework_extensions.auth.jwt.authentication import JwtAuthentication
 from rest_framework import permissions
 from rest_framework.authentication import SessionAuthentication
+from rest_framework.serializers import ValidationError
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_204_NO_CONTENT
 from rest_framework.views import APIView
 
+from notices.data import AcknowledgmentResponseTypes
 from notices.models import AcknowledgedNotice, Notice
 from notices.rest_api.v1.serializers import NoticeSerializer
 
@@ -72,7 +73,7 @@ class AcknowledgeNotice(APIView):
 
     Example request:
     POST /api/notices/v1/acknowledge
-    post data: {notice_id: 10}
+    post data: {"notice_id": 10, "acknowledgment_type": "confirmed"}
     """
     authentication_classes = (JwtAuthentication, SessionAuthentication,)
     permission_classes = (permissions.IsAuthenticated,)
@@ -82,14 +83,25 @@ class AcknowledgeNotice(APIView):
         Acknowledges the notice for the requesting user
         """
         notice_id = request.data.get("notice_id")
+        acknowledgment_type = request.data.get("acknowledgment_type")
+
         if not notice_id:
-            raise ValidationError("notice_id required to acknowledge notice")
+            raise ValidationError({'notice_id': "notice_id field required"})
+
+        if not AcknowledgmentResponseTypes.includes_value(acknowledgment_type):
+            raise ValidationError({
+                'acknowledgment_type': f"acknowledgment_type must be one of the following: {[e.value for e in AcknowledgmentResponseTypes]}"
+            })
 
         try:
             notice = Notice.objects.get(id=notice_id, active=True)
         except Notice.DoesNotExist as exc:
-            raise ValidationError("Request notice does not exist or is not active") from exc
+            raise ValidationError({'notice_id': "notice_id field does not match an existing active notice"}) from exc
 
-        AcknowledgedNotice.objects.update_or_create(user=request.user, notice=notice)
-        # Since this is just an acknowledgment API, we can just return a 200 OK.
+        AcknowledgedNotice.objects.update_or_create(
+            user=request.user,
+            notice=notice,
+            defaults={"response_type": acknowledgment_type}
+        )
+        # Since this is just an acknowledgment API, we can just return a 204 without any response data.
         return Response(status=HTTP_204_NO_CONTENT)
