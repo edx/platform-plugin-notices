@@ -89,8 +89,9 @@ class AcknowledgeNotice(APIView):
             raise ValidationError({'notice_id': "notice_id field required"})
 
         if not AcknowledgmentResponseTypes.includes_value(acknowledgment_type):
+            valid_types = [e.value for e in AcknowledgmentResponseTypes]
             raise ValidationError({
-                'acknowledgment_type': f"acknowledgment_type must be one of the following: {[e.value for e in AcknowledgmentResponseTypes]}"
+                'acknowledgment_type': f"acknowledgment_type must be one of the following: {valid_types}"
             })
 
         try:

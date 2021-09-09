@@ -2,12 +2,12 @@
 import json
 
 from django.test import TestCase
-from rest_framework.test import APIClient, APIRequestFactory, force_authenticate
+from rest_framework.test import APIRequestFactory, force_authenticate
 
 from notices.rest_api.v1.views import AcknowledgeNotice, ListUnacknowledgedNotices
 from notices.models import AcknowledgedNotice
 from notices.data import AcknowledgmentResponseTypes
-from test_utils.factories import AcknowledgedNoticeFactory, NoticeFactory, TranslatedNoticeContentFactory, UserFactory
+from test_utils.factories import AcknowledgedNoticeFactory, NoticeFactory, UserFactory
 
 
 class ListUnacknowledgedNoticesTests(TestCase):
@@ -82,13 +82,13 @@ class AcknowledgeNoticeTests(TestCase):
         )
         force_authenticate(request, user=self.user)
         response = self.view(request)
-        assert response.data == None
+        assert response.data is None
         assert response.status_code == 204
         # Verify the acknowledgment made it to the DB
-        assert AcknowledgedNotice.objects.filter(user=self.user, notice=notice_1).first() != None
+        assert AcknowledgedNotice.objects.filter(user=self.user, notice=notice_1).first() is not None
 
     def test_no_notice_data(self):
-        notice_1 = NoticeFactory(active=True)
+        NoticeFactory(active=True)
         request = self.request_factory.post('/api/v1/acknowledge/')
         force_authenticate(request, user=self.user)
         response = self.view(request)
@@ -134,4 +134,3 @@ class AcknowledgeNoticeTests(TestCase):
         )
         response = self.view(request)
         assert response.status_code == 401
-
