@@ -35,7 +35,6 @@ class ListUnacknowledgedNoticesTests(TestCase):
         assert len(response.data) == 1
         assert response.data[0] == {"id": notice_1.id, "name": notice_1.name, "translated_notice_content": []}
 
-
     def test_multiple_notices(self):
         notice_1 = NoticeFactory(active=True)
         notice_2 = NoticeFactory(active=True)
