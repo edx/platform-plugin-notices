@@ -15,5 +15,5 @@ class AcknowledgmentResponseTypes(str, Enum):
 
     @classmethod
     def includes_value(cls, value):
-        """Checks if the value passed in is a valid option"""
+        """Check if the value passed in is a valid option."""
         return value in set(item.value for item in cls)
