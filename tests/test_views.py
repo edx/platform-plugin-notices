@@ -4,9 +4,9 @@ import json
 from django.test import TestCase
 from rest_framework.test import APIRequestFactory, force_authenticate
 
-from notices.rest_api.v1.views import AcknowledgeNotice, ListUnacknowledgedNotices
-from notices.models import AcknowledgedNotice
 from notices.data import AcknowledgmentResponseTypes
+from notices.models import AcknowledgedNotice
+from notices.rest_api.v1.views import AcknowledgeNotice, ListUnacknowledgedNotices
 from test_utils.factories import AcknowledgedNoticeFactory, NoticeFactory, UserFactory
 
 

@@ -9,6 +9,7 @@ from simple_history.models import HistoricalRecords
 
 from notices.data import AcknowledgmentResponseTypes
 
+
 User = get_user_model()
 
 
