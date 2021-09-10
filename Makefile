@@ -50,6 +50,13 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 quality: ## check coding style with pycodestyle and pylint
 	tox -e quality
 
+quality-fix: ## Fix quality failures that are automatable
+	isort tests notices manage.py setup.py test_settings.py
+	black .
+
+quality-requirements: requirements ## Installs quality-related requirements
+	pip-sync requirements/quality.txt requirements/private.*
+
 pii_check: ## check for PII annotations on all Django models
 	tox -e pii_check
 

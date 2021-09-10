@@ -25,5 +25,5 @@ class NoticesConfig(AppConfig):
                 "production": {"relative_path": "settings.production"},
                 "common": {"relative_path": "settings.common"},
             }
-        }
+        },
     }

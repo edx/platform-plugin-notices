@@ -20,20 +20,16 @@ class TestNoticeSerializer(TestCase):
         first_notice = NoticeFactory()
         second_notice = NoticeFactory()
         first_content_for_first_notice = TranslatedNoticeContentFactory(
-            notice=first_notice,
-            language_code="en-US",
-            html_content="This is a <b>test</b> notice."
+            notice=first_notice, language_code="en-US", html_content="This is a <b>test</b> notice."
         )
         second_content_for_first_notice = TranslatedNoticeContentFactory(
             notice=first_notice,
             language_code="es-ES",
             # This was an auto translation, sorry if it's wrong
-            html_content="Este es un aviso de <b>prueba</b>."
+            html_content="Este es un aviso de <b>prueba</b>.",
         )
         first_content_for_second_notice = TranslatedNoticeContentFactory(
-            notice=second_notice,
-            language_code="en-US",
-            html_content="This is a <i>second</i> <b>test</b> notice."
+            notice=second_notice, language_code="en-US", html_content="This is a <i>second</i> <b>test</b> notice."
         )
         notices = [first_notice, second_notice]
 
@@ -44,13 +40,13 @@ class TestNoticeSerializer(TestCase):
                 "translated_notice_content": [
                     {
                         "language_code": first_content_for_first_notice.language_code,
-                        "html_content": first_content_for_first_notice.html_content
+                        "html_content": first_content_for_first_notice.html_content,
                     },
                     {
                         "language_code": second_content_for_first_notice.language_code,
-                        "html_content": second_content_for_first_notice.html_content
+                        "html_content": second_content_for_first_notice.html_content,
                     },
-                ]
+                ],
             },
             {
                 "id": second_notice.id,
@@ -58,10 +54,10 @@ class TestNoticeSerializer(TestCase):
                 "translated_notice_content": [
                     {
                         "language_code": first_content_for_second_notice.language_code,
-                        "html_content": first_content_for_second_notice.html_content
+                        "html_content": first_content_for_second_notice.html_content,
                     },
-                ]
-            }
+                ],
+            },
         ]
         serializer = NoticeSerializer(notices, many=True)
         # json required because serializer.data is an OrderedDict and this is

@@ -59,3 +59,6 @@ docs/notices.*.rst
 # Private requirements
 requirements/private.in
 requirements/private.txt
+
+# Virtual environments
+venv/

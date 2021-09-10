@@ -9,4 +9,4 @@ def plugin_settings(settings):
     # .. toggle_description: If True, users will be prompted to acknowledge the notice in a client
     # .. toggle_use_cases: open_edx
     # .. toggle_creation_date: 2021-08-19
-    settings.FEATURES['ENABLE_NOTICES'] = False
+    settings.FEATURES["ENABLE_NOTICES"] = False

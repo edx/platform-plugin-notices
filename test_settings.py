@@ -16,26 +16,26 @@ def root(*args):
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'default.db',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "default.db",
+        "USER": "",
+        "PASSWORD": "",
+        "HOST": "",
+        "PORT": "",
     }
 }
 
 INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'notices',
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "notices",
 )
 
 LOCALE_PATHS = [
-    root('notices', 'conf', 'locale'),
+    root("notices", "conf", "locale"),
 ]
 
-ROOT_URLCONF = 'notices.urls'
+ROOT_URLCONF = "notices.urls"
 
-SECRET_KEY = 'insecure-secret-key'
+SECRET_KEY = "insecure-secret-key"

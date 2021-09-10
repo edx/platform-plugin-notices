@@ -10,6 +10,7 @@ class AcknowledgmentResponseTypes(str, Enum):
     """
     Options for the response_type field of a AcknowledgedNotice.
     """
+
     CONFIRMED = "confirmed"
     DISMISSED = "dismissed"
 

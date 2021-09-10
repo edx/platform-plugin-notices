@@ -23,6 +23,7 @@ class UserFactory(DjangoModelFactory):
     is_superuser = False
     is_active = True
 
+
 class NoticeFactory(DjangoModelFactory):
     """
     Notice factory
@@ -34,6 +35,7 @@ class NoticeFactory(DjangoModelFactory):
     name = factory.Sequence(u"Notice number {0}".format)
     active = True
 
+
 class TranslatedNoticeContentFactory(DjangoModelFactory):
     """
     TranslatedNoticeContent factory
@@ -43,6 +45,7 @@ class TranslatedNoticeContentFactory(DjangoModelFactory):
         model = TranslatedNoticeContent
 
     notice = factory.SubFactory(NoticeFactory)
+
 
 class AcknowledgedNoticeFactory(DjangoModelFactory):
     """
