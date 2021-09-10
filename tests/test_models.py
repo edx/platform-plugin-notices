@@ -11,6 +11,7 @@ class TestTranslatedNoticeContent(TestCase):
     """
     Tests of the TranslatedNoticeContent model.
     """
+
     def setUp(self):
         super().setUp()
         self.notice = NoticeFactory()
@@ -30,8 +31,6 @@ class TestTranslatedNoticeContent(TestCase):
             <a href="http://www.example.com">Link</a>
         """
         translated_content = TranslatedNoticeContentFactory(
-            notice=self.notice,
-            language_code="en-US",
-            html_content=unclean_content
+            notice=self.notice, language_code="en-US", html_content=unclean_content
         )
         assert translated_content.html_content == expected_content

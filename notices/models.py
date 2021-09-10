@@ -45,6 +45,7 @@ class TranslatedNoticeContent(TimeStampedModel):
 
     .. no_pii:
     """
+
     notice = models.ForeignKey(Notice, on_delete=models.CASCADE, related_name="translated_notice_content")
     language_code = models.CharField(max_length=10, help_text="The IETF BCP 47 language code for this translation")
     html_content = models.TextField(
@@ -58,7 +59,7 @@ class TranslatedNoticeContent(TimeStampedModel):
         """Model metadata."""
 
         app_label = "notices"
-        unique_together = ['notice', 'language_code']
+        unique_together = ["notice", "language_code"]
 
     def save(self, *args, **kwargs):
         """Save method override to remove unsafe tags from html_content first."""
@@ -74,6 +75,7 @@ class AcknowledgedNotice(TimeStampedModel):
 
     .. no_pii:
     """
+
     RESPONSE_TYPE_CHOICES = [
         (AcknowledgmentResponseTypes.CONFIRMED.value, "Confirmed"),
         (AcknowledgmentResponseTypes.DISMISSED.value, "Dismissed"),
@@ -85,6 +87,7 @@ class AcknowledgedNotice(TimeStampedModel):
 
     class Meta:
         """Model metadata."""
+
         app_label = "notices"
 
     def __str__(self):

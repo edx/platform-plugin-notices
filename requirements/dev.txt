@@ -17,6 +17,8 @@ backports.entry-points-selectable==1.1.0
     # via
     #   -r requirements/ci.txt
     #   virtualenv
+black==21.8b0
+    # via -r requirements/quality.txt
 bleach==4.1.0
     # via
     #   -r requirements/quality.txt
@@ -41,6 +43,7 @@ click==8.0.1
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/quality.txt
+    #   black
     #   click-log
     #   code-annotations
     #   edx-lint
@@ -199,6 +202,10 @@ mccabe==0.6.1
     # via
     #   -r requirements/quality.txt
     #   pylint
+mypy-extensions==0.4.3
+    # via
+    #   -r requirements/quality.txt
+    #   black
 newrelic==6.8.1.164
     # via
     #   -r requirements/quality.txt
@@ -212,6 +219,10 @@ packaging==21.0
     #   tox
 path==16.2.0
     # via edx-i18n-tools
+pathspec==0.9.0
+    # via
+    #   -r requirements/quality.txt
+    #   black
 pbr==5.6.0
     # via
     #   -r requirements/quality.txt
@@ -230,6 +241,7 @@ platformdirs==2.3.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
+    #   black
     #   pylint
     #   virtualenv
 pluggy==0.13.1
@@ -338,6 +350,10 @@ readme-renderer==29.0
     # via
     #   -r requirements/quality.txt
     #   twine
+regex==2021.8.28
+    # via
+    #   -r requirements/quality.txt
+    #   black
 requests==2.26.0
     # via
     #   -r requirements/ci.txt
@@ -384,7 +400,7 @@ snowballstemmer==2.1.0
     # via
     #   -r requirements/quality.txt
     #   pydocstyle
-sqlparse==0.4.1
+sqlparse==0.4.2
     # via
     #   -r requirements/quality.txt
     #   django
@@ -410,6 +426,8 @@ toml==0.10.2
 tomli==1.2.1
     # via
     #   -r requirements/pip-tools.txt
+    #   -r requirements/quality.txt
+    #   black
     #   pep517
 tox==3.24.3
     # via
@@ -423,6 +441,10 @@ tqdm==4.62.2
     #   twine
 twine==3.4.2
     # via -r requirements/quality.txt
+typing-extensions==3.10.0.2
+    # via
+    #   -r requirements/quality.txt
+    #   black
 urllib3==1.26.6
     # via
     #   -r requirements/ci.txt

@@ -44,7 +44,11 @@ class ListUnacknowledgedNotices(APIView):
         ]
     }
     """
-    authentication_classes = (JwtAuthentication, SessionAuthentication,)
+
+    authentication_classes = (
+        JwtAuthentication,
+        SessionAuthentication,
+    )
     permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request):
@@ -75,7 +79,11 @@ class AcknowledgeNotice(APIView):
     POST /api/notices/v1/acknowledge
     post data: {"notice_id": 10, "acknowledgment_type": "confirmed"}
     """
-    authentication_classes = (JwtAuthentication, SessionAuthentication,)
+
+    authentication_classes = (
+        JwtAuthentication,
+        SessionAuthentication,
+    )
     permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request):
@@ -86,23 +94,21 @@ class AcknowledgeNotice(APIView):
         acknowledgment_type = request.data.get("acknowledgment_type")
 
         if not notice_id:
-            raise ValidationError({'notice_id': "notice_id field required"})
+            raise ValidationError({"notice_id": "notice_id field required"})
 
         if not AcknowledgmentResponseTypes.includes_value(acknowledgment_type):
             valid_types = [e.value for e in AcknowledgmentResponseTypes]
-            raise ValidationError({
-                'acknowledgment_type': f"acknowledgment_type must be one of the following: {valid_types}"
-            })
+            raise ValidationError(
+                {"acknowledgment_type": f"acknowledgment_type must be one of the following: {valid_types}"}
+            )
 
         try:
             notice = Notice.objects.get(id=notice_id, active=True)
         except Notice.DoesNotExist as exc:
-            raise ValidationError({'notice_id': "notice_id field does not match an existing active notice"}) from exc
+            raise ValidationError({"notice_id": "notice_id field does not match an existing active notice"}) from exc
 
         AcknowledgedNotice.objects.update_or_create(
-            user=request.user,
-            notice=notice,
-            defaults={"response_type": acknowledgment_type}
+            user=request.user, notice=notice, defaults={"response_type": acknowledgment_type}
         )
         # Since this is just an acknowledgment API, we can just return a 204 without any response data.
         return Response(status=HTTP_204_NO_CONTENT)

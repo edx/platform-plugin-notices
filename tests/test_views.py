@@ -20,7 +20,7 @@ class ListUnacknowledgedNoticesTests(TestCase):
         self.view = ListUnacknowledgedNotices.as_view()
 
     def test_no_notices(self):
-        request = self.request_factory.get('/api/v1/unacknowledged/')
+        request = self.request_factory.get("/api/v1/unacknowledged/")
         force_authenticate(request, user=self.user)
         response = self.view(request)
         # reformat response from list of OrderedDicts to list of Dict
@@ -29,7 +29,7 @@ class ListUnacknowledgedNoticesTests(TestCase):
 
     def test_single_notice(self):
         notice_1 = NoticeFactory(active=True)
-        request = self.request_factory.get('/api/v1/unacknowledged/')
+        request = self.request_factory.get("/api/v1/unacknowledged/")
         force_authenticate(request, user=self.user)
         response = self.view(request)
         assert len(response.data) == 1
@@ -39,7 +39,7 @@ class ListUnacknowledgedNoticesTests(TestCase):
         notice_1 = NoticeFactory(active=True)
         notice_2 = NoticeFactory(active=True)
         notice_3 = NoticeFactory(active=True)
-        request = self.request_factory.get('/api/v1/unacknowledged/')
+        request = self.request_factory.get("/api/v1/unacknowledged/")
         force_authenticate(request, user=self.user)
         response = self.view(request)
         assert len(response.data) == 3
@@ -57,7 +57,7 @@ class ListUnacknowledgedNoticesTests(TestCase):
         # acknowledge the middle notice
         AcknowledgedNoticeFactory(user=self.user, notice=notice_2, response_type=AcknowledgmentResponseTypes.CONFIRMED)
         AcknowledgedNoticeFactory(user=self.user, notice=notice_1, response_type=AcknowledgmentResponseTypes.DISMISSED)
-        request = self.request_factory.get('/api/v1/unacknowledged/')
+        request = self.request_factory.get("/api/v1/unacknowledged/")
         force_authenticate(request, user=self.user)
         response = self.view(request)
         assert len(response.data) == 1
@@ -76,8 +76,8 @@ class AcknowledgeNoticeTests(TestCase):
     def test_valid_acknowledgement(self):
         notice_1 = NoticeFactory(active=True)
         request = self.request_factory.post(
-            '/api/v1/acknowledge/',
-            {'notice_id': notice_1.id, "acknowledgment_type": AcknowledgmentResponseTypes.CONFIRMED.value}
+            "/api/v1/acknowledge/",
+            {"notice_id": notice_1.id, "acknowledgment_type": AcknowledgmentResponseTypes.CONFIRMED.value},
         )
         force_authenticate(request, user=self.user)
         response = self.view(request)
@@ -88,33 +88,32 @@ class AcknowledgeNoticeTests(TestCase):
 
     def test_no_notice_data(self):
         NoticeFactory(active=True)
-        request = self.request_factory.post('/api/v1/acknowledge/')
+        request = self.request_factory.post("/api/v1/acknowledge/")
         force_authenticate(request, user=self.user)
         response = self.view(request)
 
         assert response.status_code == 400
         json_response_data = json.loads(json.dumps(response.data))
-        assert json_response_data == {'notice_id': "notice_id field required"}
+        assert json_response_data == {"notice_id": "notice_id field required"}
 
     def test_invalid_notice_data(self):
         notice_1 = NoticeFactory(active=True)
         request = self.request_factory.post(
-            '/api/v1/acknowledge/',
-            {'notice_id': notice_1.id + 1, "acknowledgment_type": AcknowledgmentResponseTypes.CONFIRMED.value}
+            "/api/v1/acknowledge/",
+            {"notice_id": notice_1.id + 1, "acknowledgment_type": AcknowledgmentResponseTypes.CONFIRMED.value},
         )
         force_authenticate(request, user=self.user)
         response = self.view(request)
 
         assert response.status_code == 400
         json_response_data = json.loads(json.dumps(response.data))
-        assert json_response_data == {'notice_id': "notice_id field does not match an existing active notice"}
+        assert json_response_data == {"notice_id": "notice_id field does not match an existing active notice"}
 
     def test_invalid_response_type(self):
         INVALID_CHOICE = "invalid_CHOICE"
         notice_1 = NoticeFactory(active=True)
         request = self.request_factory.post(
-            '/api/v1/acknowledge/',
-            {'notice_id': notice_1.id, "acknowledgment_type": INVALID_CHOICE}
+            "/api/v1/acknowledge/", {"notice_id": notice_1.id, "acknowledgment_type": INVALID_CHOICE}
         )
         force_authenticate(request, user=self.user)
         response = self.view(request)
@@ -122,14 +121,14 @@ class AcknowledgeNoticeTests(TestCase):
         json_response_data = json.loads(json.dumps(response.data))
         acknowledgment_type_values = [e.value for e in AcknowledgmentResponseTypes]
         assert json_response_data == {
-            'acknowledgment_type': f"acknowledgment_type must be one of the following: {acknowledgment_type_values}"
+            "acknowledgment_type": f"acknowledgment_type must be one of the following: {acknowledgment_type_values}"
         }
 
     def test_unauthenticated_call(self):
         notice_1 = NoticeFactory(active=True)
         request = self.request_factory.post(
-            '/api/v1/acknowledge/',
-            {'notice_id': notice_1.id + 1, "acknowledgment_type": AcknowledgmentResponseTypes.CONFIRMED}
+            "/api/v1/acknowledge/",
+            {"notice_id": notice_1.id + 1, "acknowledgment_type": AcknowledgmentResponseTypes.CONFIRMED},
         )
         response = self.view(request)
         assert response.status_code == 401
