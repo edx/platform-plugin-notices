@@ -10,3 +10,5 @@ def plugin_settings(settings):
     # .. toggle_use_cases: open_edx
     # .. toggle_creation_date: 2021-08-19
     settings.FEATURES["ENABLE_NOTICES"] = False
+    settings.FEATURES["NOTICES_REDIRECT_ALLOWLIST"] = ["www.google.com"]
+    settings.FEATURES["NOTICES_DEFAULT_REDIRECT_URL"] = "www.example.com"

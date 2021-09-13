@@ -16,7 +16,7 @@ class NoticesConfig(AppConfig):
         "url_config": {
             "lms.djangoapp": {
                 "namespace": "notices",
-                "regex": "^api/notices/",
+                "regex": "^notices/",
                 "relative_path": "urls",
             }
         },

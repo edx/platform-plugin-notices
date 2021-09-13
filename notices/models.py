@@ -23,6 +23,12 @@ class Notice(TimeStampedModel):
     name = models.CharField(max_length=128, help_text="Name for the notice that needs to be acknowledged")
     active = models.BooleanField()
     history = HistoricalRecords(app="notices")
+    head_content = models.TextField(
+        default="",
+        help_text=(
+            "HTML content to be included in the <head> block. Should contain all javascript / styles. Shared for all translated templates"
+        )
+    )
 
     class Meta:
         """Model metadata."""
@@ -47,10 +53,10 @@ class TranslatedNoticeContent(TimeStampedModel):
     """
 
     notice = models.ForeignKey(Notice, on_delete=models.CASCADE, related_name="translated_notice_content")
-    language_code = models.CharField(max_length=10, help_text="The IETF BCP 47 language code for this translation")
+    language_code = models.CharField(max_length=10, help_text="The 2 character shortcode language (en, es, etc.)")
     html_content = models.TextField(
         help_text=(
-            "HTML content to be included in a notice prompt. Allowed tags include (a, b, em, i, img, span, strong)"
+            "HTML content to be included in a notice view's <body> block."
         )
     )
     history = HistoricalRecords(app="notices")
@@ -60,11 +66,6 @@ class TranslatedNoticeContent(TimeStampedModel):
 
         app_label = "notices"
         unique_together = ["notice", "language_code"]
-
-    def save(self, *args, **kwargs):
-        """Save method override to remove unsafe tags from html_content first."""
-        self.html_content = bleach.clean(self.html_content, tags=["a", "b", "em", "i", "img", "span", "strong"])
-        super().save(*args, **kwargs)
 
 
 class AcknowledgedNotice(TimeStampedModel):
