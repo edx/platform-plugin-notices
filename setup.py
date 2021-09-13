@@ -67,7 +67,7 @@ with open(os.path.join(os.path.dirname(__file__), "CHANGELOG.rst"), encoding="ut
     CHANGELOG = changelog_file.read()
 
 setup(
-    name="notices",
+    name="edx-notices",
     version=VERSION,
     description="""An edx-platform plugin which manages notices that must be acknowledged""",
     long_description=README + "\n\n" + CHANGELOG,
