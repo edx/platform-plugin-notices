@@ -2,6 +2,7 @@
 import json
 
 from django.test import TestCase
+from rest_framework.reverse import reverse
 from rest_framework.test import APIRequestFactory, force_authenticate
 
 from notices.data import AcknowledgmentResponseTypes
@@ -24,16 +25,17 @@ class ListUnacknowledgedNoticesTests(TestCase):
         force_authenticate(request, user=self.user)
         response = self.view(request)
         # reformat response from list of OrderedDicts to list of Dict
-        response = json.loads(json.dumps(response.data))
-        assert response == []
+        results = response.data["results"]
+        assert results == []
 
     def test_single_notice(self):
         notice_1 = NoticeFactory(active=True)
         request = self.request_factory.get("/api/v1/unacknowledged/")
         force_authenticate(request, user=self.user)
         response = self.view(request)
-        assert len(response.data) == 1
-        assert response.data[0] == {"id": notice_1.id, "name": notice_1.name, "translated_notice_content": []}
+        results = response.data["results"]
+        assert len(results) == 1
+        assert results == [reverse("notices:notice-detail", kwargs={"pk": notice_1.id}, request=request)]
 
     def test_multiple_notices(self):
         notice_1 = NoticeFactory(active=True)
@@ -42,8 +44,16 @@ class ListUnacknowledgedNoticesTests(TestCase):
         request = self.request_factory.get("/api/v1/unacknowledged/")
         force_authenticate(request, user=self.user)
         response = self.view(request)
-        assert len(response.data) == 3
-        assert {notice["id"] for notice in response.data} == set([notice_1.id, notice_2.id, notice_3.id])
+        results = response.data["results"]
+        assert len(results) == 3
+        # cast to set to avoid ordering issues
+        assert set(results) == set(
+            [
+                reverse("notices:notice-detail", kwargs={"pk": notice_1.id}, request=request),
+                reverse("notices:notice-detail", kwargs={"pk": notice_2.id}, request=request),
+                reverse("notices:notice-detail", kwargs={"pk": notice_3.id}, request=request),
+            ]
+        )
 
     def test_some_acknowledged(self):
         """
@@ -60,8 +70,11 @@ class ListUnacknowledgedNoticesTests(TestCase):
         request = self.request_factory.get("/api/v1/unacknowledged/")
         force_authenticate(request, user=self.user)
         response = self.view(request)
-        assert len(response.data) == 1
-        assert {notice["id"] for notice in response.data} == set([notice_3.id])
+        results = response.data["results"]
+        assert len(results) == 1
+        assert results == [
+            reverse("notices:notice-detail", kwargs={"pk": notice_3.id}, request=request),
+        ]
 
 
 class AcknowledgeNoticeTests(TestCase):

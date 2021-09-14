@@ -36,6 +36,6 @@ LOCALE_PATHS = [
     root("notices", "conf", "locale"),
 ]
 
-ROOT_URLCONF = "notices.urls"
+ROOT_URLCONF = "test_utils.test_urls"
 
 SECRET_KEY = "insecure-secret-key"

@@ -1,7 +1,6 @@
 """
 Database models for notices.
 """
-import bleach
 from django.contrib.auth import get_user_model
 from django.db import models
 from model_utils.models import TimeStampedModel
@@ -26,8 +25,9 @@ class Notice(TimeStampedModel):
     head_content = models.TextField(
         default="",
         help_text=(
-            "HTML content to be included in the <head> block. Should contain all javascript / styles. Shared for all translated templates"
-        )
+            "HTML content to be included in the <head> block. Should contain all javascript / styles. "
+            "Shared for all translated templates"
+        ),
     )
 
     class Meta:
@@ -54,11 +54,7 @@ class TranslatedNoticeContent(TimeStampedModel):
 
     notice = models.ForeignKey(Notice, on_delete=models.CASCADE, related_name="translated_notice_content")
     language_code = models.CharField(max_length=10, help_text="The 2 character shortcode language (en, es, etc.)")
-    html_content = models.TextField(
-        help_text=(
-            "HTML content to be included in a notice view's <body> block."
-        )
-    )
+    html_content = models.TextField(help_text=("HTML content to be included in a notice view's <body> block."))
     history = HistoricalRecords(app="notices")
 
     class Meta:

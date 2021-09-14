@@ -11,6 +11,7 @@ from django.views.generic import DetailView
 
 from notices.models import Notice
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -24,6 +25,9 @@ class RenderNotice(DetailView):
     model = Notice
 
     def get_context_data(self, **kwargs):
+        """
+        Add the context for the rendering templates.
+        """
         context = super().get_context_data(**kwargs)
         user_language = get_language_from_request(self.request)
         body_content = self.object.translated_notice_content.get(language_code=user_language).html_content
@@ -40,4 +44,3 @@ class RenderNotice(DetailView):
             }
         )
         return context
-
