@@ -1,16 +1,15 @@
 """API views for the notices app"""
-
 from edx_rest_framework_extensions.auth.jwt.authentication import JwtAuthentication
 from rest_framework import permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
+from rest_framework.reverse import reverse
 from rest_framework.serializers import ValidationError
 from rest_framework.status import HTTP_200_OK, HTTP_204_NO_CONTENT
 from rest_framework.views import APIView
 
 from notices.data import AcknowledgmentResponseTypes
 from notices.models import AcknowledgedNotice, Notice
-from notices.rest_api.v1.serializers import NoticeSerializer
 
 
 class ListUnacknowledgedNotices(APIView):
@@ -27,20 +26,8 @@ class ListUnacknowledgedNotices(APIView):
     Example:
     {
         "results": [
-            {
-                "id": 1
-                "name": "First notice",
-                "translated_notice_content": [
-                    {
-                        "language_code": "en-US",
-                        "html_content": "<b>Hello</b>"
-                    },
-                    {
-                        "language_code": "es-ES",
-                        "html_content": "<i>Hola</i>"
-                    }
-                ]
-            }
+            "http://localhost:18000/notices/render/1/",
+            "http://localhost:18000/notices/render/2/",
         ]
     }
     """
@@ -59,8 +46,11 @@ class ListUnacknowledgedNotices(APIView):
         unacknowledged_active_notices = Notice.objects.filter(active=True).exclude(
             id__in=[acked.notice.id for acked in acknowledged_notices]
         )
-        serializer = NoticeSerializer(unacknowledged_active_notices, many=True, context={"request": request})
-        return Response(serializer.data, status=HTTP_200_OK)
+        urls_to_return = [
+            reverse("notices:notice-detail", kwargs={"pk": notice.id}, request=request)
+            for notice in unacknowledged_active_notices
+        ]
+        return Response({"results": urls_to_return}, status=HTTP_200_OK)
 
 
 class AcknowledgeNotice(APIView):
