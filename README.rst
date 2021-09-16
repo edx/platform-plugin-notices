@@ -4,7 +4,7 @@ platform-plugin-notices
 |pypi-badge| |ci-badge| |codecov-badge| |doc-badge| |pyversions-badge|
 |license-badge|
 
-* This repo is not currently accepting open source contributions *
+*This repo is not currently accepting open source contributions*
 
 Overview
 --------
