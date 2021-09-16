@@ -4,9 +4,10 @@ platform-plugin-notices
 |pypi-badge| |ci-badge| |codecov-badge| |doc-badge| |pyversions-badge|
 |license-badge|
 
+**This repo is not currently accepting open source contributions**
 
 Overview
-------------------------
+--------
 
 This plugin for edx-platform manages notices that a user must acknowledge. It only stores the content of the notices and whether a user has acknowledged them. Presentation and other client side decisions will be left to the frontends that utilize these APIs.
 

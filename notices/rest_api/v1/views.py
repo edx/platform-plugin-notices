@@ -16,7 +16,7 @@ class ListUnacknowledgedNotices(APIView):
     """
     Read only view to list all notices that the user hasn't acknowledged.
 
-    Path: `/api/notices/v1/unacknowledged`
+    Path: `/notices/api/v1/unacknowledged`
 
     Returns:
       * 200: OK - Contains a list of active unacknowledged notices the user still needs to see
