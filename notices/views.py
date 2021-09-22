@@ -41,6 +41,7 @@ class RenderNotice(DetailView):
                 "head_content": self.object.head_content,
                 "html_content": body_content,
                 "forwarding_url": forwarding_url,
+                "notice_id": self.object.id,
             }
         )
         return context

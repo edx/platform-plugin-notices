@@ -1,11 +1,17 @@
+{% load static %}
 <html>
 <head>
+    <script>
+        // Global constants so the notice and shared JS can pull the values easily.
+        const forwardingUrl = "{{ forwarding_url }}";
+        const noticeId = {{ notice_id }};
+    </script>
+    <script src="{% static 'notices/js/utils.js' %}"></script>
     {{ head_content|safe }}
 </head>
 <body>
-    <!-- This is so the javascript can pull a validated forwarding URL from the page -->
-    <div aria-hidden="true" id="redirect_path" style="display:none">{{ forwarding_url }}</div>
     {{ html_content|safe }}
+    {% csrf_token %}
 </body>
 </html>
 
