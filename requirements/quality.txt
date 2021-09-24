@@ -24,7 +24,7 @@ cffi==1.14.6
     # via
     #   -r requirements/test.txt
     #   cryptography
-charset-normalizer==2.0.5
+charset-normalizer==2.0.6
     # via
     #   -r requirements/test.txt
     #   requests
@@ -152,7 +152,7 @@ mccabe==0.6.1
     # via pylint
 mypy-extensions==0.4.3
     # via black
-newrelic==6.10.0.165
+newrelic==7.0.0.166
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
@@ -316,7 +316,7 @@ toml==0.10.2
     #   pytest-cov
 tomli==1.2.1
     # via black
-tqdm==4.62.2
+tqdm==4.62.3
     # via twine
 twine==3.4.2
     # via -r requirements/quality.in
@@ -325,7 +325,7 @@ typing-extensions==3.10.0.2
     #   astroid
     #   black
     #   pylint
-urllib3==1.26.6
+urllib3==1.26.7
     # via
     #   -r requirements/test.txt
     #   requests
