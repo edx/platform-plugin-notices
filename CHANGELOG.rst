@@ -16,6 +16,13 @@ Unreleased
 
 *
 
+[0.2.2] - 2021-09-24
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Add fallback language on render view
+* Add Bearer auth to APIs for mobile
+* Add login requirement to render view
+* Add first edx-platform dependancy
+
 [0.2.1] - 2021-09-22
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -8,8 +8,20 @@ from rest_framework.serializers import ValidationError
 from rest_framework.status import HTTP_200_OK, HTTP_204_NO_CONTENT
 from rest_framework.views import APIView
 
+
+try:
+    from openedx.core.lib.api.authentication import BearerAuthenticationAllowInactiveUser
+except ImportError:
+    BearerAuthenticationAllowInactiveUser = None
+
 from notices.data import AcknowledgmentResponseTypes
 from notices.models import AcknowledgedNotice, Notice
+
+
+# Pulling this out so tests can ignore Bearer auth since we won't have platform importable in tests
+COMMON_AUTH_CLASSES = [JwtAuthentication, SessionAuthentication]
+if BearerAuthenticationAllowInactiveUser is not None:
+    COMMON_AUTH_CLASSES.append(BearerAuthenticationAllowInactiveUser)
 
 
 class ListUnacknowledgedNotices(APIView):
@@ -32,10 +44,7 @@ class ListUnacknowledgedNotices(APIView):
     }
     """
 
-    authentication_classes = (
-        JwtAuthentication,
-        SessionAuthentication,
-    )
+    authentication_classes = COMMON_AUTH_CLASSES
     permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request):
@@ -70,10 +79,7 @@ class AcknowledgeNotice(APIView):
     post data: {"notice_id": 10, "acknowledgment_type": "confirmed"}
     """
 
-    authentication_classes = (
-        JwtAuthentication,
-        SessionAuthentication,
-    )
+    authentication_classes = COMMON_AUTH_CLASSES
     permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request):

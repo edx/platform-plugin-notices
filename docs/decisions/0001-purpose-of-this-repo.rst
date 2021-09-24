@@ -4,7 +4,7 @@
 Status
 ------
 
-Under Review
+Accepted
 
 Context
 -------
@@ -20,3 +20,7 @@ Rejected Alternatives
 ---------------------
 
 We looked into taking care of this via external tools, but we also wanted to keep the data close to the rest of our data and allow the rest of the Open edX platform to be able to easily customize the experience of what to show or block based on if a user acknowledged the notice or not.
+
+Other IDA plugin
+~~~~~~~~~~~~~~~~
+This data is not *necessarily* related to the LMS in anyway, so it didn't necessarily need to be a platform plugin versus a plugin in any of our other IDAs. However we will allow use of imported edx-platform code, so if we install this elsewhere in the future, those imports will need to be moved to a common space.

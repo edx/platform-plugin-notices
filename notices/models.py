@@ -53,7 +53,12 @@ class TranslatedNoticeContent(TimeStampedModel):
     """
 
     notice = models.ForeignKey(Notice, on_delete=models.CASCADE, related_name="translated_notice_content")
-    language_code = models.CharField(max_length=10, help_text="The 2 character shortcode language (en, es, etc.)")
+    language_code = models.CharField(
+        max_length=10,
+        help_text=(
+            "The language code (e.g. en, es-419). Must be a released language in DarkLang if DarkLang is enabled."
+        ),
+    )
     html_content = models.TextField(help_text=("HTML content to be included in a notice view's <body> block."))
     history = HistoricalRecords(app="notices")
 
