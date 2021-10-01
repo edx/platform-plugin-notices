@@ -16,12 +16,16 @@ Unreleased
 
 *
 
+[0.3.1] - 2021-10-1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Add mobile calls so notice code can deep link
+
 [0.2.2] - 2021-09-24
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Add fallback language on render view
 * Add Bearer auth to APIs for mobile
 * Add login requirement to render view
-* Add first edx-platform dependancy
+* Add first edx-platform dependency
 
 [0.2.1] - 2021-09-22
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
