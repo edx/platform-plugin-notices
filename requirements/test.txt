@@ -14,7 +14,7 @@ cffi==1.14.6
     # via
     #   -r requirements/base.txt
     #   cryptography
-charset-normalizer==2.0.5
+charset-normalizer==2.0.6
     # via
     #   -r requirements/base.txt
     #   requests
@@ -69,17 +69,15 @@ edx-django-utils==4.4.0
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
-edx-drf-extensions==6.6.0
-    # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
-    #   -r requirements/base.txt
+edx-drf-extensions==7.0.1
+    # via -r requirements/base.txt
 edx-opaque-keys==2.2.2
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
 factory-boy==3.2.0
     # via -r requirements/test.in
-faker==8.13.2
+faker==8.14.0
     # via factory-boy
 future==0.18.2
     # via
@@ -95,7 +93,7 @@ jinja2==3.0.1
     # via code-annotations
 markupsafe==2.0.1
     # via jinja2
-newrelic==6.10.0.165
+newrelic==7.0.0.166
     # via
     #   -r requirements/base.txt
     #   edx-django-utils
@@ -119,7 +117,7 @@ pycparser==2.20
     # via
     #   -r requirements/base.txt
     #   cffi
-pycryptodomex==3.10.1
+pycryptodomex==3.10.4
     # via
     #   -r requirements/base.txt
     #   pyjwkest
@@ -127,11 +125,11 @@ pyjwkest==1.4.2
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
-pyjwt[crypto]==1.7.1
+pyjwt[crypto]==2.1.0
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.txt
     #   drf-jwt
+    #   edx-drf-extensions
 pymongo==3.12.0
     # via
     #   -r requirements/base.txt
@@ -196,7 +194,7 @@ toml==0.10.2
     # via
     #   pytest
     #   pytest-cov
-urllib3==1.26.6
+urllib3==1.26.7
     # via
     #   -r requirements/base.txt
     #   requests
