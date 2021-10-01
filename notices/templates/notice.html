@@ -5,6 +5,7 @@
         // Global constants so the notice and shared JS can pull the values easily.
         const forwardingUrl = "{{ forwarding_url }}";
         const noticeId = {{ notice_id }};
+        const inApp = "{{ in_app }}" === "True" ? true : false;
     </script>
     <script src="{% static 'notices/js/utils.js' %}"></script>
     {{ head_content|safe }}

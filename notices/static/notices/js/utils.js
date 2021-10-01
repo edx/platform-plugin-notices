@@ -3,8 +3,9 @@ const ACKNOWLEDGMENT_TYPES = {
   CONFIRMED: "confirmed"
 }
 
-function confirmNoticeClick(){
-  sendAcknowledgment(ACKNOWLEDGMENT_TYPES.CONFIRMED, forwardingUrl)
+function confirmNoticeClick(forwarding_url_override){
+  const url = forwarding_url_override || forwardingUrl;
+  sendAcknowledgment(ACKNOWLEDGMENT_TYPES.CONFIRMED, url)
 }
 
 function dismissNoticeClick(event){

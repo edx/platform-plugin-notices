@@ -28,6 +28,8 @@ class ListUnacknowledgedNotices(APIView):
     """
     Read only view to list all notices that the user hasn't acknowledged.
 
+    If `mobile=true` is in the query text, it will append `mobile=true` to the render links.
+
     Path: `/notices/api/v1/unacknowledged`
 
     Returns:
@@ -51,12 +53,14 @@ class ListUnacknowledgedNotices(APIView):
         """
         Return a list of all active unacknowledged notices for the user
         """
+        in_app = request.query_params.get("mobile") == "true"
         acknowledged_notices = AcknowledgedNotice.objects.filter(user=request.user)
         unacknowledged_active_notices = Notice.objects.filter(active=True).exclude(
             id__in=[acked.notice.id for acked in acknowledged_notices]
         )
         urls_to_return = [
             reverse("notices:notice-detail", kwargs={"pk": notice.id}, request=request)
+            + ("?mobile=true" if in_app else "")
             for notice in unacknowledged_active_notices
         ]
         return Response({"results": urls_to_return}, status=HTTP_200_OK)

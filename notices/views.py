@@ -43,12 +43,15 @@ class RenderNotice(LoginRequiredMixin, DetailView):
         if forwarding_url_domain not in settings.FEATURES["NOTICES_REDIRECT_ALLOWLIST"]:
             forwarding_url = settings.FEATURES["NOTICES_DEFAULT_REDIRECT_URL"]
 
+        in_app = self.request.GET.get("mobile") == "true"
+
         context.update(
             {
                 "head_content": self.object.head_content,
                 "html_content": body_content,
                 "forwarding_url": forwarding_url,
                 "notice_id": self.object.id,
+                "in_app": in_app,
             }
         )
         return context
