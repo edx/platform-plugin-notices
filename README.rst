@@ -25,7 +25,7 @@ Make sure the LMS container is running in Devstack, then
 
 .. code-block::
 
-  git clone git@github.com:tuchfarber/platform-plugin-notices.git <devstack_folder>/src
+  git clone git@github.com:edx/platform-plugin-notices.git <devstack_folder>/src
   cd <devstack_folder>/devstack
   make dev.shell.lms
   pip install -e /edx/src/platform-plugin-notices
