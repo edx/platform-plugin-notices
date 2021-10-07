@@ -26,4 +26,5 @@ class NoticesConfig(AppConfig):
                 "common": {"relative_path": "settings.common"},
             }
         },
+        "view_context_config": {"lms.djangoapp": {"course_dashboard": "notices.context_api.get_dashboard_context"}},
     }

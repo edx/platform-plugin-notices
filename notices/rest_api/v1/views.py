@@ -4,7 +4,6 @@ from edx_rest_framework_extensions.auth.session.authentication import SessionAut
 from rest_framework import permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
-from rest_framework.reverse import reverse
 from rest_framework.serializers import ValidationError
 from rest_framework.status import HTTP_200_OK, HTTP_204_NO_CONTENT
 from rest_framework.views import APIView
@@ -15,6 +14,7 @@ try:
 except ImportError:
     BearerAuthenticationAllowInactiveUser = None
 
+from notices.api import get_unacknowledged_notices_for_user
 from notices.data import AcknowledgmentResponseTypes
 from notices.models import AcknowledgedNotice, Notice
 
@@ -55,16 +55,11 @@ class ListUnacknowledgedNotices(APIView):
         Return a list of all active unacknowledged notices for the user
         """
         in_app = request.query_params.get("mobile") == "true"
-        acknowledged_notices = AcknowledgedNotice.objects.filter(user=request.user)
-        unacknowledged_active_notices = Notice.objects.filter(active=True).exclude(
-            id__in=[acked.notice.id for acked in acknowledged_notices]
+        unacknowledged_active_notices = get_unacknowledged_notices_for_user(
+            request.user, in_app=in_app, request=request
         )
-        urls_to_return = [
-            reverse("notices:notice-detail", kwargs={"pk": notice.id}, request=request)
-            + ("?mobile=true" if in_app else "")
-            for notice in unacknowledged_active_notices
-        ]
-        return Response({"results": urls_to_return}, status=HTTP_200_OK)
+
+        return Response({"results": unacknowledged_active_notices}, status=HTTP_200_OK)
 
 
 class AcknowledgeNotice(APIView):
