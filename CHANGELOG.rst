@@ -16,6 +16,10 @@ Unreleased
 
 *
 
+[0.5.1] - 2021-10-1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Disallow dismissal after confirmation of notice
+
 [0.4.1] - 2021-10-7
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Allow inactive (non-email-verified) users to call APIs
