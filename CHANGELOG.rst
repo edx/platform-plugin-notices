@@ -16,6 +16,10 @@ Unreleased
 
 *
 
+[0.4.1] - 2021-10-7
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Allow inactive (non-email-verified) users to call APIs
+
 [0.3.1] - 2021-10-1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Add mobile calls so notice code can deep link

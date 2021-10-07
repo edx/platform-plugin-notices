@@ -1,5 +1,6 @@
 """API views for the notices app"""
 from edx_rest_framework_extensions.auth.jwt.authentication import JwtAuthentication
+from edx_rest_framework_extensions.auth.session.authentication import SessionAuthenticationAllowInactiveUser
 from rest_framework import permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
@@ -19,7 +20,7 @@ from notices.models import AcknowledgedNotice, Notice
 
 
 # Pulling this out so tests can ignore Bearer auth since we won't have platform importable in tests
-COMMON_AUTH_CLASSES = [JwtAuthentication, SessionAuthentication]
+COMMON_AUTH_CLASSES = [JwtAuthentication, SessionAuthentication, SessionAuthenticationAllowInactiveUser]
 if BearerAuthenticationAllowInactiveUser is not None:
     COMMON_AUTH_CLASSES.append(BearerAuthenticationAllowInactiveUser)
 
