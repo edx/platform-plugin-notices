@@ -82,6 +82,7 @@ class AcknowledgedNotice(TimeStampedModel):
         (AcknowledgmentResponseTypes.CONFIRMED.value, "Confirmed"),
         (AcknowledgmentResponseTypes.DISMISSED.value, "Dismissed"),
     ]
+    FINAL_RESPONSE_TYPE = AcknowledgmentResponseTypes.CONFIRMED
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="notice_acknowledgments")
     notice = models.ForeignKey(Notice, on_delete=models.CASCADE, related_name="acknowledgments")
@@ -91,6 +92,19 @@ class AcknowledgedNotice(TimeStampedModel):
         """Model metadata."""
 
         app_label = "notices"
+
+    def save(self, *args, **kwargs):
+        """
+        Overridden so that if a user has confirmed a notice,they can't redact that confirmation.
+        """
+        try:
+            old_instance = AcknowledgedNotice.objects.get(pk=self.pk)
+        except AcknowledgedNotice.DoesNotExist:
+            pass
+        else:
+            if old_instance.response_type == self.FINAL_RESPONSE_TYPE.value:
+                self.response_type = self.FINAL_RESPONSE_TYPE
+        super().save(*args, **kwargs)
 
     def __str__(self):
         """
