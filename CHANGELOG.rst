@@ -14,9 +14,12 @@ Change Log
 Unreleased
 ~~~~~~~~~~
 
-*
+[0.6.1] - 2021-10-7
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Add Python API for retrieving unack'd and active notice data
+* Add Plugin Context API for notice data to support redirects on the LMS Course Dashboard
 
-[0.5.1] - 2021-10-1
+[0.5.1] - 2021-10-7
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Disallow dismissal after confirmation of notice
 
