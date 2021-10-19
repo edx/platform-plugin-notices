@@ -14,6 +14,10 @@ Change Log
 Unreleased
 ~~~~~~~~~~
 
+[0.7.2] - 2021-10-19
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Make AcknowledgedNotice user readonly in the admin for performance
+
 [0.7.1] - 2021-10-19
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Add Waffle Flag to enable and disable the feature for rollout
