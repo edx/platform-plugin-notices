@@ -2,15 +2,16 @@
 Tests for the plugin context functions.
 """
 from django.test import TestCase
-from django.test.utils import override_settings
+from edx_toggles.toggles.testutils import override_waffle_flag
 from rest_framework.reverse import reverse
 
 from notices.context_api import get_dashboard_context
 from notices.data import AcknowledgmentResponseTypes
+from notices.toggles import ENABLE_NOTICES
 from test_utils.factories import AcknowledgedNoticeFactory, NoticeFactory, UserFactory
 
 
-@override_settings(FEATURES={"ENABLE_NOTICES": True})
+@override_waffle_flag(ENABLE_NOTICES, active=True)
 class TestContextApi(TestCase):
     """
     Tests for the data that gets passed to the course dashboard via context plugins.

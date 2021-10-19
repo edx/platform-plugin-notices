@@ -17,6 +17,7 @@ except ImportError:
 from notices.api import get_unacknowledged_notices_for_user
 from notices.data import AcknowledgmentResponseTypes
 from notices.models import AcknowledgedNotice, Notice
+from notices.toggles import ENABLE_NOTICES
 
 
 # Pulling this out so tests can ignore Bearer auth since we won't have platform importable in tests
@@ -54,6 +55,11 @@ class ListUnacknowledgedNotices(APIView):
         """
         Return a list of all active unacknowledged notices for the user
         """
+        # If feature isn't enabled for request, return empty list so the user doesn't get
+        # forwarded anywhere client side
+        if not ENABLE_NOTICES.is_enabled():
+            return Response({"results": []}, status=HTTP_200_OK)
+
         in_app = request.query_params.get("mobile") == "true"
         unacknowledged_active_notices = get_unacknowledged_notices_for_user(
             request.user, in_app=in_app, request=request
