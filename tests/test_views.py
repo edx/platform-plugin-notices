@@ -2,12 +2,14 @@
 import json
 
 from django.test import TestCase
+from edx_toggles.toggles.testutils import override_waffle_flag
 from rest_framework.reverse import reverse
 from rest_framework.test import APIRequestFactory, force_authenticate
 
 from notices.data import AcknowledgmentResponseTypes
 from notices.models import AcknowledgedNotice
 from notices.rest_api.v1.views import AcknowledgeNotice, ListUnacknowledgedNotices
+from notices.toggles import ENABLE_NOTICES
 from test_utils.factories import AcknowledgedNoticeFactory, NoticeFactory, UserFactory
 
 
@@ -20,6 +22,7 @@ class ListUnacknowledgedNoticesTests(TestCase):
         self.request_factory = APIRequestFactory()
         self.view = ListUnacknowledgedNotices.as_view()
 
+    @override_waffle_flag(ENABLE_NOTICES, active=True)
     def test_no_notices(self):
         request = self.request_factory.get("/api/v1/unacknowledged/")
         force_authenticate(request, user=self.user)
@@ -28,6 +31,7 @@ class ListUnacknowledgedNoticesTests(TestCase):
         results = response.data["results"]
         assert results == []
 
+    @override_waffle_flag(ENABLE_NOTICES, active=True)
     def test_single_notice(self):
         notice_1 = NoticeFactory(active=True)
         request = self.request_factory.get("/api/v1/unacknowledged/")
@@ -37,6 +41,7 @@ class ListUnacknowledgedNoticesTests(TestCase):
         assert len(results) == 1
         assert results == [reverse("notices:notice-detail", kwargs={"pk": notice_1.id}, request=request)]
 
+    @override_waffle_flag(ENABLE_NOTICES, active=True)
     def test_multiple_notices(self):
         notice_1 = NoticeFactory(active=True)
         notice_2 = NoticeFactory(active=True)
@@ -55,6 +60,7 @@ class ListUnacknowledgedNoticesTests(TestCase):
             ]
         )
 
+    @override_waffle_flag(ENABLE_NOTICES, active=True)
     def test_some_acknowledged(self):
         """
         Test that when a user response to some (but not all) the API only returns the unacknowledged ones

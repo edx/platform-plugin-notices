@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
-astroid==2.8.2
+astroid==2.8.3
     # via
     #   -r requirements/quality.txt
     #   pylint
@@ -23,23 +23,23 @@ bleach==4.1.0
     # via
     #   -r requirements/quality.txt
     #   readme-renderer
-certifi==2021.5.30
+certifi==2021.10.8
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   requests
-cffi==1.14.6
+cffi==1.15.0
     # via
     #   -r requirements/quality.txt
     #   cryptography
 chardet==4.0.0
     # via diff-cover
-charset-normalizer==2.0.6
+charset-normalizer==2.0.7
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   requests
-click==8.0.1
+click==8.0.3
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/quality.txt
@@ -56,13 +56,14 @@ code-annotations==1.2.0
     # via
     #   -r requirements/quality.txt
     #   edx-lint
+    #   edx-toggles
 codecov==2.1.12
     # via -r requirements/ci.txt
 colorama==0.4.4
     # via
     #   -r requirements/quality.txt
     #   twine
-coverage[toml]==6.0.1
+coverage[toml]==6.0.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -90,11 +91,13 @@ django==2.2.24
     #   edx-django-utils
     #   edx-drf-extensions
     #   edx-i18n-tools
+    #   edx-toggles
 django-crum==0.7.9
     # via
     #   -r requirements/quality.txt
     #   edx-django-utils
-django-model-utils==4.1.1
+    #   edx-toggles
+django-model-utils==4.2.0
     # via -r requirements/quality.txt
 django-rest-framework==0.1.0
     # via -r requirements/quality.txt
@@ -105,6 +108,7 @@ django-waffle==2.2.1
     #   -r requirements/quality.txt
     #   edx-django-utils
     #   edx-drf-extensions
+    #   edx-toggles
 djangorestframework==3.12.4
     # via
     #   -r requirements/quality.txt
@@ -115,15 +119,15 @@ docutils==0.17.1
     # via
     #   -r requirements/quality.txt
     #   readme-renderer
-drf-jwt==1.19.0
+drf-jwt==1.19.1
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/quality.txt
     #   edx-drf-extensions
 edx-django-utils==4.4.0
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
+    #   edx-toggles
 edx-drf-extensions==8.0.0
     # via -r requirements/quality.txt
 edx-i18n-tools==0.8.1
@@ -134,13 +138,15 @@ edx-opaque-keys==2.2.2
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
+edx-toggles==4.2.0
+    # via -r requirements/quality.txt
 factory-boy==3.2.0
     # via -r requirements/quality.txt
-faker==9.2.0
+faker==9.5.0
     # via
     #   -r requirements/quality.txt
     #   factory-boy
-filelock==3.3.0
+filelock==3.3.1
     # via
     #   -r requirements/ci.txt
     #   tox
@@ -149,7 +155,7 @@ future==0.18.2
     # via
     #   -r requirements/quality.txt
     #   pyjwkest
-idna==3.2
+idna==3.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -202,7 +208,7 @@ mypy-extensions==0.4.3
     # via
     #   -r requirements/quality.txt
     #   black
-newrelic==7.0.0.166
+newrelic==7.2.2.169
     # via
     #   -r requirements/quality.txt
     #   edx-django-utils
@@ -223,11 +229,11 @@ pbr==5.6.0
     # via
     #   -r requirements/quality.txt
     #   stevedore
-pep517==0.11.0
+pep517==0.12.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
-pip-tools==6.3.0
+pip-tools==6.4.0
     # via -r requirements/pip-tools.txt
 pkginfo==1.7.1
     # via
@@ -260,13 +266,13 @@ py==1.10.0
     #   -r requirements/quality.txt
     #   pytest
     #   tox
-pycodestyle==2.7.0
+pycodestyle==2.8.0
     # via -r requirements/quality.txt
 pycparser==2.20
     # via
     #   -r requirements/quality.txt
     #   cffi
-pycryptodomex==3.10.4
+pycryptodomex==3.11.0
     # via
     #   -r requirements/quality.txt
     #   pyjwkest
@@ -281,7 +287,7 @@ pyjwkest==1.4.2
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
-pyjwt[crypto]==2.2.0
+pyjwt[crypto]==2.3.0
     # via
     #   -r requirements/quality.txt
     #   drf-jwt
@@ -337,7 +343,7 @@ pytz==2021.3
     # via
     #   -r requirements/quality.txt
     #   django
-pyyaml==5.4.1
+pyyaml==6.0
     # via
     #   -r requirements/quality.txt
     #   code-annotations
@@ -346,7 +352,7 @@ readme-renderer==30.0
     # via
     #   -r requirements/quality.txt
     #   twine
-regex==2021.9.30
+regex==2021.10.8
     # via
     #   -r requirements/quality.txt
     #   black
@@ -394,7 +400,7 @@ sqlparse==0.4.2
     # via
     #   -r requirements/quality.txt
     #   django
-stevedore==3.4.0
+stevedore==3.5.0
     # via
     #   -r requirements/quality.txt
     #   code-annotations
@@ -454,7 +460,7 @@ wheel==0.37.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
-wrapt==1.12.1
+wrapt==1.13.2
     # via
     #   -r requirements/quality.txt
     #   astroid
