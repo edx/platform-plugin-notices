@@ -16,4 +16,4 @@ class NoticeAdmin(admin.ModelAdmin):
 
 @admin.register(AcknowledgedNotice)
 class AcknowledgedNoticeAdmin(admin.ModelAdmin):
-    readonly_fields = ["user"]
+    raw_id_fields = ["user"]
