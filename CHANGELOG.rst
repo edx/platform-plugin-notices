@@ -14,6 +14,10 @@ Change Log
 Unreleased
 ~~~~~~~~~~
 
+[0.7.3] - 2021-10-20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Make AcknowledgedNotice user editable in the admin for testing purposes
+
 [0.7.2] - 2021-10-19
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Make AcknowledgedNotice user readonly in the admin for performance
