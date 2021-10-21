@@ -40,3 +40,7 @@ LOCALE_PATHS = [
 ROOT_URLCONF = "test_utils.test_urls"
 
 SECRET_KEY = "insecure-secret-key"
+
+FEATURES = {"NOTICES_SNOOZE_HOURS": None}
+
+USE_TZ = True
