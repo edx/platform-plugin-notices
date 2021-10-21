@@ -1,7 +1,10 @@
 """
 Tests for the Notices app's data fetching utilities.
 """
-from django.test import TestCase
+import datetime
+
+from django.conf import settings
+from django.test import TestCase, override_settings
 
 from notices.data import AcknowledgmentResponseTypes
 from notices.selectors import get_visible_notices
@@ -32,3 +35,36 @@ class TestSelectors(TestCase):
 
         results = get_visible_notices(self.user)
         assert list(results) == [active_notice, active_notice2]
+
+    @override_settings(FEATURES={"NOTICES_SNOOZE_HOURS": 4})
+    def test_snoozed_notices(self):
+        """
+        Tests that snoozed notices are only snoozed for the `NOTICES_SNOOZE_HOURS` amount of time
+        """
+        SNOOZE_HOURS = settings.FEATURES["NOTICES_SNOOZE_HOURS"]
+
+        active_notice = NoticeFactory(active=True)
+        latest_snooze_time = datetime.datetime.now() - datetime.timedelta(hours=SNOOZE_HOURS)
+
+        # acknowledgment an hour older than the snooze limit
+        AcknowledgedNoticeFactory(
+            user=self.user,
+            notice=active_notice,
+            response_type=AcknowledgmentResponseTypes.DISMISSED,
+            modified=latest_snooze_time - datetime.timedelta(hours=1),
+        )
+
+        results = get_visible_notices(self.user)
+        assert len(results) == 1
+        assert list(results) == [active_notice]
+
+        # acknowledgment an hour newer than the snooze limit
+        AcknowledgedNoticeFactory(
+            user=self.user,
+            notice=active_notice,
+            response_type=AcknowledgmentResponseTypes.DISMISSED,
+            modified=latest_snooze_time + datetime.timedelta(hours=1),
+        )
+
+        results = get_visible_notices(self.user)
+        assert len(results) == 0
