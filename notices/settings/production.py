@@ -15,3 +15,6 @@ def plugin_settings(settings):
     settings.FEATURES["NOTICES_SNOOZE_HOURS"] = settings.ENV_TOKENS.get(
         "NOTICES_SNOOZE_HOURS", settings.FEATURES["NOTICES_SNOOZE_HOURS"]
     )
+    settings.FEATURES["NOTICES_SNOOZE_COUNT_LIMIT"] = settings.ENV_TOKENS.get(
+        "NOTICES_SNOOZE_COUNT_LIMIT", settings.FEATURES["NOTICES_SNOOZE_COUNT_LIMIT"]
+    )

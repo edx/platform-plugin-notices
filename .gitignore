@@ -62,3 +62,10 @@ requirements/private.txt
 
 # Virtual environments
 venv/
+
+### Editor and IDE artifacts
+*~
+*.swp
+*.orig
+.idea/
+.pycharm_helpers/

@@ -1,4 +1,5 @@
 """API views for the notices app"""
+from django.conf import settings
 from edx_rest_framework_extensions.auth.jwt.authentication import JwtAuthentication
 from edx_rest_framework_extensions.auth.session.authentication import SessionAuthenticationAllowInactiveUser
 from rest_framework import permissions
@@ -109,8 +110,13 @@ class AcknowledgeNotice(APIView):
         except Notice.DoesNotExist as exc:
             raise ValidationError({"notice_id": "notice_id field does not match an existing active notice"}) from exc
 
-        AcknowledgedNotice.objects.update_or_create(
+        (acknowledged_notice, _) = AcknowledgedNotice.objects.update_or_create(
             user=request.user, notice=notice, defaults={"response_type": acknowledgment_type}
         )
+        snooze_limit = settings.FEATURES.get("NOTICES_SNOOZE_COUNT_LIMIT")
+        if snooze_limit is not None and acknowledgment_type == AcknowledgmentResponseTypes.DISMISSED:
+            acknowledged_notice.snooze_count = acknowledged_notice.snooze_count + 1
+            acknowledged_notice.save()
+
         # Since this is just an acknowledgment API, we can just return a 204 without any response data.
         return Response(status=HTTP_204_NO_CONTENT)

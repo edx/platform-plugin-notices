@@ -11,6 +11,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.utils.translation import get_language_from_request
 from django.views.generic import DetailView
 
+from notices.api import can_dismiss
 from notices.models import Notice
 
 
@@ -44,7 +45,6 @@ class RenderNotice(LoginRequiredMixin, DetailView):
             forwarding_url = settings.FEATURES["NOTICES_DEFAULT_REDIRECT_URL"]
 
         in_app = self.request.GET.get("mobile") == "true"
-
         context.update(
             {
                 "head_content": self.object.head_content,
@@ -52,6 +52,7 @@ class RenderNotice(LoginRequiredMixin, DetailView):
                 "forwarding_url": forwarding_url,
                 "notice_id": self.object.id,
                 "in_app": in_app,
+                "can_dismiss": can_dismiss(self.request.user, self.object),
             }
         )
         return context
