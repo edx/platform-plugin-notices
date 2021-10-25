@@ -41,6 +41,6 @@ ROOT_URLCONF = "test_utils.test_urls"
 
 SECRET_KEY = "insecure-secret-key"
 
-FEATURES = {"NOTICES_SNOOZE_HOURS": None}
+FEATURES = {"NOTICES_SNOOZE_HOURS": None, "NOTICES_SNOOZE_COUNT_LIMIT": None}
 
 USE_TZ = True

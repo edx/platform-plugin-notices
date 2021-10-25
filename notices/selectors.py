@@ -37,6 +37,12 @@ def get_visible_notices(user):
             response_type=AcknowledgmentResponseTypes.DISMISSED, modified__lte=last_valid_datetime
         )
 
+    snooze_limit = settings.FEATURES.get("NOTICES_SNOOZE_COUNT_LIMIT")
+    if snooze_limit is not None:
+        acknowledged_notices = acknowledged_notices.exclude(
+            response_type=AcknowledgmentResponseTypes.DISMISSED, snooze_count__gt=snooze_limit
+        )
+
     excluded_notices = active_notices.exclude(id__in=[acked.notice.id for acked in acknowledged_notices])
 
     return excluded_notices

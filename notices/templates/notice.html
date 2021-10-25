@@ -6,6 +6,7 @@
         const forwardingUrl = "{{ forwarding_url }}";
         const noticeId = {{ notice_id }};
         const inApp = "{{ in_app }}" === "True" ? true : false;
+        const canDismiss = "{{ can_dismiss }}" === "True" ? true : false;
     </script>
     <script src="{% static 'notices/js/utils.js' %}"></script>
     {{ head_content|safe }}

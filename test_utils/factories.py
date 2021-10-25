@@ -7,6 +7,7 @@ from factory.django import DjangoModelFactory
 
 from notices.models import AcknowledgedNotice, Notice, TranslatedNoticeContent
 
+
 USER_PASSWORD = "password"
 
 
