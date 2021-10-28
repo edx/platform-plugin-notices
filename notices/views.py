@@ -53,6 +53,7 @@ class RenderNotice(LoginRequiredMixin, DetailView):
                 "notice_id": self.object.id,
                 "in_app": in_app,
                 "can_dismiss": can_dismiss(self.request.user, self.object),
+                "NOTICES_SEGMENT_KEY": settings.FEATURES["NOTICES_SEGMENT_KEY"],
             }
         )
         return context
