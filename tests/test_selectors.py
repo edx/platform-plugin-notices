@@ -7,7 +7,7 @@ from django.conf import settings
 from django.test import TestCase, override_settings
 
 from notices.data import AcknowledgmentResponseTypes
-from notices.selectors import get_visible_notices
+from notices.selectors import get_active_notices, get_visible_notices
 from test_utils.factories import AcknowledgedNoticeFactory, NoticeFactory, UserFactory
 
 
@@ -18,7 +18,17 @@ class TestSelectors(TestCase):
 
     def setUp(self):
         super().setUp()
-        self.user = UserFactory()
+        self.user = UserFactory(date_joined=datetime.datetime.fromisoformat("2015-01-01"))
+
+    def test_get_active_notices(self):
+        old_active_notice = NoticeFactory(active=True, launch_date=datetime.datetime.fromisoformat("2020-10-31"))
+        new_active_notice = NoticeFactory(active=True, launch_date=datetime.datetime.fromisoformat("2021-10-31"))
+        results = get_active_notices()
+        assert list(results) == [old_active_notice, new_active_notice]
+
+        sign_up_date = datetime.datetime.fromisoformat("2021-10-27")
+        results = get_active_notices(before_date=sign_up_date)
+        assert list(results) == [new_active_notice]
 
     def test_get_visible_notices(self):
         """

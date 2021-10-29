@@ -9,11 +9,17 @@ from notices.data import AcknowledgmentResponseTypes
 from notices.models import AcknowledgedNotice, Notice
 
 
-def get_active_notices():
+def get_active_notices(before_date=None):
     """
     Return a QuerySet of all active Notices.
+
+    We don't want to show notices that have a launch date prior to a user creating an account,
+    because they won't have a change to acknowledge.
     """
-    return Notice.objects.filter(active=True)
+    active_notices = Notice.objects.filter(active=True)
+    if before_date:
+        return active_notices.exclude(launch_date__lte=before_date)
+    return active_notices
 
 
 def get_acknowledged_notices_for_user(user):
@@ -27,7 +33,7 @@ def get_visible_notices(user):
     """
     Return a QuerySet of all active and unacknowledged Notices for a given user.
     """
-    active_notices = get_active_notices()
+    active_notices = get_active_notices(before_date=user.date_joined)
     acknowledged_notices = get_acknowledged_notices_for_user(user)
 
     snooze_hours = settings.FEATURES.get("NOTICES_SNOOZE_HOURS")
