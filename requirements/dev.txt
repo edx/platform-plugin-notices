@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
-astroid==2.8.3
+astroid==2.8.4
     # via
     #   -r requirements/quality.txt
     #   pylint
@@ -115,7 +115,7 @@ djangorestframework==3.12.4
     #   django-rest-framework
     #   drf-jwt
     #   edx-drf-extensions
-docutils==0.17.1
+docutils==0.18
     # via
     #   -r requirements/quality.txt
     #   readme-renderer
@@ -132,7 +132,7 @@ edx-drf-extensions==8.0.0
     # via -r requirements/quality.txt
 edx-i18n-tools==0.8.1
     # via -r requirements/dev.in
-edx-lint==5.2.0
+edx-lint==5.2.1
     # via -r requirements/quality.txt
 edx-opaque-keys==2.2.2
     # via
@@ -140,9 +140,9 @@ edx-opaque-keys==2.2.2
     #   edx-drf-extensions
 edx-toggles==4.2.0
     # via -r requirements/quality.txt
-factory-boy==3.2.0
+factory-boy==3.2.1
     # via -r requirements/quality.txt
-faker==9.5.2
+faker==9.7.1
     # via
     #   -r requirements/quality.txt
     #   factory-boy
@@ -316,7 +316,7 @@ pymongo==3.12.1
     # via
     #   -r requirements/quality.txt
     #   edx-opaque-keys
-pyparsing==2.4.7
+pyparsing==3.0.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -352,7 +352,7 @@ readme-renderer==30.0
     # via
     #   -r requirements/quality.txt
     #   twine
-regex==2021.10.21
+regex==2021.10.23
     # via
     #   -r requirements/quality.txt
     #   black
@@ -418,7 +418,7 @@ toml==0.10.2
     #   pylint
     #   pytest
     #   tox
-tomli==1.2.1
+tomli==1.2.2
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/quality.txt
@@ -448,7 +448,7 @@ urllib3==1.26.7
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   requests
-virtualenv==20.8.1
+virtualenv==20.9.0
     # via
     #   -r requirements/ci.txt
     #   tox

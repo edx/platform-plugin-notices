@@ -103,9 +103,9 @@ edx-sphinx-theme==3.0.0
     # via -r requirements/doc.in
 edx-toggles==4.2.0
     # via -r requirements/test.txt
-factory-boy==3.2.0
+factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==9.5.2
+faker==9.7.1
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -185,7 +185,7 @@ pymongo==3.12.1
     # via
     #   -r requirements/test.txt
     #   edx-opaque-keys
-pyparsing==2.4.7
+pyparsing==3.0.3
     # via
     #   -r requirements/test.txt
     #   packaging
@@ -276,7 +276,7 @@ toml==0.10.2
     # via
     #   -r requirements/test.txt
     #   pytest
-tomli==1.2.1
+tomli==1.2.2
     # via
     #   -r requirements/test.txt
     #   coverage
