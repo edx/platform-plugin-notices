@@ -3,6 +3,7 @@ Database models for notices.
 """
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.utils import timezone
 from model_utils.models import TimeStampedModel
 from simple_history.models import HistoricalRecords
 
@@ -28,6 +29,9 @@ class Notice(TimeStampedModel):
             "HTML content to be included in the <head> block. Should contain all javascript / styles. "
             "Shared for all translated templates"
         ),
+    )
+    launch_date = models.DateTimeField(
+        default=timezone.now, help_text="All users created after this date will not be show the notice"
     )
 
     class Meta:
