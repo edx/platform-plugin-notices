@@ -10,10 +10,10 @@ function confirmNoticeClick(forwarding_url_override){
 
 function dismissNoticeClick(event){
   let nextUrl;
-  if (event.target.href){
+  if (event.currentTarget.href){
     // If caller is a link, stop redirection until after API call.
     event.preventDefault();
-    nextUrl = event.target.href;
+    nextUrl = event.currentTarget.href;
   } else {
     nextUrl = forwardingUrl;
   }
