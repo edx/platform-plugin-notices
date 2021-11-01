@@ -1,0 +1,69 @@
+name: Create edx-internal PR for version bump
+
+# This workflow is triggered when a commit is tagged.
+# Future plan is to auto tag and and create PR on merge to main, then comment on original PR a link to new PR.
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  create_pr:
+    name: CreatePR
+    runs-on: ubuntu-latest
+    if: ${{contains(github.ref, 'tags')}}
+    steps:
+      # Clone edx-internal
+      - name: clone_internal
+        uses: actions/checkout@v2
+        with:
+          repository: 'edx/edx-internal'
+          token: ${{ secrets.EDX_DEPLOYMENT_GH_TOKEN }}
+
+      # Create branch with new version and push
+      - name: create_branch
+        run: |
+          git checkout -b edx-deployment/notices/$GITHUB_SHA
+          git config user.email "edx-deployment@edx.org"
+          git config user.name "Edx Deployment automation robot"
+          RELEASE_TAG=${GITHUB_REF#refs/tags/}
+          sed -i -e "s|platform-plugin-notices.git@.*|platform-plugin-notices.git@$RELEASE_TAG#egg=notices|" ansible/vars/edx.yml
+          git add ansible/vars/edx.yml
+          git commit -m "Bump notices plugin to $RELEASE_TAG"
+          git push --set-upstream origin edx-deployment/notices/$GITHUB_SHA
+
+      # Create a PR and comment on original PR
+      - name: create_pr
+        uses: actions/github-script@v1
+        with:
+          github-token: ${{secrets.EDX_DEPLOYMENT_GH_TOKEN}}
+          script: |
+            // Create edx-internal PR from version-updating branch above
+            const createResponse = await github.pulls.create({
+              title: 'Bump platform-plugin-notices version',
+              owner: 'edx',
+              repo: 'edx-internal',
+              head: 'edx-deployment/notices/' + context.sha,
+              base: 'master',
+            })
+
+            // Get the PR that relates to the tagged commit
+            const getRelatedPrResponse = await github.repos.listPullRequestsAssociatedWithCommit({
+              owner: 'edx',
+              repo: 'platform-plugin-notices',
+              commit_sha: process.env.GITHUB_SHA
+            })
+            const prNumber = getRelatedPrResponse.data.length > 0 ? getRelatedPrResponse.data[0].number : undefined;
+            if (prNumber === undefined) {
+              console.log("No matching PR number for commit")
+              exit(1)
+            }
+
+            // Comment on the original PR with a link to the edx-internal PR
+            github.issues.createComment({
+              owner: 'edx',
+              repo: 'platform-plugin-notices',
+              issue_number: prNumber,
+              body: `A PR has been created in edx-internal to release this new version. Please review it here: ${createResponse.data.html_url}`,
+            });
+
