@@ -9,3 +9,4 @@ def plugin_settings(settings):
     settings.FEATURES["NOTICES_SEGMENT_KEY"] = None
     settings.FEATURES["NOTICES_SNOOZE_HOURS"] = None
     settings.FEATURES["NOTICES_SNOOZE_COUNT_LIMIT"] = None
+    settings.FEATURES["NOTICES_MAX_SNOOZE_DAYS"] = None

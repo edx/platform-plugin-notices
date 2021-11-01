@@ -21,3 +21,6 @@ def plugin_settings(settings):
     settings.FEATURES["NOTICES_SEGMENT_KEY"] = settings.AUTH_TOKENS.get(
         "SEGMENT_KEY", settings.FEATURES["NOTICES_SEGMENT_KEY"]
     )
+    settings.FEATURES["NOTICES_MAX_SNOOZE_DAYS"] = settings.ENV_TOKENS.get(
+        "NOTICES_MAX_SNOOZE_DAYS", settings.FEATURES["NOTICES_MAX_SNOOZE_DAYS"]
+    )
