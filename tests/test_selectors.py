@@ -95,8 +95,6 @@ class TestSelectors(TestCase):
         )
         results = get_visible_notices(self.user)
         assert len(results) == 1
-        print(results[0].id)
-        print(active_notice.id)
         assert list(results) == [active_notice]
 
         # snooze count >= limit
@@ -107,19 +105,22 @@ class TestSelectors(TestCase):
         results = get_visible_notices(self.user)
         assert len(results) == 0
 
-    @override_settings(FEATURES={"NOTICES_SNOOZE_HOURS": 4, "NOTICES_SNOOZE_COUNT_LIMIT": 3})
+    @override_settings(
+        FEATURES={"NOTICES_SNOOZE_HOURS": 4, "NOTICES_SNOOZE_COUNT_LIMIT": 3, "NOTICES_MAX_SNOOZE_DAYS": 30}
+    )
     def test_snoozed_notices_with_count(self):
         """
         Tests the interaction between snoozing a notice and the snooze limit.
         """
         SNOOZE_HOURS = settings.FEATURES["NOTICES_SNOOZE_HOURS"]
         notices_snooze_count_limit = settings.FEATURES["NOTICES_SNOOZE_COUNT_LIMIT"]
+        max_snooze_days = settings.FEATURES["NOTICES_MAX_SNOOZE_DAYS"]
 
         active_notice = NoticeFactory(active=True)
         latest_snooze_time = datetime.datetime.now() - datetime.timedelta(hours=SNOOZE_HOURS)
 
         # acknowledgment an hour older than the snooze limit
-        AcknowledgedNoticeFactory(
+        ack_test = AcknowledgedNoticeFactory(
             user=self.user,
             notice=active_notice,
             response_type=AcknowledgmentResponseTypes.DISMISSED,
@@ -131,26 +132,37 @@ class TestSelectors(TestCase):
         assert list(results) == [active_notice]
 
         # acknowledgment an hour newer than the snooze limit, but snooze_limit exceeded
-        AcknowledgedNoticeFactory(
-            user=self.user,
-            notice=active_notice,
-            response_type=AcknowledgmentResponseTypes.DISMISSED,
-            modified=latest_snooze_time + datetime.timedelta(hours=1),
-            snooze_count=notices_snooze_count_limit + 1,
-        )
+        ack_test.modified = latest_snooze_time + datetime.timedelta(hours=1)
+        ack_test.snooze_count = notices_snooze_count_limit + 1
+        ack_test.save()
 
         results = get_visible_notices(self.user)
         assert len(results) == 1
         assert list(results) == [active_notice]
 
         # acknowledgment an hour newer than the snooze limit
-        AcknowledgedNoticeFactory(
-            user=self.user,
-            notice=active_notice,
-            response_type=AcknowledgmentResponseTypes.DISMISSED,
-            modified=latest_snooze_time + datetime.timedelta(hours=1),
-            snooze_count=1,
-        )
+        ack_test.modified = latest_snooze_time + datetime.timedelta(hours=1)
+        ack_test.snooze_count = 1
+        ack_test.save()
+
+        results = get_visible_notices(self.user)
+        assert len(results) == 0
+
+        # acknowledgment an hour newer than the snooze limit, but max_snooze_days exceeded
+        ack_test.modified = latest_snooze_time + datetime.timedelta(hours=1)
+        ack_test.snooze_count = 1
+        ack_test.created = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=max_snooze_days + 2)
+        ack_test.save()
+
+        results = get_visible_notices(self.user)
+        assert len(results) == 1
+        assert list(results) == [active_notice]
+
+        # Created 2 days ago
+        ack_test.created = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=2)
+        ack_test.modified = latest_snooze_time + datetime.timedelta(hours=0)
+        ack_test.snooze_count = 1
+        ack_test.save()
 
         results = get_visible_notices(self.user)
         assert len(results) == 0
