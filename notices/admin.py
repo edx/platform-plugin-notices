@@ -12,8 +12,12 @@ class TranslatedNoticeContentAdmin(admin.TabularInline):
 @admin.register(Notice)
 class NoticeAdmin(admin.ModelAdmin):
     inlines = [TranslatedNoticeContentAdmin]
+    list_display = ["name", "active", "launch_date"]
+    search_fields = ["name"]
 
 
 @admin.register(AcknowledgedNotice)
 class AcknowledgedNoticeAdmin(admin.ModelAdmin):
     raw_id_fields = ["user"]
+    list_display = ["user", "notice", "response_type"]
+    search_fields = ["user__username", "response_type"]
