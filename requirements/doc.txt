@@ -34,7 +34,7 @@ code-annotations==1.2.0
     # via
     #   -r requirements/test.txt
     #   edx-toggles
-coverage[toml]==6.0.2
+coverage[toml]==6.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cov
@@ -93,7 +93,7 @@ edx-django-utils==4.4.0
     #   -r requirements/test.txt
     #   edx-drf-extensions
     #   edx-toggles
-edx-drf-extensions==8.0.0
+edx-drf-extensions==8.0.1
     # via -r requirements/test.txt
 edx-opaque-keys==2.2.2
     # via
@@ -103,9 +103,9 @@ edx-sphinx-theme==3.0.0
     # via -r requirements/doc.in
 edx-toggles==4.2.0
     # via -r requirements/test.txt
-factory-boy==3.2.0
+factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==9.5.2
+faker==9.8.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -132,17 +132,17 @@ markupsafe==2.0.1
     # via
     #   -r requirements/test.txt
     #   jinja2
-newrelic==7.2.2.169
+newrelic==7.2.3.170
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
-packaging==21.0
+packaging==21.2
     # via
     #   -r requirements/test.txt
     #   bleach
     #   pytest
     #   sphinx
-pbr==5.6.0
+pbr==5.7.0
     # via
     #   -r requirements/test.txt
     #   stevedore
@@ -155,7 +155,7 @@ psutil==5.8.0
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
-py==1.10.0
+py==1.11.0
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -276,7 +276,7 @@ toml==0.10.2
     # via
     #   -r requirements/test.txt
     #   pytest
-tomli==1.2.1
+tomli==1.2.2
     # via
     #   -r requirements/test.txt
     #   coverage
