@@ -29,7 +29,7 @@ jobs:
           RELEASE_TAG=${GITHUB_REF#refs/tags/}
           sed -i -e "s|platform-plugin-notices.git@.*|platform-plugin-notices.git@$RELEASE_TAG#egg=notices|" ansible/vars/edx.yml
           git add ansible/vars/edx.yml
-          git commit -m "Bump notices plugin to $RELEASE_TAG"
+          git commit -m "chore: bump notices plugin to $RELEASE_TAG"
           git push --set-upstream origin edx-deployment/notices/$GITHUB_SHA
 
       # Create a PR and comment on original PR
