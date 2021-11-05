@@ -13,6 +13,9 @@ Change Log
 
 Unreleased
 ~~~~~~~~~~
+[0.11.3] - 2021-11-05
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Allow user to leave page even if API call fails (important for mobile)
 
 [0.11.2] - 2021-11-04
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

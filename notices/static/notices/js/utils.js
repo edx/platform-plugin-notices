@@ -34,6 +34,11 @@ function sendAcknowledgment(type, url){
   postRequest.onreadystatechange = () => {
     if (postRequest.readyState === 4 && postRequest.status === 204) {
       console.log("acknowledgment successful");
+      window.analytics.track('edx.bi.user.acknowledged_acqusition', {acknowledgment_type: type});
+      callback();
+    } else if (postRequest.readyState === 4 && postRequest.status !== 204) {
+      /* We need to let the user exit even on a failure because mobile users can get stuck otherwise */
+      console.log(`acknowledgement failed. Error: ${postRequest.responseText}`)
       callback();
     }
   };
