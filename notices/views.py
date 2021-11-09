@@ -47,6 +47,7 @@ class RenderNotice(LoginRequiredMixin, DetailView):
         in_app = self.request.GET.get("mobile") == "true"
         context.update(
             {
+                "user_language": user_language,
                 "head_content": self.object.head_content,
                 "html_content": body_content,
                 "forwarding_url": forwarding_url,
