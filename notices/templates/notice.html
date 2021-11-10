@@ -3,6 +3,7 @@
 <head>
     <script>
         // Global constants so the notice and shared JS can pull the values easily.
+        const userLanguage = "{{ user_language }}"
         const forwardingUrl = "{{ forwarding_url }}";
         const noticeId = {{ notice_id }};
         const inApp = "{{ in_app }}" === "True" ? true : false;
@@ -38,4 +39,3 @@
     {% csrf_token %}
 </body>
 </html>
-
