@@ -10,3 +10,4 @@ def plugin_settings(settings):
     settings.FEATURES["NOTICES_SNOOZE_HOURS"] = None
     settings.FEATURES["NOTICES_SNOOZE_COUNT_LIMIT"] = None
     settings.FEATURES["NOTICES_MAX_SNOOZE_DAYS"] = None
+    settings.FEATURES["NOTICES_ENABLE_MOBILE"] = True

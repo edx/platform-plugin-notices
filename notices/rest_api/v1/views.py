@@ -62,6 +62,12 @@ class ListUnacknowledgedNotices(APIView):
             return Response({"results": []}, status=HTTP_200_OK)
 
         in_app = request.query_params.get("mobile") == "true"
+
+        # If request is from mobile and mobile is disabled, return empty list so user
+        # doesn't get forwarded anywhere
+        if in_app and not settings.FEATURES.get("NOTICES_ENABLE_MOBILE"):
+            return Response({"results": []}, status=HTTP_200_OK)
+
         unacknowledged_active_notices = get_unacknowledged_notices_for_user(
             request.user, in_app=in_app, request=request
         )
