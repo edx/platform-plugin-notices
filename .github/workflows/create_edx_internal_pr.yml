@@ -27,7 +27,7 @@ jobs:
           git config user.email "edx-deployment@edx.org"
           git config user.name "Edx Deployment automation robot"
           RELEASE_TAG=${GITHUB_REF#refs/tags/}
-          sed -i -e "s|platform-plugin-notices.git@.*|platform-plugin-notices.git@$RELEASE_TAG#egg=notices|" ansible/vars/edx.yml
+          sed -i -e "s|platform-plugin-notices.git@.*|platform-plugin-notices.git@$RELEASE_TAG#egg=edx-notices|" ansible/vars/edx.yml
           git add ansible/vars/edx.yml
           git commit -m "chore: bump notices plugin to $RELEASE_TAG"
           git push --set-upstream origin edx-deployment/notices/$GITHUB_SHA
