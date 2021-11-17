@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
-astroid==2.8.3
+astroid==2.8.4
     # via
     #   pylint
     #   pylint-celery
@@ -12,7 +12,7 @@ attrs==21.2.0
     # via
     #   -r requirements/test.txt
     #   pytest
-black==21.9b0
+black==21.10b0
     # via -r requirements/quality.in
 bleach==4.1.0
     # via readme-renderer
@@ -44,7 +44,7 @@ code-annotations==1.2.0
     #   edx-toggles
 colorama==0.4.4
     # via twine
-coverage[toml]==6.0.2
+coverage[toml]==6.1.2
     # via
     #   -r requirements/test.txt
     #   pytest-cov
@@ -87,7 +87,7 @@ djangorestframework==3.12.4
     #   django-rest-framework
     #   drf-jwt
     #   edx-drf-extensions
-docutils==0.17.1
+docutils==0.18
     # via readme-renderer
 drf-jwt==1.19.1
     # via
@@ -98,9 +98,9 @@ edx-django-utils==4.4.0
     #   -r requirements/test.txt
     #   edx-drf-extensions
     #   edx-toggles
-edx-drf-extensions==8.0.0
+edx-drf-extensions==8.0.1
     # via -r requirements/test.txt
-edx-lint==5.2.0
+edx-lint==5.2.1
     # via -r requirements/quality.in
 edx-opaque-keys==2.2.2
     # via
@@ -108,9 +108,9 @@ edx-opaque-keys==2.2.2
     #   edx-drf-extensions
 edx-toggles==4.2.0
     # via -r requirements/test.txt
-factory-boy==3.2.0
+factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==9.5.2
+faker==9.8.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -122,7 +122,7 @@ idna==3.3
     # via
     #   -r requirements/test.txt
     #   requests
-importlib-metadata==4.8.1
+importlib-metadata==4.8.2
     # via
     #   keyring
     #   twine
@@ -130,7 +130,7 @@ iniconfig==1.1.1
     # via
     #   -r requirements/test.txt
     #   pytest
-isort==5.9.3
+isort==5.10.1
     # via
     #   -r requirements/quality.in
     #   pylint
@@ -138,7 +138,7 @@ jeepney==0.7.1
     # via
     #   keyring
     #   secretstorage
-jinja2==3.0.2
+jinja2==3.0.3
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -154,18 +154,18 @@ mccabe==0.6.1
     # via pylint
 mypy-extensions==0.4.3
     # via black
-newrelic==7.2.2.169
+newrelic==7.2.4.171
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
-packaging==21.0
+packaging==21.2
     # via
     #   -r requirements/test.txt
     #   bleach
     #   pytest
 pathspec==0.9.0
     # via black
-pbr==5.6.0
+pbr==5.7.0
     # via
     #   -r requirements/test.txt
     #   stevedore
@@ -184,13 +184,13 @@ psutil==5.8.0
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
-py==1.10.0
+py==1.11.0
     # via
     #   -r requirements/test.txt
     #   pytest
 pycodestyle==2.8.0
     # via -r requirements/quality.in
-pycparser==2.20
+pycparser==2.21
     # via
     #   -r requirements/test.txt
     #   cffi
@@ -261,7 +261,7 @@ pyyaml==6.0
     #   code-annotations
 readme-renderer==30.0
     # via twine
-regex==2021.10.21
+regex==2021.11.10
     # via black
 requests==2.26.0
     # via
@@ -310,14 +310,14 @@ toml==0.10.2
     #   -r requirements/test.txt
     #   pylint
     #   pytest
-tomli==1.2.1
+tomli==1.2.2
     # via
     #   -r requirements/test.txt
     #   black
     #   coverage
 tqdm==4.62.3
     # via twine
-twine==3.4.2
+twine==3.6.0
     # via -r requirements/quality.in
 typing-extensions==3.10.0.2
     # via
@@ -330,7 +330,7 @@ urllib3==1.26.7
     #   requests
 webencodings==0.5.1
     # via bleach
-wrapt==1.13.2
+wrapt==1.13.3
     # via astroid
 zipp==3.6.0
     # via importlib-metadata
