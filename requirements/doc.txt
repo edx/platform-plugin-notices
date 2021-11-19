@@ -6,6 +6,10 @@
 #
 alabaster==0.7.12
     # via sphinx
+asgiref==3.4.1
+    # via
+    #   -r requirements/test.txt
+    #   django
 attrs==21.2.0
     # via
     #   -r requirements/test.txt
@@ -42,7 +46,7 @@ cryptography==35.0.0
     # via
     #   -r requirements/test.txt
     #   pyjwt
-django==2.2.24
+django==3.2.9
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -105,7 +109,7 @@ edx-toggles==4.2.0
     # via -r requirements/test.txt
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==9.8.0
+faker==9.8.2
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -136,13 +140,13 @@ newrelic==7.2.4.171
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
-packaging==21.2
+packaging==21.3
     # via
     #   -r requirements/test.txt
     #   bleach
     #   pytest
     #   sphinx
-pbr==5.7.0
+pbr==5.8.0
     # via
     #   -r requirements/test.txt
     #   stevedore
@@ -185,7 +189,7 @@ pymongo==3.12.1
     # via
     #   -r requirements/test.txt
     #   edx-opaque-keys
-pyparsing==2.4.7
+pyparsing==3.0.6
     # via
     #   -r requirements/test.txt
     #   packaging
@@ -238,7 +242,7 @@ six==1.16.0
     #   edx-sphinx-theme
     #   pyjwkest
     #   python-dateutil
-snowballstemmer==2.1.0
+snowballstemmer==2.2.0
     # via sphinx
 sphinx==4.3.0
     # via
