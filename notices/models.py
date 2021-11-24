@@ -92,6 +92,7 @@ class AcknowledgedNotice(TimeStampedModel):
     notice = models.ForeignKey(Notice, on_delete=models.CASCADE, related_name="acknowledgments")
     response_type = models.CharField(max_length=32, choices=RESPONSE_TYPE_CHOICES)
     snooze_count = models.IntegerField(default=0)
+    history = HistoricalRecords(app="notices")
 
     class Meta:
         """Model metadata."""

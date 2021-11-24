@@ -19,6 +19,8 @@ auth.User:
   ".. pii_retirement:" : consumer_api
 contenttypes.ContentType:
   ".. no_pii:": "This model has no PII"
+notices.HistoricalAcknowledgedNotice:
+  ".. no_pii:": "This model has no PII"
 notices.HistoricalNotice:
   ".. no_pii:": "This model has no PII"
 notices.HistoricalTranslatedNoticeContent:
