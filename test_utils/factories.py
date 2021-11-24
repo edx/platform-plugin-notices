@@ -1,6 +1,8 @@
 """
 Factories for notices testing.
 """
+import datetime
+
 import factory
 from django.contrib.auth import get_user_model
 from factory.django import DjangoModelFactory
@@ -58,3 +60,5 @@ class AcknowledgedNoticeFactory(DjangoModelFactory):
 
     user = factory.SubFactory(UserFactory)
     notice = factory.SubFactory(NoticeFactory)
+    snooze_count = 0
+    created = datetime.datetime.now(datetime.timezone.utc)

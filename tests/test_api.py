@@ -1,10 +1,12 @@
 """
 Tests for the Notices app's Python API
 """
-from django.test import TestCase
+import datetime
+
+from django.test import TestCase, override_settings
 from rest_framework.reverse import reverse
 
-from notices.api import get_unacknowledged_notices_for_user
+from notices.api import can_dismiss, get_unacknowledged_notices_for_user
 from notices.data import AcknowledgmentResponseTypes
 from test_utils.factories import AcknowledgedNoticeFactory, NoticeFactory, UserFactory
 
@@ -57,3 +59,74 @@ class TestPythonApi(TestCase):
 
         results = get_unacknowledged_notices_for_user(self.user)
         assert results == []
+
+    @override_settings(FEATURES={"NOTICES_SNOOZE_COUNT_LIMIT": 3})
+    def test_can_dismiss_snooze_limit_ack_dne(self):
+        """
+        Verifies the default behavior of the `can_dismiss` function when a acknowledgment does not exist for a
+        user/notice.
+        """
+        notice = NoticeFactory(active=True)
+
+        assert can_dismiss(self.user, notice)
+
+    @override_settings(FEATURES={"NOTICES_SNOOZE_COUNT_LIMIT": 3})
+    def test_can_dismiss_snooze_count_under_limit(self):
+        """
+        Verifies the behavior of the `can_dismiss` function when the SNOOZE_LIMIT is under the threshhold set in
+        configuration.
+        """
+        notice = NoticeFactory(active=True)
+        AcknowledgedNoticeFactory(
+            user=self.user, notice=notice, snooze_count=1, response_type=AcknowledgmentResponseTypes.DISMISSED
+        )
+
+        assert can_dismiss(self.user, notice)
+
+    @override_settings(FEATURES={"NOTICES_SNOOZE_COUNT_LIMIT": 1})
+    def test_can_dismiss_snooze_count_above_limit(self):
+        """
+        Verifies the behavior of the `can_dismiss` function when the a user shouldn't be allowed to snooze anymore.
+        """
+        notice = NoticeFactory(active=True)
+        AcknowledgedNoticeFactory(
+            user=self.user, notice=notice, snooze_count=1, response_type=AcknowledgmentResponseTypes.DISMISSED
+        )
+
+        assert not can_dismiss(self.user, notice)
+
+    @override_settings(FEATURES={"NOTICES_MAX_SNOOZE_DAYS": 30})
+    def test_can_dismiss_snooze_days_under_limit(self):
+        """
+        Verifies the behavior of the `can_dismiss` function when a user is under the threshold of days to ack a
+        notice.
+        """
+        notice = NoticeFactory(active=True)
+        test_date = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=10)
+        AcknowledgedNoticeFactory(
+            user=self.user,
+            notice=notice,
+            snooze_count=1,
+            created=test_date,
+            response_type=AcknowledgmentResponseTypes.DISMISSED,
+        )
+
+        assert can_dismiss(self.user, notice)
+
+    @override_settings(FEATURES={"NOTICES_MAX_SNOOZE_DAYS": 1})
+    def test_can_dismiss_snooze_days_over_limit(self):
+        """
+        Verifies the behavior of the `can_dismiss` function when a user should no longer be able to dismiss a notice
+        based on the "max snooze days" limit.
+        """
+        notice = NoticeFactory(active=True)
+        test_date = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=10)
+        AcknowledgedNoticeFactory(
+            user=self.user,
+            notice=notice,
+            snooze_count=1,
+            created=test_date,
+            response_type=AcknowledgmentResponseTypes.DISMISSED,
+        )
+
+        assert not can_dismiss(self.user, notice)

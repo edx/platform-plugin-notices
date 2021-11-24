@@ -2,12 +2,16 @@
 Python API for Notice data.
 """
 import datetime
+import logging
 
 from django.conf import settings
 from rest_framework.reverse import reverse
 
 from notices.models import AcknowledgedNotice
 from notices.selectors import get_visible_notices
+
+
+log = logging.getLogger(__name__)
 
 
 def get_unacknowledged_notices_for_user(user, in_app=False, request=None):
@@ -27,6 +31,7 @@ def get_unacknowledged_notices_for_user(user, in_app=False, request=None):
             for notice in unacknowledged_active_notices
         ]
 
+    log.info(f"Returning {len(urls)} notice(s) for user {user.id} with in_app={in_app}")
     return urls
 
 
@@ -52,5 +57,12 @@ def can_dismiss(user, notice):
         max_snooze_days_exceeded = acknowledged_notice.created < max_time_before_now
 
     if any([snooze_count_limit_exceeded, max_snooze_days_exceeded]):
+        log.info(
+            f"User {user.id} cannot dismiss notice {notice.id}, "
+            f"snooze_count_limit_exceeded={snooze_count_limit_exceeded} and "
+            f"max_snooze_days_exceeded={max_snooze_days_exceeded}"
+        )
         return False
+
+    log.info(f"User {user.id} may dismiss notice {notice.id}")
     return True
