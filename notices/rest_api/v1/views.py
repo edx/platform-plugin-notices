@@ -1,4 +1,6 @@
 """API views for the notices app"""
+import logging
+
 from django.conf import settings
 from edx_rest_framework_extensions.auth.jwt.authentication import JwtAuthentication
 from edx_rest_framework_extensions.auth.session.authentication import SessionAuthenticationAllowInactiveUser
@@ -25,6 +27,8 @@ from notices.toggles import ENABLE_NOTICES
 COMMON_AUTH_CLASSES = [JwtAuthentication, SessionAuthentication, SessionAuthenticationAllowInactiveUser]
 if BearerAuthenticationAllowInactiveUser is not None:
     COMMON_AUTH_CLASSES.append(BearerAuthenticationAllowInactiveUser)
+
+log = logging.getLogger(__name__)
 
 
 class ListUnacknowledgedNotices(APIView):
@@ -116,6 +120,10 @@ class AcknowledgeNotice(APIView):
         except Notice.DoesNotExist as exc:
             raise ValidationError({"notice_id": "notice_id field does not match an existing active notice"}) from exc
 
+        log.info(
+            f"Acknowledging notice {notice_id} for user {request.user.id} with "
+            f"acknowledgment_type={acknowledgment_type}"
+        )
         (acknowledged_notice, _) = AcknowledgedNotice.objects.update_or_create(
             user=request.user, notice=notice, defaults={"response_type": acknowledgment_type}
         )
