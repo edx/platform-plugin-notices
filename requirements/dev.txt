@@ -4,7 +4,11 @@
 #
 #    make upgrade
 #
-astroid==2.8.4
+asgiref==3.4.1
+    # via
+    #   -r requirements/quality.txt
+    #   django
+astroid==2.9.0
     # via
     #   -r requirements/quality.txt
     #   pylint
@@ -17,7 +21,7 @@ backports.entry-points-selectable==1.1.1
     # via
     #   -r requirements/ci.txt
     #   virtualenv
-black==21.10b0
+black==21.11b1
     # via -r requirements/quality.txt
 bleach==4.1.0
     # via
@@ -34,7 +38,7 @@ cffi==1.15.0
     #   cryptography
 chardet==4.0.0
     # via diff-cover
-charset-normalizer==2.0.7
+charset-normalizer==2.0.8
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -63,24 +67,24 @@ colorama==0.4.4
     # via
     #   -r requirements/quality.txt
     #   twine
-coverage[toml]==6.1.2
+coverage[toml]==6.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   codecov
     #   pytest-cov
-cryptography==35.0.0
+cryptography==36.0.0
     # via
     #   -r requirements/quality.txt
     #   pyjwt
     #   secretstorage
-diff-cover==6.4.2
+diff-cover==6.4.3
     # via -r requirements/dev.in
 distlib==0.3.3
     # via
     #   -r requirements/ci.txt
     #   virtualenv
-django==2.2.24
+django==3.2.9
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/quality.txt
@@ -115,7 +119,7 @@ djangorestframework==3.12.4
     #   django-rest-framework
     #   drf-jwt
     #   edx-drf-extensions
-docutils==0.18
+docutils==0.18.1
     # via
     #   -r requirements/quality.txt
     #   readme-renderer
@@ -142,11 +146,11 @@ edx-toggles==4.2.0
     # via -r requirements/quality.txt
 factory-boy==3.2.1
     # via -r requirements/quality.txt
-faker==9.8.0
+faker==9.9.0
     # via
     #   -r requirements/quality.txt
     #   factory-boy
-filelock==3.3.2
+filelock==3.4.0
     # via
     #   -r requirements/ci.txt
     #   tox
@@ -165,8 +169,6 @@ importlib-metadata==4.8.2
     #   -r requirements/quality.txt
     #   keyring
     #   twine
-inflect==5.3.0
-    # via jinja2-pluralize
 iniconfig==1.1.1
     # via
     #   -r requirements/quality.txt
@@ -185,10 +187,7 @@ jinja2==3.0.3
     #   -r requirements/quality.txt
     #   code-annotations
     #   diff-cover
-    #   jinja2-pluralize
-jinja2-pluralize==0.3.0
-    # via diff-cover
-keyring==23.2.1
+keyring==23.4.0
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -212,7 +211,7 @@ newrelic==7.2.4.171
     # via
     #   -r requirements/quality.txt
     #   edx-django-utils
-packaging==21.2
+packaging==21.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -225,7 +224,7 @@ pathspec==0.9.0
     # via
     #   -r requirements/quality.txt
     #   black
-pbr==5.7.0
+pbr==5.8.0
     # via
     #   -r requirements/quality.txt
     #   stevedore
@@ -235,7 +234,7 @@ pep517==0.12.0
     #   pip-tools
 pip-tools==6.4.0
     # via -r requirements/pip-tools.txt
-pkginfo==1.7.1
+pkginfo==1.8.2
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -292,7 +291,7 @@ pyjwt[crypto]==2.3.0
     #   -r requirements/quality.txt
     #   drf-jwt
     #   edx-drf-extensions
-pylint==2.11.1
+pylint==2.12.1
     # via
     #   -r requirements/quality.txt
     #   edx-lint
@@ -312,11 +311,11 @@ pylint-plugin-utils==0.6
     #   -r requirements/quality.txt
     #   pylint-celery
     #   pylint-django
-pymongo==3.12.1
+pymongo==4.0
     # via
     #   -r requirements/quality.txt
     #   edx-opaque-keys
-pyparsing==2.4.7
+pyparsing==3.0.6
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -328,7 +327,7 @@ pytest==6.2.5
     #   pytest-django
 pytest-cov==3.0.0
     # via -r requirements/quality.txt
-pytest-django==4.4.0
+pytest-django==4.5.1
     # via -r requirements/quality.txt
 python-dateutil==2.8.2
     # via
@@ -392,7 +391,7 @@ six==1.16.0
     #   python-dateutil
     #   tox
     #   virtualenv
-snowballstemmer==2.1.0
+snowballstemmer==2.2.0
     # via
     #   -r requirements/quality.txt
     #   pydocstyle
@@ -435,9 +434,9 @@ tqdm==4.62.3
     # via
     #   -r requirements/quality.txt
     #   twine
-twine==3.6.0
+twine==3.7.0
     # via -r requirements/quality.txt
-typing-extensions==3.10.0.2
+typing-extensions==4.0.1
     # via
     #   -r requirements/quality.txt
     #   astroid
