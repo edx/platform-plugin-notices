@@ -16,7 +16,7 @@ attrs==21.2.0
     # via
     #   -r requirements/test.txt
     #   pytest
-black==21.11b1
+black==21.12b0
     # via -r requirements/quality.in
 bleach==4.1.0
     # via readme-renderer
@@ -28,7 +28,7 @@ cffi==1.15.0
     # via
     #   -r requirements/test.txt
     #   cryptography
-charset-normalizer==2.0.8
+charset-normalizer==2.0.9
     # via
     #   -r requirements/test.txt
     #   requests
@@ -52,12 +52,11 @@ coverage[toml]==6.2
     # via
     #   -r requirements/test.txt
     #   pytest-cov
-cryptography==36.0.0
+cryptography==36.0.1
     # via
     #   -r requirements/test.txt
     #   pyjwt
-    #   secretstorage
-django==3.2.9
+django==3.2.10
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -85,7 +84,7 @@ django-waffle==2.2.1
     #   edx-django-utils
     #   edx-drf-extensions
     #   edx-toggles
-djangorestframework==3.12.4
+djangorestframework==3.13.1
     # via
     #   -r requirements/test.txt
     #   django-rest-framework
@@ -114,7 +113,7 @@ edx-toggles==4.2.0
     # via -r requirements/test.txt
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==9.9.0
+faker==10.0.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -126,7 +125,7 @@ idna==3.3
     # via
     #   -r requirements/test.txt
     #   requests
-importlib-metadata==4.8.2
+importlib-metadata==4.9.0
     # via
     #   keyring
     #   twine
@@ -138,17 +137,13 @@ isort==5.10.1
     # via
     #   -r requirements/quality.in
     #   pylint
-jeepney==0.7.1
-    # via
-    #   keyring
-    #   secretstorage
 jinja2==3.0.3
     # via
     #   -r requirements/test.txt
     #   code-annotations
 keyring==23.4.0
     # via twine
-lazy-object-proxy==1.6.0
+lazy-object-proxy==1.7.1
     # via astroid
 markupsafe==2.0.1
     # via
@@ -179,9 +174,8 @@ platformdirs==2.4.0
     # via
     #   black
     #   pylint
-pluggy==0.13.1
+pluggy==1.0.0
     # via
-    #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   pytest
 psutil==5.8.0
@@ -198,7 +192,7 @@ pycparser==2.21
     # via
     #   -r requirements/test.txt
     #   cffi
-pycryptodomex==3.11.0
+pycryptodomex==3.12.0
     # via
     #   -r requirements/test.txt
     #   pyjwkest
@@ -215,7 +209,7 @@ pyjwt[crypto]==2.3.0
     #   -r requirements/test.txt
     #   drf-jwt
     #   edx-drf-extensions
-pylint==2.12.1
+pylint==2.12.2
     # via
     #   edx-lint
     #   pylint-celery
@@ -229,7 +223,7 @@ pylint-plugin-utils==0.6
     # via
     #   pylint-celery
     #   pylint-django
-pymongo==4.0
+pymongo==4.0.1
     # via
     #   -r requirements/test.txt
     #   edx-opaque-keys
@@ -244,7 +238,7 @@ pytest==6.2.5
     #   pytest-django
 pytest-cov==3.0.0
     # via -r requirements/test.txt
-pytest-django==4.5.1
+pytest-django==4.5.2
     # via -r requirements/test.txt
 python-dateutil==2.8.2
     # via
@@ -259,14 +253,13 @@ pytz==2021.3
     # via
     #   -r requirements/test.txt
     #   django
+    #   djangorestframework
 pyyaml==6.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
-readme-renderer==30.0
+readme-renderer==32.0
     # via twine
-regex==2021.11.10
-    # via black
 requests==2.26.0
     # via
     #   -r requirements/test.txt
@@ -278,8 +271,6 @@ requests-toolbelt==0.9.1
     # via twine
 rfc3986==1.5.0
     # via twine
-secretstorage==3.3.1
-    # via keyring
 semantic-version==2.8.5
     # via
     #   -r requirements/test.txt
@@ -314,14 +305,15 @@ toml==0.10.2
     #   -r requirements/test.txt
     #   pylint
     #   pytest
-tomli==1.2.2
+tomli==1.2.3
     # via
+    #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   black
     #   coverage
 tqdm==4.62.3
     # via twine
-twine==3.7.0
+twine==3.7.1
     # via -r requirements/quality.in
 typing-extensions==4.0.1
     # via

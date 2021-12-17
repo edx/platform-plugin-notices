@@ -26,7 +26,7 @@ cffi==1.15.0
     # via
     #   -r requirements/test.txt
     #   cryptography
-charset-normalizer==2.0.8
+charset-normalizer==2.0.9
     # via
     #   -r requirements/test.txt
     #   requests
@@ -42,11 +42,11 @@ coverage[toml]==6.2
     # via
     #   -r requirements/test.txt
     #   pytest-cov
-cryptography==36.0.0
+cryptography==36.0.1
     # via
     #   -r requirements/test.txt
     #   pyjwt
-django==3.2.9
+django==3.2.10
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -74,7 +74,7 @@ django-waffle==2.2.1
     #   edx-django-utils
     #   edx-drf-extensions
     #   edx-toggles
-djangorestframework==3.12.4
+djangorestframework==3.13.1
     # via
     #   -r requirements/test.txt
     #   django-rest-framework
@@ -109,7 +109,7 @@ edx-toggles==4.2.0
     # via -r requirements/test.txt
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==9.9.0
+faker==10.0.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -150,9 +150,8 @@ pbr==5.8.0
     # via
     #   -r requirements/test.txt
     #   stevedore
-pluggy==0.13.1
+pluggy==1.0.0
     # via
-    #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   pytest
 psutil==5.8.0
@@ -167,7 +166,7 @@ pycparser==2.21
     # via
     #   -r requirements/test.txt
     #   cffi
-pycryptodomex==3.11.0
+pycryptodomex==3.12.0
     # via
     #   -r requirements/test.txt
     #   pyjwkest
@@ -185,7 +184,7 @@ pyjwt[crypto]==2.3.0
     #   -r requirements/test.txt
     #   drf-jwt
     #   edx-drf-extensions
-pymongo==4.0
+pymongo==4.0.1
     # via
     #   -r requirements/test.txt
     #   edx-opaque-keys
@@ -200,7 +199,7 @@ pytest==6.2.5
     #   pytest-django
 pytest-cov==3.0.0
     # via -r requirements/test.txt
-pytest-django==4.5.1
+pytest-django==4.5.2
     # via -r requirements/test.txt
 python-dateutil==2.8.2
     # via
@@ -216,11 +215,12 @@ pytz==2021.3
     #   -r requirements/test.txt
     #   babel
     #   django
+    #   djangorestframework
 pyyaml==6.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
-readme-renderer==30.0
+readme-renderer==32.0
     # via -r requirements/doc.in
 requests==2.26.0
     # via
@@ -280,8 +280,9 @@ toml==0.10.2
     # via
     #   -r requirements/test.txt
     #   pytest
-tomli==1.2.2
+tomli==1.2.3
     # via
+    #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   coverage
 urllib3==1.26.7
