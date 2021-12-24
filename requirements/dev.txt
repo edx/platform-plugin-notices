@@ -127,7 +127,7 @@ drf-jwt==1.19.1
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
-edx-django-utils==4.4.0
+edx-django-utils==4.4.1
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
@@ -164,7 +164,7 @@ idna==3.3
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   requests
-importlib-metadata==4.9.0
+importlib-metadata==4.10.0
     # via
     #   -r requirements/quality.txt
     #   keyring
@@ -452,7 +452,7 @@ webencodings==0.5.1
     # via
     #   -r requirements/quality.txt
     #   bleach
-wheel==0.37.0
+wheel==0.37.1
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
