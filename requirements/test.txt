@@ -18,7 +18,7 @@ cffi==1.15.0
     # via
     #   -r requirements/base.txt
     #   cryptography
-charset-normalizer==2.0.9
+charset-normalizer==2.0.10
     # via
     #   -r requirements/base.txt
     #   requests
@@ -89,7 +89,7 @@ edx-toggles==4.2.0
     # via -r requirements/base.txt
 factory-boy==3.2.1
     # via -r requirements/test.in
-faker==11.1.0
+faker==11.3.0
     # via factory-boy
 future==0.18.2
     # via
@@ -176,7 +176,7 @@ pyyaml==6.0
     # via
     #   -r requirements/base.txt
     #   code-annotations
-requests==2.26.0
+requests==2.27.1
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
