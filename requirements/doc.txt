@@ -26,7 +26,7 @@ cffi==1.15.0
     # via
     #   -r requirements/test.txt
     #   cryptography
-charset-normalizer==2.0.9
+charset-normalizer==2.0.10
     # via
     #   -r requirements/test.txt
     #   requests
@@ -46,7 +46,7 @@ cryptography==36.0.1
     # via
     #   -r requirements/test.txt
     #   pyjwt
-django==3.2.10
+django==3.2.11
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -68,7 +68,7 @@ django-rest-framework==0.1.0
     # via -r requirements/test.txt
 django-simple-history==3.0.0
     # via -r requirements/test.txt
-django-waffle==2.2.1
+django-waffle==2.3.0
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
@@ -88,7 +88,7 @@ docutils==0.17.1
     #   readme-renderer
     #   restructuredtext-lint
     #   sphinx
-drf-jwt==1.19.1
+drf-jwt==1.19.2
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
@@ -109,7 +109,7 @@ edx-toggles==4.2.0
     # via -r requirements/test.txt
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==11.1.0
+faker==11.3.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -170,7 +170,7 @@ pycryptodomex==3.12.0
     # via
     #   -r requirements/test.txt
     #   pyjwkest
-pygments==2.11.0
+pygments==2.11.2
     # via
     #   doc8
     #   readme-renderer
@@ -222,7 +222,7 @@ pyyaml==6.0
     #   code-annotations
 readme-renderer==32.0
     # via -r requirements/doc.in
-requests==2.26.0
+requests==2.27.1
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
@@ -285,7 +285,7 @@ tomli==1.2.3
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   coverage
-urllib3==1.26.7
+urllib3==1.26.8
     # via
     #   -r requirements/test.txt
     #   requests
