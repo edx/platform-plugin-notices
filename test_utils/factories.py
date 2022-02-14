@@ -35,7 +35,7 @@ class NoticeFactory(DjangoModelFactory):
     class Meta:
         model = Notice
 
-    name = factory.Sequence(u"Notice number {0}".format)
+    name = factory.Sequence("Notice number {0}".format)
     active = True
 
 
