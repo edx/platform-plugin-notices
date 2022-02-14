@@ -7,7 +7,7 @@ from urllib.parse import unquote, urlsplit
 
 from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
 from django.utils.translation import get_language_from_request
 from django.views.generic import DetailView
 
@@ -26,6 +26,13 @@ class RenderNotice(LoginRequiredMixin, DetailView):
     # (e.g., courses, programs).
     template_name = "notice.html"
     model = Notice
+
+    def handle_no_permission(self):
+        """If mobile=true in get params then don't redirect to login page."""
+        if self.request.query_params.get("mobile") == "true":
+            raise PermissionDenied("Authentication failed. Login to access notice")
+
+        return super().handle_no_permission()
 
     def get_context_data(self, **kwargs):
         """
