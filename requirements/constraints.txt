@@ -10,7 +10,3 @@
 
 # Common constraints for edx repos
 -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
-
-# tomli released v2.0.0 but there are constraints issues between black and coverage. This constraints will be
-# re-evaluated for removal in MICROBA-1634
-tomli<2.0.0
