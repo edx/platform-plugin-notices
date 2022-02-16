@@ -29,7 +29,7 @@ class RenderNotice(LoginRequiredMixin, DetailView):
 
     def handle_no_permission(self):
         """If mobile=true in get params then don't redirect to login page."""
-        if self.request.query_params.get("mobile") == "true":
+        if self.request.GET.get("mobile") == "true":
             raise PermissionDenied("Authentication failed. Login to access notice")
 
         return super().handle_no_permission()
