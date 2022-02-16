@@ -34,6 +34,17 @@ Make sure the LMS container is running in Devstack, then
 
 Once that is done, LMS will pickup the plugin and saves to existing files should cause a devserver restart with your changes. Occasionally when adding a new file, you may need to restart the LMS container in order for it to pickup the changes.
 
+Enabling the Notices Plugin in the LMS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Notices plugin functionality is enabled via use of a waffle flag. After installation of the plugin you need to do the following in devstack:
+
+#. Log into the LMS Django Admin (http://localhost:18000/admin/)
+#. Add a new waffle flag (http://localhost:18000/admin/waffle/flag/add/)
+#. Name the waffle flag ``notices.enable_notices``
+#. Set `Everyone` to `Yes`
+#. Save the waffle flag.
+
 License
 -------
 
