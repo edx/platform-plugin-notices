@@ -10,10 +10,8 @@ pep517==0.12.0
     # via pip-tools
 pip-tools==6.5.1
     # via -r requirements/pip-tools.in
-tomli==1.2.3
-    # via
-    #   -c requirements/constraints.txt
-    #   pep517
+tomli==2.0.1
+    # via pep517
 wheel==0.37.1
     # via pip-tools
 
