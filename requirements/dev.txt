@@ -34,12 +34,12 @@ cffi==1.15.0
     #   cryptography
 chardet==4.0.0
     # via diff-cover
-charset-normalizer==2.0.11
+charset-normalizer==2.0.12
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   requests
-click==8.0.3
+click==8.0.4
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/quality.txt
@@ -63,7 +63,7 @@ colorama==0.4.4
     # via
     #   -r requirements/quality.txt
     #   twine
-coverage[toml]==6.3.1
+coverage[toml]==6.3.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -142,11 +142,11 @@ edx-toggles==4.3.1
     # via -r requirements/quality.txt
 factory-boy==3.2.1
     # via -r requirements/quality.txt
-faker==12.3.0
+faker==13.2.0
     # via
     #   -r requirements/quality.txt
     #   factory-boy
-filelock==3.4.2
+filelock==3.6.0
     # via
     #   -r requirements/ci.txt
     #   tox
@@ -160,7 +160,7 @@ idna==3.3
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   requests
-importlib-metadata==4.11.0
+importlib-metadata==4.11.1
     # via
     #   -r requirements/quality.txt
     #   keyring
@@ -191,7 +191,7 @@ lazy-object-proxy==1.7.1
     # via
     #   -r requirements/quality.txt
     #   astroid
-markupsafe==2.0.1
+markupsafe==2.1.0
     # via
     #   -r requirements/quality.txt
     #   jinja2
@@ -234,7 +234,7 @@ pkginfo==1.8.2
     # via
     #   -r requirements/quality.txt
     #   twine
-platformdirs==2.5.0
+platformdirs==2.5.1
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -297,7 +297,7 @@ pylint-celery==0.3
     # via
     #   -r requirements/quality.txt
     #   edx-lint
-pylint-django==2.5.0
+pylint-django==2.5.2
     # via
     #   -r requirements/quality.txt
     #   edx-lint
@@ -315,7 +315,7 @@ pyparsing==3.0.7
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   packaging
-pytest==7.0.0
+pytest==7.0.1
     # via
     #   -r requirements/quality.txt
     #   pytest-cov
@@ -329,7 +329,7 @@ python-dateutil==2.8.2
     #   -r requirements/quality.txt
     #   edx-drf-extensions
     #   faker
-python-slugify==5.0.2
+python-slugify==6.1.0
     # via
     #   -r requirements/quality.txt
     #   code-annotations
@@ -407,9 +407,8 @@ toml==0.10.2
     #   -r requirements/quality.txt
     #   pylint
     #   tox
-tomli==1.2.3
+tomli==2.0.1
     # via
-    #   -c requirements/constraints.txt
     #   -r requirements/pip-tools.txt
     #   -r requirements/quality.txt
     #   black
@@ -428,7 +427,7 @@ tqdm==4.62.3
     #   twine
 twine==3.8.0
     # via -r requirements/quality.txt
-typing-extensions==4.0.1
+typing-extensions==4.1.1
     # via
     #   -r requirements/quality.txt
     #   astroid
@@ -440,7 +439,7 @@ urllib3==1.26.8
     #   -r requirements/quality.txt
     #   requests
     #   twine
-virtualenv==20.13.1
+virtualenv==20.13.2
     # via
     #   -r requirements/ci.txt
     #   tox
