@@ -74,7 +74,7 @@ cryptography==36.0.2
     #   -r requirements/quality.txt
     #   pyjwt
     #   secretstorage
-diff-cover==6.4.5
+diff-cover==6.5.0
     # via -r requirements/dev.in
 dill==0.3.4
     # via
@@ -237,7 +237,7 @@ pkginfo==1.8.2
     # via
     #   -r requirements/quality.txt
     #   twine
-platformdirs==2.5.1
+platformdirs==2.5.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -430,7 +430,7 @@ tox-battery==0.6.1
     # via -r requirements/dev.in
 twine==4.0.0
     # via -r requirements/quality.txt
-typing-extensions==4.1.1
+typing-extensions==4.2.0
     # via
     #   -r requirements/quality.txt
     #   astroid
