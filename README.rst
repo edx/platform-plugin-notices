@@ -63,8 +63,8 @@ Reporting Security Issues
 
 Please do not report security issues in public. Please email security@edx.org.
 
-Getting Help
-------------
+Support
+-------
 
 If you're having trouble, we have discussion forums at https://discuss.openedx.org where you can connect with others in the community.
 
