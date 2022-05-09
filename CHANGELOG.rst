@@ -144,25 +144,13 @@ Unreleased
 
 [0.2.1] - 2021-09-22
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Added
-_____
-
 * Utility functions for custom notice code to use to call APIs
 
 [0.1.1] - 2021-09-16
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Added
-_____
-
 * Moved to server rendered notice model
 * Add mandatory types to acknowledgement to track more states
 
 [0.1.0] - 2021-08-19
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Added
-_____
-
 * First release on PyPI.
