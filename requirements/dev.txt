@@ -150,7 +150,7 @@ edx-toggles==5.0.0
     # via -r requirements/quality.txt
 factory-boy==3.2.1
     # via -r requirements/quality.txt
-faker==13.11.1
+faker==13.12.0
     # via
     #   -r requirements/quality.txt
     #   factory-boy
@@ -235,7 +235,7 @@ pep517==0.12.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
-pip-tools==6.6.1
+pip-tools==6.6.2
     # via -r requirements/pip-tools.txt
 pkginfo==1.8.2
     # via
@@ -376,7 +376,7 @@ rfc3986==2.0.0
     # via
     #   -r requirements/quality.txt
     #   twine
-rich==12.4.2
+rich==12.4.4
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -384,7 +384,7 @@ secretstorage==3.3.2
     # via
     #   -r requirements/quality.txt
     #   keyring
-semantic-version==2.9.0
+semantic-version==2.10.0
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
