@@ -14,6 +14,10 @@ Change Log
 Unreleased
 ~~~~~~~~~~
 
+[0.14.11] - 2022-06-01
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Updating Python Requirements
+
 [0.14.4] - 2022-02-14
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Changed Do not redirect notices/render/{id}/ to login page in case of 403 on mobile request
