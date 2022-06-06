@@ -65,7 +65,7 @@ commonmark==0.9.1
     # via
     #   -r requirements/quality.txt
     #   rich
-coverage[toml]==6.4
+coverage[toml]==6.4.1
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -111,7 +111,7 @@ django-simple-history==3.0.0
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/quality.txt
-django-waffle==2.4.1
+django-waffle==2.5.0
     # via
     #   -r requirements/quality.txt
     #   edx-django-utils
@@ -154,7 +154,7 @@ faker==13.12.0
     # via
     #   -r requirements/quality.txt
     #   factory-boy
-filelock==3.7.0
+filelock==3.7.1
     # via
     #   -r requirements/ci.txt
     #   tox
@@ -294,7 +294,7 @@ pyjwt[crypto]==2.4.0
     #   -r requirements/quality.txt
     #   drf-jwt
     #   edx-drf-extensions
-pylint==2.13.9
+pylint==2.14.0
     # via
     #   -r requirements/quality.txt
     #   edx-lint
@@ -430,13 +430,17 @@ tomli==2.0.1
     #   pep517
     #   pylint
     #   pytest
+tomlkit==0.11.0
+    # via
+    #   -r requirements/quality.txt
+    #   pylint
 tox==3.25.0
     # via
     #   -r requirements/ci.txt
     #   tox-battery
 tox-battery==0.6.1
     # via -r requirements/dev.in
-twine==4.0.0
+twine==4.0.1
     # via -r requirements/quality.txt
 typing-extensions==4.2.0
     # via
