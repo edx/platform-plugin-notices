@@ -8,7 +8,7 @@ asgiref==3.5.2
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.11.5
+astroid==2.11.6
     # via
     #   pylint
     #   pylint-celery
@@ -20,7 +20,7 @@ black==22.3.0
     # via -r requirements/quality.in
 bleach==5.0.0
     # via readme-renderer
-certifi==2022.5.18.1
+certifi==2022.6.15
     # via
     #   -r requirements/test.txt
     #   requests
@@ -221,7 +221,7 @@ pyjwt[crypto]==2.4.0
     #   -r requirements/test.txt
     #   drf-jwt
     #   edx-drf-extensions
-pylint==2.14.1
+pylint==2.14.3
     # via
     #   edx-lint
     #   pylint-celery
