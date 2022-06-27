@@ -33,7 +33,7 @@ cffi==1.15.0
     #   -r requirements/quality.txt
     #   cryptography
     #   pynacl
-chardet==4.0.0
+chardet==5.0.0
     # via diff-cover
 charset-normalizer==2.0.12
     # via
@@ -76,7 +76,7 @@ cryptography==37.0.2
     #   -r requirements/quality.txt
     #   pyjwt
     #   secretstorage
-diff-cover==6.5.0
+diff-cover==6.5.1
     # via -r requirements/dev.in
 dill==0.3.5.1
     # via
@@ -150,7 +150,7 @@ edx-toggles==5.0.0
     # via -r requirements/quality.txt
 factory-boy==3.2.1
     # via -r requirements/quality.txt
-faker==13.13.0
+faker==13.14.0
     # via
     #   -r requirements/quality.txt
     #   factory-boy
@@ -168,7 +168,7 @@ idna==3.3
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   requests
-importlib-metadata==4.11.4
+importlib-metadata==4.12.0
     # via
     #   -r requirements/quality.txt
     #   keyring
@@ -273,7 +273,7 @@ pycparser==2.21
     # via
     #   -r requirements/quality.txt
     #   cffi
-pycryptodomex==3.14.1
+pycryptodomex==3.15.0
     # via
     #   -r requirements/quality.txt
     #   pyjwkest
@@ -455,7 +455,7 @@ urllib3==1.26.9
     #   -r requirements/quality.txt
     #   requests
     #   twine
-virtualenv==20.14.1
+virtualenv==20.15.0
     # via
     #   -r requirements/ci.txt
     #   tox
