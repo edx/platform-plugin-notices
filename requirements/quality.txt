@@ -8,7 +8,7 @@ asgiref==3.5.2
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.11.6
+astroid==2.11.7
     # via
     #   pylint
     #   pylint-celery
@@ -54,7 +54,7 @@ coverage[toml]==6.4.1
     # via
     #   -r requirements/test.txt
     #   pytest-cov
-cryptography==37.0.2
+cryptography==37.0.4
     # via
     #   -r requirements/test.txt
     #   pyjwt
@@ -97,7 +97,7 @@ djangorestframework==3.13.1
     #   django-rest-framework
     #   drf-jwt
     #   edx-drf-extensions
-docutils==0.18.1
+docutils==0.19
     # via readme-renderer
 drf-jwt==1.19.2
     # via
@@ -120,7 +120,7 @@ edx-toggles==5.0.0
     # via -r requirements/test.txt
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==13.14.0
+faker==13.15.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -326,7 +326,7 @@ tomli==2.0.1
     #   coverage
     #   pylint
     #   pytest
-tomlkit==0.11.0
+tomlkit==0.11.1
     # via pylint
 twine==4.0.1
     # via -r requirements/quality.in
@@ -336,7 +336,7 @@ typing-extensions==4.3.0
     #   black
     #   pylint
     #   rich
-urllib3==1.26.9
+urllib3==1.26.10
     # via
     #   -r requirements/test.txt
     #   requests

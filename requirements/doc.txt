@@ -44,7 +44,7 @@ coverage[toml]==6.4.1
     # via
     #   -r requirements/test.txt
     #   pytest-cov
-cryptography==37.0.2
+cryptography==37.0.4
     # via
     #   -r requirements/test.txt
     #   pyjwt
@@ -113,7 +113,7 @@ edx-toggles==5.0.0
     # via -r requirements/test.txt
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==13.14.0
+faker==13.15.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -289,7 +289,7 @@ tomli==2.0.1
     #   -r requirements/test.txt
     #   coverage
     #   pytest
-urllib3==1.26.9
+urllib3==1.26.10
     # via
     #   -r requirements/test.txt
     #   requests
