@@ -69,7 +69,7 @@ commonmark==0.9.1
     # via
     #   -r requirements/quality.txt
     #   rich
-coverage[toml]==6.4.2
+coverage[toml]==6.4.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -90,7 +90,7 @@ distlib==0.3.5
     # via
     #   -r requirements/ci.txt
     #   virtualenv
-django==3.2.14
+django==3.2.15
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/quality.txt
@@ -195,7 +195,7 @@ jinja2==3.1.2
     #   -r requirements/quality.txt
     #   code-annotations
     #   diff-cover
-keyring==23.7.0
+keyring==23.8.2
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -273,7 +273,7 @@ py==1.11.0
     #   -r requirements/quality.txt
     #   pytest
     #   tox
-pycodestyle==2.9.0
+pycodestyle==2.9.1
     # via -r requirements/quality.txt
 pycparser==2.21
     # via
@@ -362,7 +362,7 @@ pyyaml==6.0
     #   -r requirements/quality.txt
     #   code-annotations
     #   edx-i18n-tools
-readme-renderer==35.0
+readme-renderer==36.0
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -437,7 +437,7 @@ tomli==2.0.1
     #   pep517
     #   pylint
     #   pytest
-tomlkit==0.11.1
+tomlkit==0.11.2
     # via
     #   -r requirements/quality.txt
     #   pylint
@@ -462,7 +462,7 @@ urllib3==1.26.11
     #   -r requirements/quality.txt
     #   requests
     #   twine
-virtualenv==20.16.2
+virtualenv==20.16.3
     # via
     #   -r requirements/ci.txt
     #   tox
