@@ -120,7 +120,7 @@ edx-toggles==5.0.0
     # via -r requirements/test.txt
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==13.15.1
+faker==14.0.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -174,7 +174,7 @@ packaging==21.3
     #   pytest
 pathspec==0.9.0
     # via black
-pbr==5.9.0
+pbr==5.10.0
     # via
     #   -r requirements/test.txt
     #   stevedore
@@ -265,7 +265,7 @@ python-slugify==6.1.2
     # via
     #   -r requirements/test.txt
     #   code-annotations
-pytz==2022.1
+pytz==2022.2.1
     # via
     #   -r requirements/test.txt
     #   django
@@ -289,7 +289,7 @@ rfc3986==2.0.0
     # via twine
 rich==12.5.1
     # via twine
-secretstorage==3.3.2
+secretstorage==3.3.3
     # via keyring
 semantic-version==2.10.0
     # via
@@ -326,7 +326,7 @@ tomli==2.0.1
     #   coverage
     #   pylint
     #   pytest
-tomlkit==0.11.2
+tomlkit==0.11.4
     # via pylint
 twine==4.0.1
     # via -r requirements/quality.in

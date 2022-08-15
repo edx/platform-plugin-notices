@@ -77,7 +77,7 @@ markupsafe==2.1.1
     # via jinja2
 newrelic==7.16.0.178
     # via edx-django-utils
-pbr==5.9.0
+pbr==5.10.0
     # via stevedore
 psutil==5.9.1
     # via edx-django-utils
@@ -99,7 +99,7 @@ python-dateutil==2.8.2
     # via edx-drf-extensions
 python-slugify==6.1.2
     # via code-annotations
-pytz==2022.1
+pytz==2022.2.1
     # via
     #   django
     #   djangorestframework
