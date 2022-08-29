@@ -101,7 +101,7 @@ edx-django-utils==5.0.0
     #   -r requirements/test.txt
     #   edx-drf-extensions
     #   edx-toggles
-edx-drf-extensions==8.0.1
+edx-drf-extensions==8.2.0
     # via -r requirements/test.txt
 edx-opaque-keys==2.3.0
     # via
