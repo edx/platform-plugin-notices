@@ -8,7 +8,7 @@ asgiref==3.5.2
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.12.9
+astroid==2.12.10
     # via
     #   pylint
     #   pylint-celery
@@ -20,7 +20,7 @@ black==22.8.0
     # via -r requirements/quality.in
 bleach==5.0.1
     # via readme-renderer
-certifi==2022.6.15.1
+certifi==2022.9.14
     # via
     #   -r requirements/test.txt
     #   requests
@@ -110,7 +110,7 @@ edx-django-utils==5.0.1
     #   edx-toggles
 edx-drf-extensions==8.3.1
     # via -r requirements/test.txt
-edx-lint==5.2.5
+edx-lint==5.3.0
     # via -r requirements/quality.in
 edx-opaque-keys==2.3.0
     # via
@@ -128,7 +128,7 @@ future==0.18.2
     # via
     #   -r requirements/test.txt
     #   pyjwkest
-idna==3.3
+idna==3.4
     # via
     #   -r requirements/test.txt
     #   requests
@@ -154,7 +154,7 @@ jinja2==3.1.2
     # via
     #   -r requirements/test.txt
     #   code-annotations
-keyring==23.9.1
+keyring==23.9.3
     # via twine
 lazy-object-proxy==1.7.1
     # via astroid
@@ -168,7 +168,7 @@ more-itertools==8.14.0
     # via jaraco-classes
 mypy-extensions==0.4.3
     # via black
-newrelic==8.0.0.179
+newrelic==8.1.0.180
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
@@ -220,7 +220,7 @@ pyjwkest==1.4.2
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
-pyjwt[crypto]==2.4.0
+pyjwt[crypto]==2.5.0
     # via
     #   -r requirements/test.txt
     #   drf-jwt
@@ -334,6 +334,10 @@ tomlkit==0.11.4
     # via pylint
 twine==4.0.1
     # via -r requirements/quality.in
+types-cryptography==3.3.23
+    # via
+    #   -r requirements/test.txt
+    #   pyjwt
 typing-extensions==4.3.0
     # via
     #   astroid
