@@ -18,7 +18,7 @@ babel==2.10.3
     # via sphinx
 bleach==5.0.1
     # via readme-renderer
-certifi==2022.6.15.1
+certifi==2022.9.14
     # via
     #   -r requirements/test.txt
     #   requests
@@ -121,7 +121,7 @@ future==0.18.2
     # via
     #   -r requirements/test.txt
     #   pyjwkest
-idna==3.3
+idna==3.4
     # via
     #   -r requirements/test.txt
     #   requests
@@ -142,7 +142,7 @@ markupsafe==2.1.1
     # via
     #   -r requirements/test.txt
     #   jinja2
-newrelic==8.0.0.179
+newrelic==8.1.0.180
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
@@ -184,7 +184,7 @@ pyjwkest==1.4.2
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
-pyjwt[crypto]==2.4.0
+pyjwt[crypto]==2.5.0
     # via
     #   -r requirements/test.txt
     #   drf-jwt
@@ -290,6 +290,10 @@ tomli==2.0.1
     #   coverage
     #   doc8
     #   pytest
+types-cryptography==3.3.23
+    # via
+    #   -r requirements/test.txt
+    #   pyjwt
 urllib3==1.26.12
     # via
     #   -r requirements/test.txt
