@@ -10,7 +10,7 @@ asgiref==3.5.2
     #   django
 attrs==22.1.0
     # via pytest
-certifi==2022.9.14
+certifi==2022.9.24
     # via
     #   -r requirements/base.txt
     #   requests
@@ -68,7 +68,7 @@ django-waffle==3.0.0
     #   edx-django-utils
     #   edx-drf-extensions
     #   edx-toggles
-djangorestframework==3.13.1
+djangorestframework==3.14.0
     # via
     #   -r requirements/base.txt
     #   django-rest-framework
@@ -78,7 +78,7 @@ drf-jwt==1.19.2
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
-edx-django-utils==5.0.1
+edx-django-utils==5.1.0
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
@@ -93,7 +93,7 @@ edx-toggles==5.0.0
     # via -r requirements/base.txt
 factory-boy==3.2.1
     # via -r requirements/test.in
-faker==14.2.0
+faker==14.2.1
     # via factory-boy
 future==0.18.2
     # via
@@ -199,7 +199,7 @@ six==1.16.0
     #   edx-drf-extensions
     #   pyjwkest
     #   python-dateutil
-sqlparse==0.4.2
+sqlparse==0.4.3
     # via
     #   -r requirements/base.txt
     #   django

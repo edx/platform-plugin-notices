@@ -27,7 +27,7 @@ build==0.8.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
-certifi==2022.9.14
+certifi==2022.9.24
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -80,7 +80,7 @@ cryptography==38.0.1
     #   -r requirements/quality.txt
     #   pyjwt
     #   secretstorage
-diff-cover==6.5.1
+diff-cover==7.0.1
     # via -r requirements/dev.in
 dill==0.3.5.1
     # via
@@ -121,7 +121,7 @@ django-waffle==3.0.0
     #   edx-django-utils
     #   edx-drf-extensions
     #   edx-toggles
-djangorestframework==3.13.1
+djangorestframework==3.14.0
     # via
     #   -r requirements/quality.txt
     #   django-rest-framework
@@ -135,7 +135,7 @@ drf-jwt==1.19.2
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
-edx-django-utils==5.0.1
+edx-django-utils==5.1.0
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
@@ -154,7 +154,7 @@ edx-toggles==5.0.0
     # via -r requirements/quality.txt
 factory-boy==3.2.1
     # via -r requirements/quality.txt
-faker==14.2.0
+faker==14.2.1
     # via
     #   -r requirements/quality.txt
     #   factory-boy
@@ -235,7 +235,7 @@ packaging==21.3
     #   build
     #   pytest
     #   tox
-path==16.4.0
+path==16.5.0
     # via edx-i18n-tools
 pathspec==0.10.1
     # via
@@ -308,7 +308,7 @@ pyjwt[crypto]==2.5.0
     #   -r requirements/quality.txt
     #   drf-jwt
     #   edx-drf-extensions
-pylint==2.15.2
+pylint==2.15.3
     # via
     #   -r requirements/quality.txt
     #   edx-lint
@@ -370,7 +370,7 @@ pyyaml==6.0
     #   -r requirements/quality.txt
     #   code-annotations
     #   edx-i18n-tools
-readme-renderer==37.1
+readme-renderer==37.2
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -417,7 +417,7 @@ snowballstemmer==2.2.0
     # via
     #   -r requirements/quality.txt
     #   pydocstyle
-sqlparse==0.4.2
+sqlparse==0.4.3
     # via
     #   -r requirements/quality.txt
     #   django
