@@ -6,7 +6,7 @@
 #
 asgiref==3.5.2
     # via django
-certifi==2022.9.14
+certifi==2022.9.24
     # via requests
 cffi==1.15.1
     # via
@@ -50,14 +50,14 @@ django-waffle==3.0.0
     #   edx-django-utils
     #   edx-drf-extensions
     #   edx-toggles
-djangorestframework==3.13.1
+djangorestframework==3.14.0
     # via
     #   django-rest-framework
     #   drf-jwt
     #   edx-drf-extensions
 drf-jwt==1.19.2
     # via edx-drf-extensions
-edx-django-utils==5.0.1
+edx-django-utils==5.1.0
     # via
     #   edx-drf-extensions
     #   edx-toggles
@@ -75,7 +75,7 @@ jinja2==3.1.2
     # via code-annotations
 markupsafe==2.1.1
     # via jinja2
-newrelic==8.1.0.180
+newrelic==8.2.0.181
     # via edx-django-utils
 pbr==5.10.0
     # via stevedore
@@ -99,7 +99,7 @@ python-dateutil==2.8.2
     # via edx-drf-extensions
 python-slugify==6.1.2
     # via code-annotations
-pytz==2022.2.1
+pytz==2022.4
     # via
     #   django
     #   djangorestframework
@@ -116,7 +116,7 @@ six==1.16.0
     #   edx-drf-extensions
     #   pyjwkest
     #   python-dateutil
-sqlparse==0.4.2
+sqlparse==0.4.3
     # via django
 stevedore==4.0.0
     # via
