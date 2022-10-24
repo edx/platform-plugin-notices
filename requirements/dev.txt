@@ -8,7 +8,7 @@ asgiref==3.5.2
     # via
     #   -r requirements/quality.txt
     #   django
-astroid==2.12.10
+astroid==2.12.12
     # via
     #   -r requirements/quality.txt
     #   pylint
@@ -17,7 +17,7 @@ attrs==22.1.0
     # via
     #   -r requirements/quality.txt
     #   pytest
-black==22.8.0
+black==22.10.0
     # via -r requirements/quality.txt
 bleach==5.0.1
     # via
@@ -82,7 +82,7 @@ cryptography==38.0.1
     #   secretstorage
 diff-cover==7.0.1
     # via -r requirements/dev.in
-dill==0.3.5.1
+dill==0.3.6
     # via
     #   -r requirements/quality.txt
     #   pylint
@@ -90,7 +90,7 @@ distlib==0.3.6
     # via
     #   -r requirements/ci.txt
     #   virtualenv
-django==3.2.15
+django==3.2.16
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/quality.txt
@@ -135,14 +135,14 @@ drf-jwt==1.19.2
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
-edx-django-utils==5.1.0
+edx-django-utils==5.2.0
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
     #   edx-toggles
 edx-drf-extensions==8.3.1
     # via -r requirements/quality.txt
-edx-i18n-tools==0.9.1
+edx-i18n-tools==0.9.2
     # via -r requirements/dev.in
 edx-lint==5.3.0
     # via -r requirements/quality.txt
@@ -154,7 +154,7 @@ edx-toggles==5.0.0
     # via -r requirements/quality.txt
 factory-boy==3.2.1
     # via -r requirements/quality.txt
-faker==15.0.0
+faker==15.1.1
     # via
     #   -r requirements/quality.txt
     #   factory-boy
@@ -215,7 +215,7 @@ mccabe==0.7.0
     # via
     #   -r requirements/quality.txt
     #   pylint
-more-itertools==8.14.0
+more-itertools==9.0.0
     # via
     #   -r requirements/quality.txt
     #   jaraco-classes
@@ -223,7 +223,7 @@ mypy-extensions==0.4.3
     # via
     #   -r requirements/quality.txt
     #   black
-newrelic==8.2.0.181
+newrelic==8.2.1
     # via
     #   -r requirements/quality.txt
     #   edx-django-utils
@@ -241,7 +241,7 @@ pathspec==0.10.1
     # via
     #   -r requirements/quality.txt
     #   black
-pbr==5.10.0
+pbr==5.11.0
     # via
     #   -r requirements/quality.txt
     #   stevedore
@@ -249,7 +249,7 @@ pep517==0.13.0
     # via
     #   -r requirements/pip-tools.txt
     #   build
-pip-tools==6.8.0
+pip-tools==6.9.0
     # via -r requirements/pip-tools.txt
 pkginfo==1.8.3
     # via
@@ -271,7 +271,7 @@ pluggy==1.0.0
     #   tox
 polib==1.1.1
     # via edx-i18n-tools
-psutil==5.9.2
+psutil==5.9.3
     # via
     #   -r requirements/quality.txt
     #   edx-django-utils
@@ -303,12 +303,12 @@ pyjwkest==1.4.2
     # via
     #   -r requirements/quality.txt
     #   edx-drf-extensions
-pyjwt[crypto]==2.5.0
+pyjwt[crypto]==2.6.0
     # via
     #   -r requirements/quality.txt
     #   drf-jwt
     #   edx-drf-extensions
-pylint==2.15.3
+pylint==2.15.5
     # via
     #   -r requirements/quality.txt
     #   edx-lint
@@ -360,7 +360,7 @@ python-slugify==6.1.2
     # via
     #   -r requirements/quality.txt
     #   code-annotations
-pytz==2022.4
+pytz==2022.5
     # via
     #   -r requirements/quality.txt
     #   django
@@ -383,7 +383,7 @@ requests==2.28.1
     #   pyjwkest
     #   requests-toolbelt
     #   twine
-requests-toolbelt==0.9.1
+requests-toolbelt==0.10.0
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -421,7 +421,7 @@ sqlparse==0.4.3
     # via
     #   -r requirements/quality.txt
     #   django
-stevedore==4.0.0
+stevedore==4.1.0
     # via
     #   -r requirements/quality.txt
     #   code-annotations
@@ -455,11 +455,7 @@ tox-battery==0.6.1
     # via -r requirements/dev.in
 twine==4.0.1
     # via -r requirements/quality.txt
-types-cryptography==3.3.23
-    # via
-    #   -r requirements/quality.txt
-    #   pyjwt
-typing-extensions==4.3.0
+typing-extensions==4.4.0
     # via
     #   -r requirements/quality.txt
     #   astroid
@@ -488,7 +484,7 @@ wrapt==1.14.1
     # via
     #   -r requirements/quality.txt
     #   astroid
-zipp==3.8.1
+zipp==3.10.0
     # via
     #   -r requirements/quality.txt
     #   importlib-metadata
