@@ -78,7 +78,7 @@ drf-jwt==1.19.2
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
-edx-django-utils==5.1.0
+edx-django-utils==5.2.0
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
@@ -93,7 +93,7 @@ edx-toggles==5.0.0
     # via -r requirements/base.txt
 factory-boy==3.2.1
     # via -r requirements/test.in
-faker==15.0.0
+faker==15.1.1
     # via factory-boy
 future==0.18.2
     # via
@@ -113,19 +113,19 @@ markupsafe==2.1.1
     # via
     #   -r requirements/base.txt
     #   jinja2
-newrelic==8.2.0.181
+newrelic==8.2.1
     # via
     #   -r requirements/base.txt
     #   edx-django-utils
 packaging==21.3
     # via pytest
-pbr==5.10.0
+pbr==5.11.0
     # via
     #   -r requirements/base.txt
     #   stevedore
 pluggy==1.0.0
     # via pytest
-psutil==5.9.2
+psutil==5.9.3
     # via
     #   -r requirements/base.txt
     #   edx-django-utils
@@ -143,7 +143,7 @@ pyjwkest==1.4.2
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
-pyjwt[crypto]==2.5.0
+pyjwt[crypto]==2.6.0
     # via
     #   -r requirements/base.txt
     #   drf-jwt
@@ -175,7 +175,7 @@ python-slugify==6.1.2
     # via
     #   -r requirements/base.txt
     #   code-annotations
-pytz==2022.4
+pytz==2022.5
     # via
     #   -r requirements/base.txt
     #   django
@@ -203,7 +203,7 @@ sqlparse==0.4.3
     # via
     #   -r requirements/base.txt
     #   django
-stevedore==4.0.0
+stevedore==4.1.0
     # via
     #   -r requirements/base.txt
     #   code-annotations
@@ -217,10 +217,6 @@ tomli==2.0.1
     # via
     #   coverage
     #   pytest
-types-cryptography==3.3.23
-    # via
-    #   -r requirements/base.txt
-    #   pyjwt
 urllib3==1.26.12
     # via
     #   -r requirements/base.txt

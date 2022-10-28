@@ -48,7 +48,7 @@ cryptography==38.0.1
     # via
     #   -r requirements/test.txt
     #   pyjwt
-django==3.2.15
+django==3.2.16
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -96,7 +96,7 @@ drf-jwt==1.19.2
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
-edx-django-utils==5.1.0
+edx-django-utils==5.2.0
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
@@ -113,7 +113,7 @@ edx-toggles==5.0.0
     # via -r requirements/test.txt
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==15.0.0
+faker==15.1.1
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -142,7 +142,7 @@ markupsafe==2.1.1
     # via
     #   -r requirements/test.txt
     #   jinja2
-newrelic==8.2.0.181
+newrelic==8.2.1
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
@@ -151,7 +151,7 @@ packaging==21.3
     #   -r requirements/test.txt
     #   pytest
     #   sphinx
-pbr==5.10.0
+pbr==5.11.0
     # via
     #   -r requirements/test.txt
     #   stevedore
@@ -159,7 +159,7 @@ pluggy==1.0.0
     # via
     #   -r requirements/test.txt
     #   pytest
-psutil==5.9.2
+psutil==5.9.3
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
@@ -184,7 +184,7 @@ pyjwkest==1.4.2
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
-pyjwt[crypto]==2.5.0
+pyjwt[crypto]==2.6.0
     # via
     #   -r requirements/test.txt
     #   drf-jwt
@@ -219,7 +219,7 @@ python-slugify==6.1.2
     # via
     #   -r requirements/test.txt
     #   code-annotations
-pytz==2022.4
+pytz==2022.5
     # via
     #   -r requirements/test.txt
     #   babel
@@ -253,7 +253,7 @@ six==1.16.0
     #   python-dateutil
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==5.2.3
+sphinx==5.3.0
     # via
     #   -r requirements/doc.in
     #   edx-sphinx-theme
@@ -273,7 +273,7 @@ sqlparse==0.4.3
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==4.0.0
+stevedore==4.1.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -290,15 +290,11 @@ tomli==2.0.1
     #   coverage
     #   doc8
     #   pytest
-types-cryptography==3.3.23
-    # via
-    #   -r requirements/test.txt
-    #   pyjwt
 urllib3==1.26.12
     # via
     #   -r requirements/test.txt
     #   requests
 webencodings==0.5.1
     # via bleach
-zipp==3.8.1
+zipp==3.10.0
     # via importlib-metadata
