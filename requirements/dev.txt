@@ -75,7 +75,7 @@ coverage[toml]==6.5.0
     #   -r requirements/quality.txt
     #   codecov
     #   pytest-cov
-cryptography==38.0.1
+cryptography==38.0.3
     # via
     #   -r requirements/quality.txt
     #   pyjwt
@@ -152,13 +152,13 @@ edx-opaque-keys==2.3.0
     #   edx-drf-extensions
 edx-toggles==5.0.0
     # via -r requirements/quality.txt
-exceptiongroup==1.0.0
+exceptiongroup==1.0.1
     # via
     #   -r requirements/quality.txt
     #   pytest
 factory-boy==3.2.1
     # via -r requirements/quality.txt
-faker==15.1.1
+faker==15.2.0
     # via
     #   -r requirements/quality.txt
     #   factory-boy
@@ -203,7 +203,7 @@ jinja2==3.1.2
     #   -r requirements/quality.txt
     #   code-annotations
     #   diff-cover
-keyring==23.9.3
+keyring==23.11.0
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -259,7 +259,7 @@ pkginfo==1.8.3
     # via
     #   -r requirements/quality.txt
     #   twine
-platformdirs==2.5.2
+platformdirs==2.5.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -330,7 +330,7 @@ pylint-plugin-utils==0.7
     #   -r requirements/quality.txt
     #   pylint-celery
     #   pylint-django
-pymongo==3.12.3
+pymongo==3.13.0
     # via
     #   -r requirements/quality.txt
     #   edx-opaque-keys
@@ -362,7 +362,7 @@ python-slugify==6.1.2
     # via
     #   -r requirements/quality.txt
     #   code-annotations
-pytz==2022.5
+pytz==2022.6
     # via
     #   -r requirements/quality.txt
     #   django
@@ -372,7 +372,7 @@ pyyaml==6.0
     #   -r requirements/quality.txt
     #   code-annotations
     #   edx-i18n-tools
-readme-renderer==37.2
+readme-renderer==37.3
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -478,7 +478,7 @@ webencodings==0.5.1
     # via
     #   -r requirements/quality.txt
     #   bleach
-wheel==0.37.1
+wheel==0.38.2
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
