@@ -118,13 +118,13 @@ edx-opaque-keys==2.3.0
     #   edx-drf-extensions
 edx-toggles==5.0.0
     # via -r requirements/test.txt
-exceptiongroup==1.0.1
+exceptiongroup==1.0.2
     # via
     #   -r requirements/test.txt
     #   pytest
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==15.2.0
+faker==15.3.1
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -180,7 +180,7 @@ packaging==21.3
     # via
     #   -r requirements/test.txt
     #   pytest
-pathspec==0.10.1
+pathspec==0.10.2
     # via black
 pbr==5.11.0
     # via
@@ -188,7 +188,7 @@ pbr==5.11.0
     #   stevedore
 pkginfo==1.8.3
     # via twine
-platformdirs==2.5.3
+platformdirs==2.5.4
     # via
     #   black
     #   pylint
@@ -196,7 +196,7 @@ pluggy==1.0.0
     # via
     #   -r requirements/test.txt
     #   pytest
-psutil==5.9.3
+psutil==5.9.4
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
@@ -313,7 +313,7 @@ sqlparse==0.4.3
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==4.1.0
+stevedore==4.1.1
     # via
     #   -r requirements/test.txt
     #   code-annotations
