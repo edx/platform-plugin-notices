@@ -37,7 +37,7 @@ django-crum==0.7.9
     # via
     #   edx-django-utils
     #   edx-toggles
-django-model-utils==4.2.0
+django-model-utils==4.3.1
     # via -r requirements/base.in
 django-rest-framework==0.1.0
     # via -r requirements/base.in
@@ -97,7 +97,7 @@ pynacl==1.5.0
     # via edx-django-utils
 python-dateutil==2.8.2
     # via edx-drf-extensions
-python-slugify==6.1.2
+python-slugify==7.0.0
     # via code-annotations
 pytz==2022.6
     # via
