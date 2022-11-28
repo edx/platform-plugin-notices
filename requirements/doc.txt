@@ -44,7 +44,7 @@ coverage[toml]==6.5.0
     # via
     #   -r requirements/test.txt
     #   pytest-cov
-cryptography==38.0.3
+cryptography==38.0.4
     # via
     #   -r requirements/test.txt
     #   pyjwt
@@ -117,7 +117,7 @@ exceptiongroup==1.0.4
     #   pytest
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==15.3.2
+faker==15.3.3
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -131,7 +131,7 @@ idna==3.4
     #   requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==5.0.0
+importlib-metadata==5.1.0
     # via sphinx
 iniconfig==1.1.1
     # via
@@ -171,7 +171,7 @@ pycparser==2.21
     # via
     #   -r requirements/test.txt
     #   cffi
-pycryptodomex==3.15.0
+pycryptodomex==3.16.0
     # via
     #   -r requirements/test.txt
     #   pyjwkest
@@ -290,11 +290,11 @@ tomli==2.0.1
     #   coverage
     #   doc8
     #   pytest
-urllib3==1.26.12
+urllib3==1.26.13
     # via
     #   -r requirements/test.txt
     #   requests
 webencodings==0.5.1
     # via bleach
-zipp==3.10.0
+zipp==3.11.0
     # via importlib-metadata
