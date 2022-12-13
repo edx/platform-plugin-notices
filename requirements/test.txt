@@ -10,7 +10,7 @@ asgiref==3.5.2
     #   django
 attrs==22.1.0
     # via pytest
-certifi==2022.9.24
+certifi==2022.12.7
     # via
     #   -r requirements/base.txt
     #   requests
@@ -115,11 +115,11 @@ markupsafe==2.1.1
     # via
     #   -r requirements/base.txt
     #   jinja2
-newrelic==8.4.0
+newrelic==8.5.0
     # via
     #   -r requirements/base.txt
     #   edx-django-utils
-packaging==21.3
+packaging==22.0
     # via pytest
 pbr==5.11.0
     # via
@@ -156,8 +156,6 @@ pynacl==1.5.0
     # via
     #   -r requirements/base.txt
     #   edx-django-utils
-pyparsing==3.0.9
-    # via packaging
 pytest==7.2.0
     # via
     #   pytest-cov
