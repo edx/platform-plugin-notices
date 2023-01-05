@@ -10,3 +10,7 @@
 
 # Common constraints for edx repos
 -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+
+# Version of sphinx is pinned to v5.3.0 because of breaking changes in v6.
+# re-evaluated as part of APER-2220
+sphinx<6.0
