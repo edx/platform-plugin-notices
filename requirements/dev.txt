@@ -8,7 +8,7 @@ asgiref==3.6.0
     # via
     #   -r requirements/quality.txt
     #   django
-astroid==2.12.13
+astroid==2.13.2
     # via
     #   -r requirements/quality.txt
     #   pylint
@@ -69,7 +69,7 @@ commonmark==0.9.1
     # via
     #   -r requirements/quality.txt
     #   rich
-coverage[toml]==7.0.3
+coverage[toml]==7.0.4
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -185,7 +185,7 @@ importlib-resources==5.10.2
     # via
     #   -r requirements/quality.txt
     #   keyring
-iniconfig==1.1.1
+iniconfig==2.0.0
     # via
     #   -r requirements/quality.txt
     #   pytest
@@ -235,7 +235,7 @@ newrelic==8.5.0
     # via
     #   -r requirements/quality.txt
     #   edx-django-utils
-packaging==22.0
+packaging==23.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/pip-tools.txt
@@ -259,7 +259,7 @@ pep517==0.13.0
     #   build
 pip-tools==6.12.1
     # via -r requirements/pip-tools.txt
-pkginfo==1.9.4
+pkginfo==1.9.6
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -297,7 +297,7 @@ pycryptodomex==3.16.0
     # via
     #   -r requirements/quality.txt
     #   pyjwkest
-pydocstyle==6.2.2
+pydocstyle==6.2.3
     # via -r requirements/quality.txt
 pygments==2.14.0
     # via
@@ -314,7 +314,7 @@ pyjwt[crypto]==2.6.0
     #   -r requirements/quality.txt
     #   drf-jwt
     #   edx-drf-extensions
-pylint==2.15.9
+pylint==2.15.10
     # via
     #   -r requirements/quality.txt
     #   edx-lint
@@ -391,7 +391,7 @@ rfc3986==2.0.0
     # via
     #   -r requirements/quality.txt
     #   twine
-rich==13.0.0
+rich==13.0.1
     # via
     #   -r requirements/quality.txt
     #   twine
