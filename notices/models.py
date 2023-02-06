@@ -63,7 +63,7 @@ class TranslatedNoticeContent(TimeStampedModel):
             "The language code (e.g. en, es-419). Must be a released language in DarkLang if DarkLang is enabled."
         ),
     )
-    html_content = models.TextField(help_text=("HTML content to be included in a notice view's <body> block."))
+    html_content = models.TextField(help_text="HTML content to be included in a notice view's <body> block.")
     history = HistoricalRecords(app="notices")
 
     class Meta:
