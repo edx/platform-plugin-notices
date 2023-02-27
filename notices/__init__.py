@@ -2,6 +2,6 @@
 An edx-platform plugin which manages notices that must be acknowledged.
 """
 
-__version__ = "0.14.36"
+__version__ = "0.14.37"
 
 default_app_config = "notices.apps.NoticesConfig"  # pylint: disable=invalid-name
