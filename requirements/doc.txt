@@ -111,7 +111,7 @@ edx-sphinx-theme==3.1.0
     # via -r requirements/doc.in
 edx-toggles==5.0.0
     # via -r requirements/test.txt
-exceptiongroup==1.1.0
+exceptiongroup==1.1.1
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -288,7 +288,7 @@ tomli==2.0.1
     #   coverage
     #   doc8
     #   pytest
-urllib3==1.26.14
+urllib3==1.26.15
     # via
     #   -r requirements/test.txt
     #   requests
