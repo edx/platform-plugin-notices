@@ -10,10 +10,6 @@ asgiref==3.6.0
     # via
     #   -r requirements/test.txt
     #   django
-attrs==22.2.0
-    # via
-    #   -r requirements/test.txt
-    #   pytest
 babel==2.12.1
     # via sphinx
 bleach==6.0.0
@@ -40,7 +36,7 @@ code-annotations==1.3.0
     # via
     #   -r requirements/test.txt
     #   edx-toggles
-coverage[toml]==7.2.2
+coverage[toml]==7.2.3
     # via
     #   -r requirements/test.txt
     #   pytest-cov
@@ -117,7 +113,7 @@ exceptiongroup==1.1.1
     #   pytest
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==18.3.2
+faker==18.4.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -131,7 +127,7 @@ idna==3.4
     #   requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==6.1.0
+importlib-metadata==6.3.0
     # via sphinx
 iniconfig==2.0.0
     # via
@@ -175,7 +171,7 @@ pycryptodomex==3.17
     # via
     #   -r requirements/test.txt
     #   pyjwkest
-pygments==2.14.0
+pygments==2.15.0
     # via
     #   doc8
     #   readme-renderer
@@ -197,7 +193,7 @@ pynacl==1.5.0
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
-pytest==7.2.2
+pytest==7.3.0
     # via
     #   -r requirements/test.txt
     #   pytest-cov
