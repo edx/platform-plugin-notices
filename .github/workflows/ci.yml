@@ -41,7 +41,7 @@ jobs:
         # Although code coverage is a "quality" concern, we need the coverage report that only exists after running the
         # test suite, and this allows us to not run it twice.
         if: matrix.python-version == '3.8' && matrix.toxenv == 'py38'
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v3
         with:
           flags: unittests
           fail_ci_if_error: true
