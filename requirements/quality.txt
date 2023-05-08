@@ -16,7 +16,7 @@ black==23.3.0
     # via -r requirements/quality.in
 bleach==6.0.0
     # via readme-renderer
-certifi==2022.12.7
+certifi==2023.5.7
     # via
     #   -r requirements/test.txt
     #   requests
@@ -55,7 +55,7 @@ cryptography==40.0.2
     #   secretstorage
 dill==0.3.6
     # via pylint
-django==3.2.18
+django==3.2.19
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -118,7 +118,7 @@ exceptiongroup==1.1.1
     #   pytest
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==18.6.0
+faker==18.6.2
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -226,7 +226,7 @@ pyjwt[crypto]==2.6.0
     #   -r requirements/test.txt
     #   drf-jwt
     #   edx-drf-extensions
-pylint==2.17.3
+pylint==2.17.4
     # via
     #   edx-lint
     #   pylint-celery
@@ -277,7 +277,7 @@ pyyaml==6.0
     #   code-annotations
 readme-renderer==37.3
     # via twine
-requests==2.29.0
+requests==2.30.0
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
@@ -337,7 +337,7 @@ typing-extensions==4.5.0
     #   black
     #   pylint
     #   rich
-urllib3==1.26.15
+urllib3==2.0.2
     # via
     #   -r requirements/test.txt
     #   requests
