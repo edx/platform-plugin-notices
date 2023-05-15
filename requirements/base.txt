@@ -87,7 +87,7 @@ pycryptodomex==3.17
     # via pyjwkest
 pyjwkest==1.4.2
     # via edx-drf-extensions
-pyjwt[crypto]==2.6.0
+pyjwt[crypto]==2.7.0
     # via
     #   drf-jwt
     #   edx-drf-extensions
@@ -118,7 +118,7 @@ six==1.16.0
     #   python-dateutil
 sqlparse==0.4.4
     # via django
-stevedore==5.0.0
+stevedore==5.1.0
     # via
     #   code-annotations
     #   edx-django-utils

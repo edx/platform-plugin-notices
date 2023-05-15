@@ -8,7 +8,7 @@ asgiref==3.6.0
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.15.4
+astroid==2.15.5
     # via
     #   pylint
     #   pylint-celery
@@ -91,7 +91,7 @@ djangorestframework==3.14.0
     #   django-rest-framework
     #   drf-jwt
     #   edx-drf-extensions
-docutils==0.19
+docutils==0.20
     # via readme-renderer
 drf-jwt==1.19.2
     # via
@@ -118,7 +118,7 @@ exceptiongroup==1.1.1
     #   pytest
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==18.6.2
+faker==18.7.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -189,7 +189,7 @@ pbr==5.11.1
     #   stevedore
 pkginfo==1.9.6
     # via twine
-platformdirs==3.5.0
+platformdirs==3.5.1
     # via
     #   black
     #   pylint
@@ -221,7 +221,7 @@ pyjwkest==1.4.2
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
-pyjwt[crypto]==2.6.0
+pyjwt[crypto]==2.7.0
     # via
     #   -r requirements/test.txt
     #   drf-jwt
@@ -236,7 +236,7 @@ pylint-celery==0.3
     # via edx-lint
 pylint-django==2.5.3
     # via edx-lint
-pylint-plugin-utils==0.7
+pylint-plugin-utils==0.8.1
     # via
     #   pylint-celery
     #   pylint-django
@@ -310,7 +310,7 @@ sqlparse==0.4.4
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==5.0.0
+stevedore==5.1.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
