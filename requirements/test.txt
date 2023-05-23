@@ -82,7 +82,9 @@ edx-django-utils==5.4.0
     #   edx-drf-extensions
     #   edx-toggles
 edx-drf-extensions==8.7.0
-    # via -r requirements/base.txt
+    # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   -r requirements/base.txt
 edx-opaque-keys==2.3.0
     # via
     #   -r requirements/base.txt
@@ -93,7 +95,7 @@ exceptiongroup==1.1.1
     # via pytest
 factory-boy==3.2.1
     # via -r requirements/test.in
-faker==18.7.0
+faker==18.9.0
     # via factory-boy
 future==0.18.3
     # via
@@ -133,7 +135,7 @@ pycparser==2.21
     # via
     #   -r requirements/base.txt
     #   cffi
-pycryptodomex==3.17
+pycryptodomex==3.18.0
     # via
     #   -r requirements/base.txt
     #   pyjwkest

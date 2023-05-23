@@ -62,7 +62,9 @@ edx-django-utils==5.4.0
     #   edx-drf-extensions
     #   edx-toggles
 edx-drf-extensions==8.7.0
-    # via -r requirements/base.in
+    # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   -r requirements/base.in
 edx-opaque-keys==2.3.0
     # via edx-drf-extensions
 edx-toggles==5.0.0
@@ -83,7 +85,7 @@ psutil==5.9.5
     # via edx-django-utils
 pycparser==2.21
     # via cffi
-pycryptodomex==3.17
+pycryptodomex==3.18.0
     # via pyjwkest
 pyjwkest==1.4.2
     # via edx-drf-extensions
