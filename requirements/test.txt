@@ -31,9 +31,9 @@ code-annotations==1.3.0
     #   -r requirements/base.txt
     #   -r requirements/test.in
     #   edx-toggles
-coverage[toml]==7.2.6
+coverage[toml]==7.2.7
     # via pytest-cov
-cryptography==40.0.2
+cryptography==41.0.1
     # via
     #   -r requirements/base.txt
     #   pyjwt
@@ -76,7 +76,7 @@ drf-jwt==1.19.2
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
-edx-django-utils==5.4.0
+edx-django-utils==5.5.0
     # via
     #   -r requirements/base.txt
     #   edx-drf-extensions
@@ -93,7 +93,7 @@ exceptiongroup==1.1.1
     # via pytest
 factory-boy==3.2.1
     # via -r requirements/test.in
-faker==18.9.0
+faker==18.10.1
     # via factory-boy
 idna==3.4
     # via
@@ -105,7 +105,7 @@ jinja2==3.1.2
     # via
     #   -r requirements/base.txt
     #   code-annotations
-markupsafe==2.1.2
+markupsafe==2.1.3
     # via
     #   -r requirements/base.txt
     #   jinja2
@@ -199,7 +199,7 @@ tomli==2.0.1
     # via
     #   coverage
     #   pytest
-typing-extensions==4.6.2
+typing-extensions==4.6.3
     # via
     #   -r requirements/base.txt
     #   asgiref
