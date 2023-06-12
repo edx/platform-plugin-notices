@@ -185,7 +185,7 @@ pbr==5.11.1
     #   stevedore
 pkginfo==1.9.6
     # via twine
-platformdirs==3.5.1
+platformdirs==3.5.3
     # via
     #   black
     #   pylint
@@ -236,7 +236,7 @@ pynacl==1.5.0
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
-pytest==7.3.1
+pytest==7.3.2
     # via
     #   -r requirements/test.txt
     #   pytest-cov
@@ -325,7 +325,7 @@ typing-extensions==4.6.3
     #   black
     #   pylint
     #   rich
-urllib3==2.0.2
+urllib3==2.0.3
     # via
     #   -r requirements/test.txt
     #   requests

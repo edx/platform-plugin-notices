@@ -66,7 +66,7 @@ cryptography==41.0.1
     #   -r requirements/quality.txt
     #   pyjwt
     #   secretstorage
-diff-cover==7.5.0
+diff-cover==7.6.0
     # via -r requirements/dev.in
 dill==0.3.6
     # via
@@ -148,7 +148,7 @@ faker==18.10.1
     # via
     #   -r requirements/quality.txt
     #   factory-boy
-filelock==3.12.0
+filelock==3.12.1
     # via
     #   -r requirements/ci.txt
     #   tox
@@ -249,7 +249,7 @@ pkginfo==1.9.6
     # via
     #   -r requirements/quality.txt
     #   twine
-platformdirs==3.5.1
+platformdirs==3.5.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -324,7 +324,7 @@ pyproject-hooks==1.0.0
     # via
     #   -r requirements/pip-tools.txt
     #   build
-pytest==7.3.1
+pytest==7.3.2
     # via
     #   -r requirements/quality.txt
     #   pytest-cov
@@ -442,7 +442,7 @@ typing-extensions==4.6.3
     #   black
     #   pylint
     #   rich
-urllib3==2.0.2
+urllib3==2.0.3
     # via
     #   -r requirements/quality.txt
     #   requests
