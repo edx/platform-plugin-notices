@@ -144,7 +144,7 @@ exceptiongroup==1.1.1
     #   pytest
 factory-boy==3.2.1
     # via -r requirements/quality.txt
-faker==18.10.1
+faker==18.11.1
     # via
     #   -r requirements/quality.txt
     #   factory-boy
@@ -188,7 +188,7 @@ jinja2==3.1.2
     #   -r requirements/quality.txt
     #   code-annotations
     #   diff-cover
-keyring==23.13.1
+keyring==24.2.0
     # via
     #   -r requirements/quality.txt
     #   twine
@@ -249,14 +249,14 @@ pkginfo==1.9.6
     # via
     #   -r requirements/quality.txt
     #   twine
-platformdirs==3.6.0
+platformdirs==3.8.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   black
     #   pylint
     #   virtualenv
-pluggy==1.1.0
+pluggy==1.2.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
@@ -324,7 +324,7 @@ pyproject-hooks==1.0.0
     # via
     #   -r requirements/pip-tools.txt
     #   build
-pytest==7.3.2
+pytest==7.4.0
     # via
     #   -r requirements/quality.txt
     #   pytest-cov
@@ -352,7 +352,7 @@ pyyaml==6.0
     #   -r requirements/quality.txt
     #   code-annotations
     #   edx-i18n-tools
-readme-renderer==37.3
+readme-renderer==40.0
     # via
     #   -r requirements/quality.txt
     #   twine
