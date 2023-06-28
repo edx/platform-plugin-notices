@@ -113,7 +113,7 @@ exceptiongroup==1.1.1
     #   pytest
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==18.10.1
+faker==18.11.1
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -151,7 +151,7 @@ pbr==5.11.1
     # via
     #   -r requirements/test.txt
     #   stevedore
-pluggy==1.1.0
+pluggy==1.2.0
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -181,7 +181,7 @@ pynacl==1.5.0
     # via
     #   -r requirements/test.txt
     #   edx-django-utils
-pytest==7.3.2
+pytest==7.4.0
     # via
     #   -r requirements/test.txt
     #   pytest-cov
@@ -209,7 +209,7 @@ pyyaml==6.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
-readme-renderer==37.3
+readme-renderer==40.0
     # via -r requirements/doc.in
 requests==2.31.0
     # via
@@ -233,7 +233,6 @@ snowballstemmer==2.2.0
     # via sphinx
 sphinx==5.3.0
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -c requirements/constraints.txt
     #   -r requirements/doc.in
     #   edx-sphinx-theme
