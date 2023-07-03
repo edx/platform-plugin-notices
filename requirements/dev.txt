@@ -76,7 +76,7 @@ distlib==0.3.6
     # via
     #   -r requirements/ci.txt
     #   virtualenv
-django==3.2.19
+django==3.2.20
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/quality.txt
@@ -138,13 +138,13 @@ edx-opaque-keys==2.3.0
     #   edx-drf-extensions
 edx-toggles==5.0.0
     # via -r requirements/quality.txt
-exceptiongroup==1.1.1
+exceptiongroup==1.1.2
     # via
     #   -r requirements/quality.txt
     #   pytest
 factory-boy==3.2.1
     # via -r requirements/quality.txt
-faker==18.11.1
+faker==18.11.2
     # via
     #   -r requirements/quality.txt
     #   factory-boy
@@ -220,7 +220,7 @@ mypy-extensions==1.0.0
     # via
     #   -r requirements/quality.txt
     #   black
-newrelic==8.8.0
+newrelic==8.8.1
     # via
     #   -r requirements/quality.txt
     #   edx-django-utils
@@ -243,7 +243,7 @@ pbr==5.11.1
     # via
     #   -r requirements/quality.txt
     #   stevedore
-pip-tools==6.13.0
+pip-tools==6.14.0
     # via -r requirements/pip-tools.txt
 pkginfo==1.9.6
     # via
@@ -417,6 +417,7 @@ tomli==2.0.1
     #   black
     #   build
     #   coverage
+    #   pip-tools
     #   pylint
     #   pyproject-hooks
     #   pytest
@@ -434,7 +435,7 @@ tox-battery==0.6.1
     # via -r requirements/dev.in
 twine==4.0.2
     # via -r requirements/quality.txt
-typing-extensions==4.6.3
+typing-extensions==4.7.1
     # via
     #   -r requirements/quality.txt
     #   asgiref
