@@ -27,7 +27,7 @@ charset-normalizer==3.2.0
     # via
     #   -r requirements/test.txt
     #   requests
-click==8.1.4
+click==8.1.5
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -40,7 +40,7 @@ coverage[toml]==7.2.7
     # via
     #   -r requirements/test.txt
     #   pytest-cov
-cryptography==41.0.1
+cryptography==41.0.2
     # via
     #   -r requirements/test.txt
     #   pyjwt
@@ -113,7 +113,7 @@ exceptiongroup==1.1.2
     #   pytest
 factory-boy==3.2.1
     # via -r requirements/test.txt
-faker==18.13.0
+faker==19.1.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -273,11 +273,12 @@ typing-extensions==4.7.1
     # via
     #   -r requirements/test.txt
     #   asgiref
+    #   faker
 urllib3==2.0.3
     # via
     #   -r requirements/test.txt
     #   requests
 webencodings==0.5.1
     # via bleach
-zipp==3.16.0
+zipp==3.16.2
     # via importlib-metadata
