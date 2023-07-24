@@ -16,7 +16,7 @@ black==23.7.0
     # via -r requirements/quality.in
 bleach==6.0.0
     # via readme-renderer
-certifi==2023.5.7
+certifi==2023.7.22
     # via
     #   -r requirements/test.txt
     #   requests
@@ -29,7 +29,7 @@ charset-normalizer==3.2.0
     # via
     #   -r requirements/test.txt
     #   requests
-click==8.1.5
+click==8.1.6
     # via
     #   -r requirements/test.txt
     #   black
@@ -39,7 +39,7 @@ click==8.1.5
     #   edx-lint
 click-log==0.4.0
     # via edx-lint
-code-annotations==1.3.0
+code-annotations==1.5.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -53,7 +53,7 @@ cryptography==41.0.2
     #   -r requirements/test.txt
     #   pyjwt
     #   secretstorage
-dill==0.3.6
+dill==0.3.7
     # via pylint
 django==3.2.20
     # via
@@ -97,7 +97,7 @@ drf-jwt==1.19.2
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
-edx-django-utils==5.5.0
+edx-django-utils==5.6.0
     # via
     #   -r requirements/test.txt
     #   edx-drf-extensions
@@ -116,9 +116,9 @@ exceptiongroup==1.1.2
     # via
     #   -r requirements/test.txt
     #   pytest
-factory-boy==3.2.1
+factory-boy==3.3.0
     # via -r requirements/test.txt
-faker==19.1.0
+faker==19.2.0
     # via
     #   -r requirements/test.txt
     #   factory-boy
@@ -164,7 +164,7 @@ mccabe==0.7.0
     # via pylint
 mdurl==0.1.2
     # via markdown-it-py
-more-itertools==9.1.0
+more-itertools==10.0.0
     # via jaraco-classes
 mypy-extensions==1.0.0
     # via black
@@ -209,7 +209,7 @@ pygments==2.15.1
     # via
     #   readme-renderer
     #   rich
-pyjwt[crypto]==2.7.0
+pyjwt[crypto]==2.8.0
     # via
     #   -r requirements/test.txt
     #   drf-jwt
@@ -259,7 +259,7 @@ pytz==2023.3
     #   -r requirements/test.txt
     #   django
     #   djangorestframework
-pyyaml==6.0
+pyyaml==6.0.1
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -326,7 +326,7 @@ typing-extensions==4.7.1
     #   faker
     #   pylint
     #   rich
-urllib3==2.0.3
+urllib3==2.0.4
     # via
     #   -r requirements/test.txt
     #   requests
