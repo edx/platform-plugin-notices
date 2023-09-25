@@ -1,10 +1,10 @@
 """v1 API URLS"""
-from django.conf.urls import url
+from django.urls import path
 
 from notices.rest_api.v1 import views
 
 
 urlpatterns = [
-    url(r"^unacknowledged$", views.ListUnacknowledgedNotices.as_view(), name="unacknowledged_notices"),
-    url(r"^acknowledge$", views.AcknowledgeNotice.as_view(), name="acknowledge_notice"),
+    path("unacknowledged", views.ListUnacknowledgedNotices.as_view(), name="unacknowledged_notices"),
+    path("acknowledge", views.AcknowledgeNotice.as_view(), name="acknowledge_notice"),
 ]
