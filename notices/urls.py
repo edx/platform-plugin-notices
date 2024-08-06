@@ -1,6 +1,7 @@
 """
 URLs for notices.
 """
+
 from django.urls import include, path
 
 from notices.views import RenderNotice

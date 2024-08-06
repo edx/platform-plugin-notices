@@ -3,6 +3,7 @@ Public data structures for this app.
 
 See OEP-49 for details
 """
+
 from enum import Enum
 
 

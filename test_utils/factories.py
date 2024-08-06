@@ -1,6 +1,7 @@
 """
 Factories for notices testing.
 """
+
 import datetime
 
 import factory

@@ -1,6 +1,7 @@
 """
 Tests for the Notices app's Python API
 """
+
 import datetime
 
 from django.test import TestCase, override_settings

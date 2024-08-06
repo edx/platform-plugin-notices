@@ -1,4 +1,5 @@
 """Tests Notices API Views"""
+
 import json
 
 from django.test import TestCase

@@ -1,4 +1,5 @@
 """Admin pages for the notices app."""
+
 from django.contrib import admin
 
 from .models import AcknowledgedNotice, Notice, TranslatedNoticeContent

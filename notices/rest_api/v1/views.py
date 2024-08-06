@@ -1,4 +1,5 @@
 """API views for the notices app"""
+
 import logging
 
 from django.conf import settings

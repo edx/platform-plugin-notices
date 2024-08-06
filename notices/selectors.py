@@ -1,6 +1,7 @@
 """
 Utility functions for pulling Notice data.
 """
+
 import datetime
 
 from django.conf import settings
