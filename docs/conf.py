@@ -93,8 +93,8 @@ top_level_doc = "index"
 
 # General information about the project.
 project = "platform-plugin-notices"
-copyright = '2024, edX Inc.'  # pylint: disable=redefined-builtin
-author = 'edX org'
+copyright = "2024, edX Inc."  # pylint: disable=redefined-builtin
+author = "edX org"
 project_title = "platform-plugin-notices"
 documentation_title = "{project_title}".format(project_title=project_title)
 
@@ -172,8 +172,8 @@ html_theme = "sphinx_book_theme"
 # documentation.
 #
 html_theme_options = {
-    "repository_url": 'https://github.com/edx/platform-plugin-notices',
-    "repository_branch": 'main',
+    "repository_url": "https://github.com/edx/platform-plugin-notices",
+    "repository_branch": "main",
     "path_to_docs": "docs/",
     "use_repository_button": True,
     "use_issues_button": True,
@@ -199,14 +199,14 @@ html_theme_options = {
                 rel="license"
                 href="https://creativecommons.org/licenses/by-sa/4.0/"
             >Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-    """
+    """,
 }
 
 html_logo = "https://logos.openedx.org/open-edx-logo-color.png"
 html_favicon = "https://logos.openedx.org/open-edx-favicon.ico"
 
-if not os.environ.get('DJANGO_SETTINGS_MODULE'):
-   os.environ['DJANGO_SETTINGS_MODULE'] = 'test_utils.test_settings'
+if not os.environ.get("DJANGO_SETTINGS_MODULE"):
+    os.environ["DJANGO_SETTINGS_MODULE"] = "test_utils.test_settings"
 
 
 # The name for this set of Sphinx documents.
