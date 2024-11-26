@@ -1,6 +1,7 @@
 """
 Functions to add context to LMS pages via the plugins context feature.
 """
+
 from notices.api import get_unacknowledged_notices_for_user
 from notices.toggles import ENABLE_NOTICES
 

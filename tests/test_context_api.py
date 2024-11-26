@@ -1,6 +1,7 @@
 """
 Tests for the plugin context functions.
 """
+
 from django.test import TestCase
 from edx_toggles.toggles.testutils import override_waffle_flag
 from rest_framework.reverse import reverse

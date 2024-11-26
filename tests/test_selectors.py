@@ -1,6 +1,7 @@
 """
 Tests for the Notices app's data fetching utilities.
 """
+
 import datetime
 
 from django.conf import settings

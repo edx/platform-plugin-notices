@@ -1,4 +1,5 @@
 """This file houses all the toggles, namely waffle switches and flags."""
+
 from edx_toggles.toggles import WaffleFlag
 
 

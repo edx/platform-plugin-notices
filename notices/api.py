@@ -1,6 +1,7 @@
 """
 Python API for Notice data.
 """
+
 import datetime
 import logging
 

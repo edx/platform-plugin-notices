@@ -1,6 +1,7 @@
 """
 Database models for notices.
 """
+
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils import timezone
