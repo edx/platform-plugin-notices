@@ -6,30 +6,30 @@
 #
 asgiref==3.8.1
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   django
-astroid==3.3.5
+astroid==3.3.8
     # via
     #   pylint
     #   pylint-celery
-black==24.10.0
+black==25.1.0
     # via -r requirements/quality.in
-certifi==2024.8.30
+certifi==2025.1.31
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   requests
 cffi==1.17.1
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   cryptography
     #   pynacl
-charset-normalizer==3.4.0
+charset-normalizer==3.4.1
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   requests
-click==8.1.7
+click==8.1.8
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   black
     #   click-log
     #   code-annotations
@@ -37,25 +37,26 @@ click==8.1.7
     #   edx-lint
 click-log==0.4.0
     # via edx-lint
-code-annotations==1.8.0
+code-annotations==2.2.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-lint
     #   edx-toggles
-coverage[toml]==7.6.4
+coverage[toml]==7.6.12
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   pytest-cov
-cryptography==43.0.3
+cryptography==44.0.2
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   pyjwt
+    #   secretstorage
 dill==0.3.9
     # via pylint
-django==4.2.16
+django==4.2.19
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   django-crum
     #   django-model-utils
     #   django-waffle
@@ -66,71 +67,71 @@ django==4.2.16
     #   edx-toggles
 django-crum==0.7.9
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-django-utils
     #   edx-toggles
 django-model-utils==5.0.0
-    # via -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    # via -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
 django-rest-framework==0.1.0
-    # via -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    # via -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
 django-simple-history==3.0.0
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
-django-waffle==4.1.0
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
+django-waffle==4.2.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-django-utils
     #   edx-drf-extensions
     #   edx-toggles
 djangorestframework==3.15.2
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   django-rest-framework
     #   drf-jwt
     #   edx-drf-extensions
 dnspython==2.7.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   pymongo
 docutils==0.21.2
     # via readme-renderer
 drf-jwt==1.19.2
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-drf-extensions
-edx-django-utils==7.0.0
+edx-django-utils==7.2.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-drf-extensions
     #   edx-toggles
 edx-drf-extensions==10.5.0
-    # via -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
-edx-lint==5.4.1
+    # via -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
+edx-lint==5.6.0
     # via -r requirements/quality.in
 edx-opaque-keys==2.11.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-drf-extensions
-edx-toggles==5.2.0
-    # via -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
-factory-boy==3.3.1
-    # via -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
-faker==30.8.1
+edx-toggles==5.3.0
+    # via -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
+factory-boy==3.3.3
+    # via -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
+faker==36.1.1
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   factory-boy
+id==1.5.0
+    # via twine
 idna==3.10
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   requests
-importlib-metadata==8.5.0
-    # via twine
 iniconfig==2.0.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   pytest
-isort==5.13.2
+isort==6.0.1
     # via
     #   -r requirements/quality.in
     #   pylint
@@ -140,77 +141,80 @@ jaraco-context==6.0.1
     # via keyring
 jaraco-functools==4.1.0
     # via keyring
-jinja2==3.1.4
+jeepney==0.9.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   keyring
+    #   secretstorage
+jinja2==3.1.5
+    # via
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   code-annotations
-keyring==25.5.0
+keyring==25.6.0
     # via twine
 markdown-it-py==3.0.0
     # via rich
 markupsafe==3.0.2
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   jinja2
 mccabe==0.7.0
     # via pylint
 mdurl==0.1.2
     # via markdown-it-py
-more-itertools==10.5.0
+more-itertools==10.6.0
     # via
     #   jaraco-classes
     #   jaraco-functools
 mypy-extensions==1.0.0
     # via black
-newrelic==10.2.0
+newrelic==10.6.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-django-utils
-nh3==0.2.18
+nh3==0.2.21
     # via readme-renderer
-packaging==24.1
+packaging==24.2
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   black
     #   pytest
+    #   twine
 pathspec==0.12.1
     # via black
-pbr==6.1.0
+pbr==6.1.1
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   stevedore
-pkginfo==1.10.0
-    # via twine
 platformdirs==4.3.6
     # via
     #   black
     #   pylint
 pluggy==1.5.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   pytest
-psutil==6.1.0
+psutil==7.0.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-django-utils
 pycodestyle==2.12.1
     # via -r requirements/quality.in
 pycparser==2.22
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   cffi
 pydocstyle==6.3.0
     # via -r requirements/quality.in
-pygments==2.18.0
+pygments==2.19.1
     # via
     #   readme-renderer
     #   rich
-pyjwt[crypto]==2.9.0
+pyjwt[crypto]==2.10.1
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   drf-jwt
     #   edx-drf-extensions
-pylint==3.3.1
+pylint==3.3.4
     # via
     #   edx-lint
     #   pylint-celery
@@ -224,87 +228,88 @@ pylint-plugin-utils==0.8.2
     # via
     #   pylint-celery
     #   pylint-django
-pymongo==4.10.1
+pymongo==4.11.1
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-opaque-keys
 pynacl==1.5.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-django-utils
-pytest==8.3.3
+pytest==8.3.5
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   pytest-cov
     #   pytest-django
 pytest-cov==6.0.0
-    # via -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
-pytest-django==4.9.0
-    # via -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
-python-dateutil==2.9.0.post0
-    # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
-    #   faker
+    # via -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
+pytest-django==4.10.0
+    # via -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
 python-slugify==8.0.4
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   code-annotations
 pyyaml==6.0.2
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   code-annotations
 readme-renderer==44.0
     # via twine
 requests==2.32.3
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-drf-extensions
+    #   id
     #   requests-toolbelt
     #   twine
 requests-toolbelt==1.0.0
     # via twine
 rfc3986==2.0.0
     # via twine
-rich==13.9.3
+rich==13.9.4
     # via twine
+secretstorage==3.3.3
+    # via keyring
 semantic-version==2.10.0
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-drf-extensions
-six==1.16.0
-    # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
-    #   edx-lint
-    #   python-dateutil
+six==1.17.0
+    # via edx-lint
 snowballstemmer==2.2.0
     # via pydocstyle
-sqlparse==0.5.1
+sqlparse==0.5.3
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   django
-stevedore==5.3.0
+stevedore==5.4.1
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   code-annotations
     #   edx-django-utils
     #   edx-opaque-keys
 text-unidecode==1.3
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   python-slugify
 tomlkit==0.13.2
     # via pylint
-twine==5.1.1
+twine==6.1.0
     # via -r requirements/quality.in
 typing-extensions==4.12.2
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   edx-opaque-keys
+tzdata==2025.1
+    # via
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   faker
 urllib3==2.2.3
     # via
-    #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   -r /home/runner/work/platform-plugin-notices/platform-plugin-notices/requirements/test.txt
     #   requests
     #   twine
-zipp==3.20.2
-    # via importlib-metadata
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools
