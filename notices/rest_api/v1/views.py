@@ -70,7 +70,7 @@ class ListUnacknowledgedNotices(APIView):
 
         # If request is from mobile and mobile is disabled, return empty list so user
         # doesn't get forwarded anywhere
-        if in_app and not settings.FEATURES.get("NOTICES_ENABLE_MOBILE"):
+        if in_app and not settings.NOTICES_ENABLE_MOBILE:
             return Response({"results": []}, status=HTTP_200_OK)
 
         unacknowledged_active_notices = get_unacknowledged_notices_for_user(
@@ -128,7 +128,7 @@ class AcknowledgeNotice(APIView):
         (acknowledged_notice, _) = AcknowledgedNotice.objects.update_or_create(
             user=request.user, notice=notice, defaults={"response_type": acknowledgment_type}
         )
-        snooze_limit = settings.FEATURES.get("NOTICES_SNOOZE_COUNT_LIMIT")
+        snooze_limit = settings.NOTICES_SNOOZE_COUNT_LIMIT
         if snooze_limit is not None and acknowledgment_type == AcknowledgmentResponseTypes.DISMISSED:
             acknowledged_notice.snooze_count = acknowledged_notice.snooze_count + 1
             acknowledged_notice.save()

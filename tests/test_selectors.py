@@ -47,12 +47,12 @@ class TestSelectors(TestCase):
         results = get_visible_notices(self.user)
         assert list(results) == [active_notice, active_notice2]
 
-    @override_settings(FEATURES={"NOTICES_SNOOZE_HOURS": 4})
+    @override_settings(NOTICES_SNOOZE_HOURS=4)
     def test_snoozed_notices(self):
         """
         Tests that snoozed notices are only snoozed for the `NOTICES_SNOOZE_HOURS` amount of time
         """
-        SNOOZE_HOURS = settings.FEATURES["NOTICES_SNOOZE_HOURS"]
+        SNOOZE_HOURS = settings.NOTICES_SNOOZE_HOURS
 
         active_notice = NoticeFactory(active=True)
         latest_snooze_time = datetime.datetime.now() - datetime.timedelta(hours=SNOOZE_HOURS)
@@ -80,12 +80,12 @@ class TestSelectors(TestCase):
         results = get_visible_notices(self.user)
         assert len(results) == 0
 
-    @override_settings(FEATURES={"NOTICES_SNOOZE_COUNT_LIMIT": 3})
+    @override_settings(NOTICES_SNOOZE_COUNT_LIMIT=3)
     def test_snooze_count_notices(self):
         """
         Tests that notices can only be snoozed NOTICES_SNOOZE_COUNT_LIMIT times
         """
-        notices_snooze_count_limit = settings.FEATURES["NOTICES_SNOOZE_COUNT_LIMIT"]
+        notices_snooze_count_limit = settings.NOTICES_SNOOZE_COUNT_LIMIT
         active_notice = NoticeFactory(active=True)
 
         AcknowledgedNoticeFactory(
@@ -106,16 +106,14 @@ class TestSelectors(TestCase):
         results = get_visible_notices(self.user)
         assert len(results) == 0
 
-    @override_settings(
-        FEATURES={"NOTICES_SNOOZE_HOURS": 4, "NOTICES_SNOOZE_COUNT_LIMIT": 3, "NOTICES_MAX_SNOOZE_DAYS": 30}
-    )
+    @override_settings(NOTICES_SNOOZE_HOURS=4, NOTICES_SNOOZE_COUNT_LIMIT=3, NOTICES_MAX_SNOOZE_DAYS=30)
     def test_snoozed_notices_with_count(self):
         """
         Tests the interaction between snoozing a notice and the snooze limit.
         """
-        SNOOZE_HOURS = settings.FEATURES["NOTICES_SNOOZE_HOURS"]
-        notices_snooze_count_limit = settings.FEATURES["NOTICES_SNOOZE_COUNT_LIMIT"]
-        max_snooze_days = settings.FEATURES["NOTICES_MAX_SNOOZE_DAYS"]
+        SNOOZE_HOURS = settings.NOTICES_SNOOZE_HOURS
+        notices_snooze_count_limit = settings.NOTICES_SNOOZE_COUNT_LIMIT
+        max_snooze_days = settings.NOTICES_MAX_SNOOZE_DAYS
 
         active_notice = NoticeFactory(active=True)
         latest_snooze_time = datetime.datetime.now() - datetime.timedelta(hours=SNOOZE_HOURS)

@@ -37,20 +37,20 @@ def get_visible_notices(user):
     active_notices = get_active_notices(before_date=user.date_joined)
     acknowledged_notices = get_acknowledged_notices_for_user(user)
 
-    snooze_hours = settings.FEATURES.get("NOTICES_SNOOZE_HOURS")
+    snooze_hours = settings.NOTICES_SNOOZE_HOURS
     if snooze_hours is not None:
         last_valid_datetime = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=snooze_hours)
         acknowledged_notices = acknowledged_notices.exclude(
             response_type=AcknowledgmentResponseTypes.DISMISSED, modified__lte=last_valid_datetime
         )
 
-    snooze_limit = settings.FEATURES.get("NOTICES_SNOOZE_COUNT_LIMIT")
+    snooze_limit = settings.NOTICES_SNOOZE_COUNT_LIMIT
     if snooze_limit is not None:
         acknowledged_notices = acknowledged_notices.exclude(
             response_type=AcknowledgmentResponseTypes.DISMISSED, snooze_count__gt=snooze_limit
         )
 
-    max_snooze_days = settings.FEATURES.get("NOTICES_MAX_SNOOZE_DAYS")
+    max_snooze_days = settings.NOTICES_MAX_SNOOZE_DAYS
     if max_snooze_days is not None:
         current_time = datetime.datetime.now(datetime.timezone.utc)
         max_time_before_now = current_time - datetime.timedelta(days=max_snooze_days)
