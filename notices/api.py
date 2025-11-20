@@ -46,12 +46,12 @@ def can_dismiss(user, notice):
         return True
 
     snooze_count_limit_exceeded = False
-    snooze_limit = settings.FEATURES.get("NOTICES_SNOOZE_COUNT_LIMIT")
+    snooze_limit = settings.NOTICES_SNOOZE_COUNT_LIMIT
     if snooze_limit is not None and acknowledged_notice.snooze_count >= snooze_limit:
         snooze_count_limit_exceeded = True
 
     max_snooze_days_exceeded = False
-    max_snooze_days = settings.FEATURES.get("NOTICES_MAX_SNOOZE_DAYS")
+    max_snooze_days = settings.NOTICES_MAX_SNOOZE_DAYS
     if max_snooze_days is not None:
         current_time = datetime.datetime.now(datetime.timezone.utc)
         max_time_before_now = current_time - datetime.timedelta(days=max_snooze_days)

@@ -61,7 +61,7 @@ class TestPythonApi(TestCase):
         results = get_unacknowledged_notices_for_user(self.user)
         assert results == []
 
-    @override_settings(FEATURES={"NOTICES_SNOOZE_COUNT_LIMIT": 3})
+    @override_settings(NOTICES_SNOOZE_COUNT_LIMIT=3)
     def test_can_dismiss_snooze_limit_ack_dne(self):
         """
         Verifies the default behavior of the `can_dismiss` function when a acknowledgment does not exist for a
@@ -71,7 +71,7 @@ class TestPythonApi(TestCase):
 
         assert can_dismiss(self.user, notice)
 
-    @override_settings(FEATURES={"NOTICES_SNOOZE_COUNT_LIMIT": 3})
+    @override_settings(NOTICES_SNOOZE_COUNT_LIMIT=3)
     def test_can_dismiss_snooze_count_under_limit(self):
         """
         Verifies the behavior of the `can_dismiss` function when the SNOOZE_LIMIT is under the threshhold set in
@@ -84,7 +84,7 @@ class TestPythonApi(TestCase):
 
         assert can_dismiss(self.user, notice)
 
-    @override_settings(FEATURES={"NOTICES_SNOOZE_COUNT_LIMIT": 1})
+    @override_settings(NOTICES_SNOOZE_COUNT_LIMIT=1)
     def test_can_dismiss_snooze_count_above_limit(self):
         """
         Verifies the behavior of the `can_dismiss` function when the a user shouldn't be allowed to snooze anymore.
@@ -96,7 +96,7 @@ class TestPythonApi(TestCase):
 
         assert not can_dismiss(self.user, notice)
 
-    @override_settings(FEATURES={"NOTICES_MAX_SNOOZE_DAYS": 30})
+    @override_settings(NOTICES_MAX_SNOOZE_DAYS=30)
     def test_can_dismiss_snooze_days_under_limit(self):
         """
         Verifies the behavior of the `can_dismiss` function when a user is under the threshold of days to ack a
@@ -114,7 +114,7 @@ class TestPythonApi(TestCase):
 
         assert can_dismiss(self.user, notice)
 
-    @override_settings(FEATURES={"NOTICES_MAX_SNOOZE_DAYS": 1})
+    @override_settings(NOTICES_MAX_SNOOZE_DAYS=1)
     def test_can_dismiss_snooze_days_over_limit(self):
         """
         Verifies the behavior of the `can_dismiss` function when a user should no longer be able to dismiss a notice
