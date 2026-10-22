@@ -14,7 +14,7 @@ astroid==3.3.5
     #   pylint-celery
 black==24.10.0
     # via -r requirements/quality.in
-certifi==2024.8.30
+certifi==2026.10.19
     # via
     #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/test.txt
     #   requests
