@@ -8,7 +8,7 @@ asgiref==3.8.1
     # via
     #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/base.txt
     #   django
-certifi==2024.8.30
+certifi==2026.10.19
     # via
     #   -r /Users/hunia.fatima/Desktop/edX/platform-plugin-notices/requirements/base.txt
     #   requests
