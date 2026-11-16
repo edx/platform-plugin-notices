@@ -13,6 +13,12 @@ Change Log
 
 Unreleased
 ~~~~~~~~~~
+* Added ``GET /notices/api/v1/refund-policy`` returning the refund policy change notice as JSON for MFE modals,
+  gated by the ``commerce.show_refund_policy_change_notice`` flag and the ``NOTICES_REFUND_POLICY_NOTICE_NAME`` setting.
+* The refund policy notice is excluded from ``GET /notices/api/v1/unacknowledged`` so MFEs do not redirect to its
+  full page; it is shown only as a modal.
+* Emit server-side ``edx.bi.user.displayed_notice`` (each time the modal notice is returned) and
+  ``edx.bi.user.acknowledged_notice`` (modal notice only; full-page notices still report it from the browser).
 
 [0.14.55] - 2023-09-25
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

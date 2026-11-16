@@ -14,6 +14,14 @@ This Django app contains notices that a user must acknowledge before continuing 
 1. An endpoint to return links to all notices that the user hasn't acknowledged.
 2. An endpoint to acknowledge that a user has seen the notice. This endpoint's URL will be passed to the client via the first endpoint.
 
+Two ways to show a notice
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Notices are created and edited in Django Admin (``Notice`` with one ``TranslatedNoticeContent`` per language, an ``en`` row is required as the fallback). No deploy is needed to add, change or switch off a notice (untick ``active``).
+
+* **Full-page notices (default).** ``GET /notices/api/v1/unacknowledged`` returns links to the rendered notice pages. Frontends such as the Learning MFE redirect the learner to the page, which acknowledges through ``POST /notices/api/v1/acknowledge``. The global flag ``notices.enable_notices`` turns this on.
+* **Refund policy modal.** ``GET /notices/api/v1/refund-policy`` returns ``{"show", "notice_id", "body", "language"}`` as JSON so an MFE can show the notice in a modal (see ``@edx/refund-policy-notice-plugin`` in ``frontend-plugins``, mounted in the ``refund_policy_notice_slot`` of ``frontend-component-header-edx``). It is served for the ``Notice`` whose name equals the ``NOTICES_REFUND_POLICY_NOTICE_NAME`` setting (default ``Refund Policy Change``) and is controlled by the waffle flag ``commerce.show_refund_policy_change_notice``. It ignores ``launch_date`` and snoozing, strips HTML from the body, and the modal acknowledges with ``POST /notices/api/v1/acknowledge`` (``confirmed``). That notice is excluded from the ``unacknowledged`` list, so it never redirects to a full page.
+
 Documentation
 -------------
 
