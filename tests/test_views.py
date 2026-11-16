@@ -12,12 +12,7 @@ from notices.data import AcknowledgmentResponseTypes
 from notices.models import AcknowledgedNotice, TranslatedNoticeContent
 from notices.rest_api.v1.views import AcknowledgeNotice, ListUnacknowledgedNotices, RefundPolicyNotice
 from notices.toggles import ENABLE_NOTICES, SHOW_REFUND_POLICY_NOTICE
-from test_utils.factories import (
-    AcknowledgedNoticeFactory,
-    NoticeFactory,
-    TranslatedNoticeContentFactory,
-    UserFactory,
-)
+from test_utils.factories import AcknowledgedNoticeFactory, NoticeFactory, TranslatedNoticeContentFactory, UserFactory
 
 
 class ListUnacknowledgedNoticesTests(TestCase):
