@@ -13,6 +13,9 @@ Change Log
 
 Unreleased
 ~~~~~~~~~~
+
+[0.15.0] - 2026-11-18
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Added ``GET /notices/api/v1/refund-policy`` returning the refund policy change notice as JSON for MFE modals,
   gated by the ``commerce.show_refund_policy_change_notice`` flag and the ``NOTICES_REFUND_POLICY_NOTICE_NAME`` setting.
 * The refund policy notice is excluded from ``GET /notices/api/v1/unacknowledged`` so MFEs do not redirect to its

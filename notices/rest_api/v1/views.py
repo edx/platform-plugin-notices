@@ -53,12 +53,16 @@ def _emit_tracking_event(name, data):
 
 def _html_to_text(html_content):
     """
-    Return the plain text of a notice's HTML, keeping line and paragraph breaks as newlines.
+    Return the plain text of a notice's HTML, with paragraphs separated by one blank line.
 
-    `strip_tags` alone would run separate paragraphs together ("<p>a</p><p>b</p>" becomes "ab").
+    The result does not depend on how the HTML source is laid out in Django Admin: each line is trimmed and runs of
+    blank lines are collapsed. `strip_tags` alone would run separate paragraphs together ("<p>a</p><p>b</p>" becomes
+    "ab"). Links keep only their text, and the contents of `<style>`, `<script>` or `<button>` are kept as text.
     """
-    text = re.sub(r"(?i)<br\s*/?>|</(?:p|div|li|h[1-6])>", "\n", html_content)
+    text = re.sub(r"(?i)<br\s*/?>|</li>", "\n", html_content)
+    text = re.sub(r"(?i)</(?:p|div|h[1-6])>", "\n\n", text)
     text = html.unescape(strip_tags(text))
+    text = re.sub(r"[^\S\n]*\n[^\S\n]*", "\n", text.replace("\r\n", "\n"))  # trim each line, drop indentation
     return re.sub(r"\n{3,}", "\n\n", text).strip()
 
 

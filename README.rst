@@ -22,6 +22,13 @@ Notices are created and edited in Django Admin (``Notice`` with one ``Translated
 * **Full-page notices (default).** ``GET /notices/api/v1/unacknowledged`` returns links to the rendered notice pages. Frontends such as the Learning MFE redirect the learner to the page, which acknowledges through ``POST /notices/api/v1/acknowledge``. The global flag ``notices.enable_notices`` turns this on.
 * **Refund policy modal.** ``GET /notices/api/v1/refund-policy`` returns ``{"show", "notice_id", "body", "language"}`` as JSON so an MFE can show the notice in a modal (see ``@edx/refund-policy-notice-plugin`` in ``frontend-plugins``, mounted in the ``refund_policy_notice_slot`` of ``frontend-component-header-edx``). It is served for the ``Notice`` whose name equals the ``NOTICES_REFUND_POLICY_NOTICE_NAME`` setting (default ``Refund Policy Change``) and is controlled by the waffle flag ``commerce.show_refund_policy_change_notice``. It ignores ``launch_date`` and snoozing, strips HTML from the body, and the modal acknowledges with ``POST /notices/api/v1/acknowledge`` (``confirmed``). That notice is excluded from the ``unacknowledged`` list, so it never redirects to a full page.
 
+Refund policy modal notes:
+
+* The ``Notice`` name must match ``NOTICES_REFUND_POLICY_NOTICE_NAME`` exactly and must not be renamed afterwards. The name decides how the notice is shown: if it no longer matches, the notice becomes a full-page notice and appears in ``unacknowledged`` (when ``notices.enable_notices`` is on), and learners are redirected to a page with no confirm button.
+* The body is converted from HTML to plain text: paragraphs are separated by one blank line, ``<br>`` becomes a line break, links keep only their text (the URL is dropped), and the contents of ``<style>``, ``<script>`` or ``<button>`` show up as text, so keep the HTML to simple paragraphs.
+* The notice is web only. Mobile apps calling ``unacknowledged?mobile=true`` do not receive it.
+* ``edx.bi.user.displayed_notice`` and ``edx.bi.user.acknowledged_notice`` are emitted server side with ``tracker.emit``, so they always reach the tracking log. They reach Segment only if both names are in ``EVENT_TRACKING_SEGMENTIO_EMIT_WHITELIST`` in the LMS config. Full-page notices send the acknowledgement event to Segment from the browser, so add both names to the whitelist to keep the two in one place.
+
 Documentation
 -------------
 

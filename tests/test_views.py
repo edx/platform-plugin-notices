@@ -236,7 +236,18 @@ class RefundPolicyNoticeTests(TestCase):
             html_content="<h2>Title</h2><p>First <b>paragraph</b> &amp; more.</p><p>Second<br>line</p>"
         )
         body = self._get(self.user).data["body"]
-        assert body == "Title\nFirst paragraph & more.\nSecond\nline"
+        assert body == "Title\n\nFirst paragraph & more.\n\nSecond\nline"
+
+    @override_waffle_flag(SHOW_REFUND_POLICY_NOTICE, active=True)
+    def test_body_is_the_same_whatever_the_html_layout(self):
+        layouts = [
+            "<p>First.</p><p>Second.</p>",
+            "<p>First.</p>\n\n<p>Second.</p>",
+            "<p>First.</p>\r\n\r\n    <p>\r\n      Second.\r\n    </p>\r\n",
+        ]
+        for layout in layouts:
+            TranslatedNoticeContent.objects.filter(notice=self.notice, language_code="en").update(html_content=layout)
+            assert self._get(self.user).data["body"] == "First.\n\nSecond."
 
     @override_waffle_flag(SHOW_REFUND_POLICY_NOTICE, active=True)
     def test_user_joined_after_launch_still_sees_notice(self):
@@ -263,6 +274,29 @@ class RefundPolicyNoticeTests(TestCase):
         self.notice.active = False
         self.notice.save()
         assert self._get(self.user).data == {"show": False}
+
+    @override_waffle_flag(SHOW_REFUND_POLICY_NOTICE, active=True)
+    @override_settings(NOTICES_REFUND_POLICY_NOTICE_NAME="Some Other Name")
+    def test_notice_with_a_different_name_is_not_served(self):
+        assert self._get(self.user).data == {"show": False}
+
+    @override_waffle_flag(SHOW_REFUND_POLICY_NOTICE, active=True)
+    def test_notice_without_user_or_fallback_language_content(self):
+        TranslatedNoticeContent.objects.filter(notice=self.notice, language_code="en").delete()
+        assert self._get(self.user, HTTP_ACCEPT_LANGUAGE="fr").data == {"show": False}
+
+    @override_waffle_flag(SHOW_REFUND_POLICY_NOTICE, active=True)
+    def test_displayed_event_is_emitted_only_when_shown(self):
+        with mock.patch("notices.rest_api.v1.views._emit_tracking_event") as emit:
+            self._get(self.user)
+        emit.assert_called_once_with("edx.bi.user.displayed_notice", {"notice_id": self.notice.id, "language": "en"})
+
+        AcknowledgedNoticeFactory(
+            user=self.user, notice=self.notice, response_type=AcknowledgmentResponseTypes.CONFIRMED
+        )
+        with mock.patch("notices.rest_api.v1.views._emit_tracking_event") as emit:
+            self._get(self.user)
+        emit.assert_not_called()
 
     @override_waffle_flag(SHOW_REFUND_POLICY_NOTICE, active=True)
     def test_translated_content(self):
