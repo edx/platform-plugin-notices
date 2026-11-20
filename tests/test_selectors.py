@@ -8,7 +8,7 @@ from django.conf import settings
 from django.test import TestCase, override_settings
 
 from notices.data import AcknowledgmentResponseTypes
-from notices.selectors import get_active_notices, get_visible_notices
+from notices.selectors import get_active_notices, get_refund_policy_notice_for_user, get_visible_notices
 from test_utils.factories import AcknowledgedNoticeFactory, NoticeFactory, UserFactory
 
 
@@ -30,6 +30,38 @@ class TestSelectors(TestCase):
         sign_up_date = datetime.datetime.fromisoformat("2021-10-27")
         results = get_active_notices(before_date=sign_up_date)
         assert list(results) == [new_active_notice]
+
+    @override_settings(NOTICES_REFUND_POLICY_NOTICE_NAME="Refund Policy Change")
+    def test_refund_policy_notice_is_not_a_page_notice(self):
+        """
+        The refund policy notice is shown as a modal, so it must not be listed for full-page redirects.
+        """
+        page_notice = NoticeFactory(active=True)
+        NoticeFactory(active=True, name="Refund Policy Change")
+
+        assert list(get_active_notices()) == [page_notice]
+        assert list(get_visible_notices(self.user)) == [page_notice]
+
+    @override_settings(NOTICES_REFUND_POLICY_NOTICE_NAME="Refund Policy Change")
+    def test_get_refund_policy_notice_for_user(self):
+        """
+        The modal notice is returned until the user confirms it, whenever they joined, and dismissing is not enough.
+        """
+        notice = NoticeFactory(active=True, name="Refund Policy Change")
+        late_user = UserFactory(date_joined=notice.launch_date + datetime.timedelta(days=1))
+
+        assert get_refund_policy_notice_for_user(self.user) == notice
+        assert get_refund_policy_notice_for_user(late_user) == notice
+
+        AcknowledgedNoticeFactory(user=self.user, notice=notice, response_type=AcknowledgmentResponseTypes.DISMISSED)
+        assert get_refund_policy_notice_for_user(self.user) == notice
+
+        AcknowledgedNoticeFactory(user=late_user, notice=notice, response_type=AcknowledgmentResponseTypes.CONFIRMED)
+        assert get_refund_policy_notice_for_user(late_user) is None
+
+        notice.active = False
+        notice.save()
+        assert get_refund_policy_notice_for_user(self.user) is None
 
     def test_get_visible_notices(self):
         """

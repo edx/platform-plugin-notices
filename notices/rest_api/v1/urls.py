@@ -7,5 +7,6 @@ from notices.rest_api.v1 import views
 
 urlpatterns = [
     path("unacknowledged", views.ListUnacknowledgedNotices.as_view(), name="unacknowledged_notices"),
+    path("refund-policy", views.RefundPolicyNotice.as_view(), name="refund_policy_notice"),
     path("acknowledge", views.AcknowledgeNotice.as_view(), name="acknowledge_notice"),
 ]

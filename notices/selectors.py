@@ -16,8 +16,12 @@ def get_active_notices(before_date=None):
 
     We don't want to show notices that have a launch date prior to a user creating an account,
     because they won't have a change to acknowledge.
+
+    The refund policy notice is excluded: it is shown as a modal by the MFE header (see
+    `get_refund_policy_notice_for_user`), so it must not appear in the full-page notice list that
+    MFEs redirect to.
     """
-    active_notices = Notice.objects.filter(active=True)
+    active_notices = Notice.objects.filter(active=True).exclude(name=settings.NOTICES_REFUND_POLICY_NOTICE_NAME)
     if before_date:
         return active_notices.exclude(launch_date__lte=before_date)
     return active_notices
@@ -28,6 +32,23 @@ def get_acknowledged_notices_for_user(user):
     Return a QuerySet of all acknowledged Notices for a given user.
     """
     return AcknowledgedNotice.objects.filter(user=user)
+
+
+def get_refund_policy_notice_for_user(user):
+    """
+    Return the refund policy Notice the user still has to acknowledge, or None.
+
+    Unlike `get_visible_notices`, this does not apply the `launch_date`/`date_joined` rule (every learner,
+    including those who joined after launch, must see it) and ignores snoozing, because this notice
+    can only be closed by confirming it.
+    """
+    notice = Notice.objects.filter(active=True, name=settings.NOTICES_REFUND_POLICY_NOTICE_NAME).first()
+    if notice is None:
+        return None
+    already_confirmed = AcknowledgedNotice.objects.filter(
+        user=user, notice=notice, response_type=AcknowledgmentResponseTypes.CONFIRMED
+    ).exists()
+    return None if already_confirmed else notice
 
 
 def get_visible_notices(user):
